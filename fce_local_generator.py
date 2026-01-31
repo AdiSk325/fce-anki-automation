@@ -129,7 +129,7 @@ def extract_word_from_cloze(sentence: str) -> str:
     Returns:
         Extracted word
     """
-    match = re.search(r'\{\{c1::([^}]+)\}\}', sentence)
+    match = re.search(r'\{\{c1::(.+?)\}\}', sentence)
     if match:
         return match.group(1)
     return ""

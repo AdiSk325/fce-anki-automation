@@ -24,7 +24,7 @@ Przed rozpoczęciem upewnij się, że masz zainstalowane:
 
 ### Windows / macOS / Linux
 
-1. Pobierz i zainstaluj Ollama ze strony: https://ollama.ai/
+1. Pobierz i zainstaluj Ollama ze strony: https://ollama.com/
 
 2. Po instalacji uruchom terminal/wiersz polecenia i pobierz model llama3:
 
