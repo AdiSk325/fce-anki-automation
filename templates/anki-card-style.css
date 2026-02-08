@@ -1,0 +1,214 @@
+/* ============================================
+   Styl kart Anki – FCE Preparation
+   Dodaj ten CSS w sekcji "Styling" szablonu karty
+   ============================================ */
+
+.card {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 16px;
+    text-align: left;
+    color: #333;
+    background-color: #fafafa;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Front karty */
+.card .front {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #1a237e;
+    padding: 30px;
+}
+
+/* Wymowa IPA */
+.ipa {
+    color: #666;
+    font-style: italic;
+    font-size: 14px;
+}
+
+/* Część mowy */
+.pos {
+    color: #7b1fa2;
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+/* Tłumaczenie */
+.translation {
+    background-color: #e8f5e9;
+    padding: 10px 15px;
+    border-left: 4px solid #4caf50;
+    margin: 10px 0;
+    border-radius: 0 4px 4px 0;
+}
+
+/* Definicja EN */
+.definition {
+    background-color: #e3f2fd;
+    padding: 10px 15px;
+    border-left: 4px solid #2196f3;
+    margin: 10px 0;
+    border-radius: 0 4px 4px 0;
+}
+
+/* Przykłady */
+.example, .examples {
+    background-color: #fff3e0;
+    padding: 10px 15px;
+    border-left: 4px solid #ff9800;
+    margin: 10px 0;
+    border-radius: 0 4px 4px 0;
+}
+
+/* Formuła gramatyczna */
+.formula {
+    background-color: #f3e5f5;
+    padding: 10px 15px;
+    border-left: 4px solid #9c27b0;
+    margin: 10px 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.formula code {
+    background-color: #e1bee7;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+}
+
+/* Użycie */
+.usage {
+    margin: 10px 0;
+}
+
+.usage ul {
+    padding-left: 20px;
+}
+
+/* Słowa sygnałowe */
+.signal-words {
+    background-color: #fff9c4;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin: 8px 0;
+}
+
+/* Wskazówki */
+.tip {
+    background-color: #e0f7fa;
+    padding: 10px 15px;
+    border-left: 4px solid #00bcd4;
+    margin: 10px 0;
+    border-radius: 0 4px 4px 0;
+}
+
+/* Typowe błędy */
+.mistakes {
+    background-color: #fce4ec;
+    padding: 10px 15px;
+    border-left: 4px solid #e91e63;
+    margin: 10px 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.wrong {
+    color: #c62828;
+    font-weight: bold;
+}
+
+.correct {
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+/* Znaczenie (phrasal verbs) */
+.meaning {
+    margin: 8px 0;
+    padding: 5px 0;
+    border-bottom: 1px dashed #ddd;
+}
+
+.meaning:last-child {
+    border-bottom: none;
+}
+
+/* Notatka gramatyczna */
+.grammar-note {
+    background-color: #efebe9;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+/* Notatka/uwaga */
+.note {
+    background-color: #fff8e1;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+/* Use of English – zadania */
+.kwt, .wf, .oc, .mc {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.kwt .original, .kwt .keyword, .kwt .gap {
+    margin: 8px 0;
+}
+
+.kwt .instruction {
+    font-size: 13px;
+    color: #666;
+    margin-top: 12px;
+}
+
+/* Odpowiedź */
+.answer {
+    background-color: #c8e6c9;
+    padding: 12px 15px;
+    border-radius: 4px;
+    margin: 10px 0;
+    font-size: 18px;
+    text-align: center;
+}
+
+.full-sentence {
+    text-align: center;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Wyjaśnienie */
+.explanation {
+    background-color: #e8eaf6;
+    padding: 10px 15px;
+    border-left: 4px solid #3f51b5;
+    margin: 10px 0;
+    border-radius: 0 4px 4px 0;
+}
+
+/* Formation (word formation) */
+.formation {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+}
+
+/* Separator */
+hr {
+    border: none;
+    border-top: 1px dashed #ccc;
+    margin: 10px 0;
+}

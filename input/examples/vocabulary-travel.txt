@@ -1,0 +1,19 @@
+# Lista słów – Travel & Tourism (przykład)
+# Format: słowo angielskie
+# Temat: podróże i turystyka (FCE)
+
+accommodation
+itinerary
+sightseeing
+destination
+souvenir
+departure
+boarding pass
+luggage
+resort
+excursion
+scenic
+all-inclusive
+backpacking
+check-in
+delay
