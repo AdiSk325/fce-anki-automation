@@ -107,5 +107,5 @@ do your best	<div class="translation"><p><b>🇵🇱 dać z siebie wszystko, sta
 1. Przeanalizuj listę wejściową lub temat
 2. Zidentyfikuj kolokacje do przetworzenia
 3. Dla każdej kolokacji wygeneruj kompletny wiersz TSV
-4. Zapisz wynik w `output/fce-collocations-[temat]-[data].tsv`
+4. Zapisz wynik w `output/fce-collocations-[temat]-[YYYY-MM-DD].tsv`
 5. Zweryfikuj format (5 kolumn TSV)

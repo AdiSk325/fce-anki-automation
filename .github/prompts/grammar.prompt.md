@@ -111,5 +111,5 @@ Second Conditional – Special Uses	<div class="formula"><b>📐 Specjalne zasto
 1. Zidentyfikuj główne zagadnienie gramatyczne
 2. Podziel je na logiczne podtematy (każdy = osobna karta)
 3. Dla każdej karty wygeneruj kompletny wiersz TSV
-4. Zapisz wynik w `output/fce-grammar-[temat]-[data].tsv`
+4. Zapisz wynik w `output/fce-grammar-[temat]-[YYYY-MM-DD].tsv`
 5. Zweryfikuj poprawność formatu (5 kolumn TSV)

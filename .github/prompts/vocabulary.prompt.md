@@ -80,6 +80,6 @@ thoroughly	<div class="pos"><b>adverb</b></div><div class="ipa">/ˈθʌrəli/</d
 
 1. Przeanalizuj listę wejściową i zidentyfikuj słowa do przetworzenia
 2. Dla każdego słowa wygeneruj kompletny wiersz TSV zgodnie ze specyfikacją
-3. Zapisz wynik w `output/fce-vocabulary-[temat]-[data].tsv`
+3. Zapisz wynik w `output/fce-vocabulary-[temat]-[YYYY-MM-DD].tsv`
 4. Upewnij się, że plik jest poprawnie zakodowany w UTF-8
 5. Zweryfikuj liczbę kolumn w każdym wierszu (4 kolumny)

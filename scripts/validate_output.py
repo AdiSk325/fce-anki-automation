@@ -99,22 +99,20 @@ def validate_tsv_structure(filepath, card_type):
 
 def validate_html(filepath):
     """Podstawowa walidacja HTML w polach."""
+    import re
     warnings = []
-    open_tags = ["<b>", "<i>", "<div", "<ul>", "<li>", "<p>", "<span", "<code>"]
-    close_tags = ["</b>", "</i>", "</div>", "</ul>", "</li>", "</p>", "</span>", "</code>"]
+    tag_names = ["b", "i", "div", "ul", "li", "p", "span", "code"]
 
     with open(filepath, "r", encoding="utf-8") as f:
         reader = csv.reader(f, delimiter="\t")
         for i, row in enumerate(reader, 1):
             for j, field in enumerate(row):
-                for open_tag, close_tag in zip(open_tags, close_tags):
-                    open_count = field.lower().count(open_tag.split(">")[0].split(" ")[0])
-                    close_count = field.lower().count(close_tag)
-                    # Prosta heurystyka – jeśli otwartych > zamkniętych, ostrzeż
+                for tag in tag_names:
+                    open_count = len(re.findall(rf"<{tag}[\s>]", field, re.IGNORECASE))
+                    close_count = len(re.findall(rf"</{tag}>", field, re.IGNORECASE))
                     if open_count > 0 and close_count == 0:
-                        tag_name = open_tag.replace("<", "").replace(">", "").split(" ")[0]
                         warnings.append(
-                            f"Wiersz {i}, pole {j+1}: możliwy niezamknięty tag <{tag_name}>"
+                            f"Wiersz {i}, pole {j+1}: możliwy niezamknięty tag <{tag}>"
                         )
 
     return warnings

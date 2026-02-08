@@ -182,5 +182,5 @@ Wyjście (TSV):
 1. Zidentyfikuj typ zadania i temat
 2. Wygeneruj realistyczne zadania w stylu FCE
 3. Dla każdego zadania wygeneruj kompletny wiersz TSV
-4. Zapisz wynik w `output/fce-use-of-english-[typ]-[data].tsv`
+4. Zapisz wynik w `output/fce-use-of-english-[typ]-[YYYY-MM-DD].tsv`
 5. Zweryfikuj format (5 kolumn TSV)

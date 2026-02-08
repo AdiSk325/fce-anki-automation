@@ -104,5 +104,5 @@ look forward to (sth)	<div class="meaning"><p><b>🇵🇱 Znaczenie:</b> nie mó
 1. Przeanalizuj listę wejściową
 2. Dla każdego phrasal verb wygeneruj kompletny wiersz TSV
 3. Jeśli podano czasownik bazowy, wygeneruj najważniejsze warianty FCE
-4. Zapisz wynik w `output/fce-phrasal-verbs-[czasownik]-[data].tsv`
+4. Zapisz wynik w `output/fce-phrasal-verbs-[czasownik]-[YYYY-MM-DD].tsv`
 5. Zweryfikuj format (5 kolumn TSV)
