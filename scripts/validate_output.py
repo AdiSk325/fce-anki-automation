@@ -11,6 +11,7 @@ Użycie:
 import argparse
 import csv
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -97,6 +98,45 @@ def validate_tsv_structure(filepath, card_type):
     return errors, warnings
 
 
+def validate_use_of_english_logic(filepath):
+    """Sprawdza podstawową logikę kart Use of English."""
+    errors = []
+
+    with open(filepath, "r", encoding="utf-8") as f:
+        reader = csv.reader(f, delimiter="\t")
+        for i, row in enumerate(reader, 1):
+            if len(row) != EXPECTED_COLUMNS["use-of-english"]["count"]:
+                continue
+
+            task, answer, _, task_type, _ = row
+
+            if task_type.strip() != "key-word-transformation":
+                continue
+
+            keyword_match = re.search(
+                r'<p class="keyword">\s*Słowo kluczowe:\s*<b>([^<]+)</b>',
+                task,
+                re.IGNORECASE,
+            )
+            if not keyword_match:
+                errors.append(
+                    f"Wiersz {i}: nie można odczytać słowa kluczowego w zadaniu KWT"
+                )
+                continue
+
+            keyword = keyword_match.group(1).strip()
+            answer_text = re.sub(r"<[^>]+>", " ", answer)
+            answer_text = re.sub(r"\s+", " ", answer_text).strip()
+            answer_words = {word.strip(".,;:!?()[]{}\"'").upper() for word in answer_text.split()}
+
+            if keyword.upper() not in answer_words:
+                errors.append(
+                    f"Wiersz {i}: odpowiedź KWT nie zawiera słowa kluczowego '{keyword}'"
+                )
+
+    return errors
+
+
 def validate_html(filepath):
     """Podstawowa walidacja HTML w polach."""
     import re
@@ -181,7 +221,12 @@ def validate_file(filepath, card_type=None):
         html_warnings = validate_html(filepath)
         all_warnings.extend(html_warnings)
 
-    # 4. Duplikaty
+    # 4. Logika kart Use of English
+    if not utf8_errors and card_type == "use-of-english":
+        logic_errors = validate_use_of_english_logic(filepath)
+        all_errors.extend(logic_errors)
+
+    # 5. Duplikaty
     if not utf8_errors:
         dup_warnings = check_duplicates(filepath)
         all_warnings.extend(dup_warnings)
