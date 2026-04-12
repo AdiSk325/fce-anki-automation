@@ -1,0 +1,17 @@
+# Zagadnienie gramatyczne – Conditionals (przykład)
+# Temat: Tryby warunkowe
+# Zakres: Zero, First, Second, Third, Mixed Conditionals
+
+Proszę wygenerować kompletny zestaw kart Anki obejmujący:
+
+1. Zero Conditional (fakty, prawdy ogólne)
+2. First Conditional (realne sytuacje przyszłe)
+3. Second Conditional (hipotetyczne sytuacje teraźniejsze/przyszłe)
+4. Third Conditional (hipotetyczne sytuacje przeszłe)
+5. Mixed Conditionals (mieszane tryby warunkowe)
+
+Dla każdego typu:
+- Struktura/formuła
+- Minimum 3 przykłady z tłumaczeniem
+- Typowe błędy
+- Wskazówki na egzamin FCE
