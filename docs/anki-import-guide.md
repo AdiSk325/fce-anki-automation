@@ -1,5 +1,7 @@
 # Importowanie do Anki – Szczegółowy przewodnik
 
+Moduł Anki jest częścią większego systemu nauki w tym repo. Najlepiej używać go w cyklu: tutor diagnozuje brak, generuje materiał, użytkownik uczy się fiszek, a następnie tutor sprawdza aktywne użycie w `practice/anki-checks/`.
+
 ## Wymagania
 
 - **Anki** (wersja 2.1+): https://apps.ankiweb.net/
@@ -153,11 +155,18 @@ Zalecane ustawienia dla przygotowania do FCE:
 ### Strategia nauki
 1. **Codziennie**: Przeglądaj zaplanowane powtórki
 2. **Co tydzień**: Dodawaj nowe karty z kolejnych tematów
-3. **Przed egzaminem**: Skup się na kartach z najgorszymi statystykami
-4. **Custom Study**: Użyj filtrowanej talii do intensywnej nauki konkretnego tematu
+3. **Po każdej sesji z tutorem**: Sprawdź, czy z nowych błędów lub braków nie trzeba dodać kolejnych kart
+4. **Przed egzaminem**: Skup się na kartach z najgorszymi statystykami
+5. **Custom Study**: Użyj filtrowanej talii do intensywnej nauki konkretnego tematu
 
 ### Tagi i filtrowanie
 Dzięki systemowi tagów możesz tworzyć filtrowane talie:
 - `tag:fce tag:grammar tag:conditionals` – tylko conditionals
 - `tag:fce tag:vocabulary tag:travel` – tylko słownictwo z podróży
 - `tag:fce tag:use-of-english` – wszystkie zadania Use of English
+
+## Integracja z tutorem
+
+- Po przerobieniu talii poproś tutora o aktywne sprawdzenie bez podpowiedzi.
+- Trudne słowa i struktury warto od razu przerobić także w writingu, speakingu albo Use of English.
+- Jeśli jakaś karta jest stale trudna, tutor powinien przygotować dodatkowy zestaw ćwiczeń zamiast tylko zwiększać liczbę powtórek.

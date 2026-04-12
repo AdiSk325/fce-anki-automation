@@ -1,126 +1,89 @@
-# Workflow – Jak korzystać z projektu
+# Workflow – codzienna praca z tutorem FCE
 
-## Przegląd
+## Założenie
 
-Ten projekt wykorzystuje GitHub Copilot jako agenta AI do generowania profesjonalnego wsadu do Anki na potrzeby przygotowania do egzaminu FCE (B2 First).
+Repo ma działać jak osobista przestrzeń robocza, nie jak jednorazowy generator treści. Każda sensowna sesja z Copilotem powinna zostawić użyteczny ślad: materiał, ocenę, korektę, plan albo zapis postępu.
 
-## Krok po kroku
+## Domyślny przebieg sesji
 
-### 1. Przygotowanie materiału wejściowego
+### 1. Kontekst
 
-Umieść swoje materiały w odpowiednim katalogu:
+Przed wykonaniem zadania tutor powinien odczytać, co jest potrzebne z:
 
-```
-input/
-├── word-lists/          ← listy słów do nauki
-├── grammar-topics/      ← zagadnienia gramatyczne
-└── examples/            ← przykłady (do podglądu)
-```
+- `knowledge/expert_knowledge.md`,
+- plików w `User/`,
+- odpowiednich katalogów w `practice/`, `plans/`, `progress/`, `materials/`.
 
-**Format wejściowy** – możesz użyć dowolnego formatu tekstowego:
-- Prosta lista słów (jedno na linię)
-- Lista z tłumaczeniami
-- Opis tematu gramatycznego
-- Skopiowany fragment podręcznika
-- Notatki własne
+### 2. Praca dydaktyczna
 
-### 2. Wybierz odpowiedni prompt
+Typowe typy sesji:
 
-W katalogu `.github/prompts/` znajdziesz gotowe instrukcje dla Copilota:
+- wyjaśnienie zagadnienia gramatycznego,
+- ćwiczenia z Reading and Use of English,
+- Writing Part 1 lub Part 2,
+- Speaking simulation,
+- analiza błędów,
+- planowanie tygodnia,
+- generowanie lub weryfikacja fiszek Anki.
 
-| Prompt | Do czego służy |
-|--------|---------------|
-| `vocabulary.prompt.md` | Konwersja list słów |
-| `grammar.prompt.md` | Generowanie kart gramatycznych |
-| `phrasal-verbs.prompt.md` | Karty z czasownikami frazowymi |
-| `collocations.prompt.md` | Karty z kolokacjami |
-| `use-of-english.prompt.md` | Zadania Use of English |
+### 3. Zapis rezultatu
 
-### 3. Uruchom Copilota
+Po zakończeniu tutor zapisuje to, co ma wartość na przyszłość:
 
-#### Opcja A: GitHub Copilot Chat (VS Code)
+- materiał do `practice/`,
+- plany do `plans/`,
+- raporty do `progress/`,
+- aktualizacje personalizacji do `User/`.
 
-1. Otwórz plik wejściowy w VS Code
-2. Otwórz Copilot Chat (`Ctrl+Shift+I` lub `Cmd+Shift+I`)
-3. Użyj polecenia z odniesieniem do promptu:
-   ```
-   @workspace /prompt vocabulary
-   Przetworz plik input/word-lists/moja-lista.txt na karty Anki
-   ```
+## Przykładowe workflow
 
-#### Opcja B: GitHub Copilot Agent (Coding Agent)
+### Writing
 
-1. Utwórz issue z opisem zadania, np.:
-   ```
-   Przetworz listę słów z input/word-lists/travel.txt na karty Anki vocabulary
-   ```
-2. Przypisz do Copilot Coding Agent
-3. Agent automatycznie wygeneruje plik TSV w `output/`
+1. Tutor daje task w stylu FCE.
+2. Użytkownik pisze własny tekst.
+3. Tekst trafia do `practice/writing/raw/`.
+4. Tutor ocenia pracę i zapisuje feedback do `practice/writing/feedback/`.
+5. Wersja poprawiona trafia do `practice/writing/corrected/`.
+6. Najważniejsze błędy są dopisywane do `User/most_popular_mistakes.md`.
 
-#### Opcja C: Ręczne polecenie w Chat
+### Reading and Use of English
 
-1. Skopiuj treść odpowiedniego promptu
-2. Wklej do Copilot Chat
-3. Dołącz materiał wejściowy
-4. Copilot wygeneruje gotowy plik TSV
+1. Tutor tworzy zestaw ćwiczeń do `practice/reading-use-of-english/`.
+2. Użytkownik rozwiązuje zadania.
+3. Tutor sprawdza odpowiedzi i zapisuje wnioski.
+4. Jeśli trzeba, tworzy zestaw naprawczy oraz fiszki Anki.
 
-### 4. Zwaliduj wynik
+### Speaking
 
-```bash
-python scripts/validate_output.py output/fce-vocabulary-travel-2024-01-15.tsv
-```
+1. Tutor prowadzi symulację jednej części Speaking.
+2. Koryguje język, zakres i organizację wypowiedzi.
+3. Zapisuje kluczowe braki do `User/user_progress.md` i `User/most_popular_mistakes.md`.
+4. Zleca ćwiczenie uzupełniające do `practice/speaking/` albo `practice/vocabulary/`.
 
-Lub zwaliduj wszystkie pliki w katalogu:
-```bash
-python scripts/validate_output.py output/
-```
+### Anki cycle
 
-### 5. Opcjonalnie: Połącz pliki
+1. Tutor diagnozuje, co trzeba zapamiętać.
+2. Tworzy lub rozszerza zestaw fiszek w `output/`.
+3. Użytkownik uczy się kart.
+4. Tutor przeprowadza aktywne sprawdzenie w `practice/anki-checks/`.
+5. Trudne elementy wracają do kolejnych ćwiczeń.
 
-Jeśli masz wiele plików tego samego typu:
-```bash
-python scripts/merge_decks.py output/fce-vocabulary-*.tsv -o output/fce-vocabulary-all.tsv
+## Polecane polecenia startowe
+
+```text
+Sprawdź moje cele i postępy, a potem zaproponuj najrozsądniejszą sesję na dziś.
 ```
 
-### 6. Importuj do Anki
-
-1. Otwórz Anki
-2. **Plik** → **Importuj**
-3. Wybierz plik `.tsv` z `output/`
-4. Skonfiguruj mapowanie pól (patrz `templates/note-types.md`)
-5. Importuj!
-
-## Przykładowy scenariusz
-
-### Scenariusz: Nauka słownictwa z tematu "Environment"
-
-```bash
-# 1. Utwórz plik wejściowy
-echo "pollution
-renewable energy
-carbon footprint
-sustainability
-biodiversity
-deforestation
-greenhouse effect
-climate change
-ecosystem
-recycling" > input/word-lists/environment.txt
-
-# 2. Poproś Copilota o przetworzenie (w Chat lub jako Issue)
-# "Przetworz input/word-lists/environment.txt na karty vocabulary z użyciem
-#  promptu .github/prompts/vocabulary.prompt.md"
-
-# 3. Zwaliduj wynik
-python scripts/validate_output.py output/fce-vocabulary-environment-2024-01-15.tsv
-
-# 4. Importuj do Anki
+```text
+Przygotuj mi Writing Part 2, oceń odpowiedź jak tutor FCE i zapisz komplet śladów pracy w repo.
 ```
 
-## Wskazówki
+```text
+Na podstawie moich błędów przygotuj 15 zadań Use of English i 10 fiszek Anki do utrwalenia.
+```
 
-- **Małe partie**: Lepiej przetwarzać 10-20 słów na raz niż 100
-- **Sprawdzaj jakość**: Przejrzyj wygenerowane karty przed importem
-- **Tagi**: Korzystaj z tagów do organizacji nauki w Anki
-- **Regularne generowanie**: Twórz nowe karty regularnie, np. po każdej lekcji
-- **Customizacja**: Możesz modyfikować prompty w `.github/prompts/` pod swoje potrzeby
+## Kiedy używać input/ i output/
+
+- `input/` służy nadal jako miejsce na materiały wejściowe, listy słów, notatki lub surowe polecenia.
+- `output/` pozostaje katalogiem na gotowe pliki TSV do Anki.
+- Wszystko, co jest materiałem do pracy i powrotu, powinno trafiać przede wszystkim do `practice/`, `plans/`, `progress/` i `materials/`.

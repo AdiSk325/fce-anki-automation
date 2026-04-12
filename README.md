@@ -1,126 +1,131 @@
-# FCE Anki Automation 🎓🃏
+# FCE Tutor Workspace
 
-Automatyczne generowanie profesjonalnego wsadu do **Anki** na potrzeby przygotowania do egzaminu **FCE (B2 First)** z wykorzystaniem **GitHub Copilot** jako agenta AI.
+To repo nie jest już tylko generatorem fiszek. To kompletna, osobista przestrzeń do przygotowania do egzaminu Cambridge B2 First, w której GitHub Copilot działa jako tutor, trener egzaminacyjny, recenzent prac i opiekun spersonalizowanego systemu nauki.
 
-## 🎯 Cel projektu
+## Cel projektu
 
-Projekt umożliwia szybką konwersję materiałów edukacyjnych (listy słów, zagadnienia gramatyczne, czasowniki frazowe, kolokacje, zadania Use of English) na gotowe do importu pliki TSV dla aplikacji Anki.
+Jedyny główny cel projektu to pomoc w skutecznym przygotowaniu i zdaniu egzaminu B2 First. Oznacza to połączenie w jednym miejscu:
 
-**Kluczowa idea**: Wykorzystanie GitHub Copilot (i innych agentów AI) z precyzyjnymi, szczegółowymi instrukcjami do automatycznego generowania wysokiej jakości fiszek.
+- wiedzy eksperckiej o egzaminie,
+- codziennej pracy z tutorem AI,
+- trwałej pamięci o postępach i błędach,
+- archiwum ćwiczeń i materiałów,
+- modułu Anki do powtórek słownictwa, gramatyki i Use of English.
 
-## 📁 Struktura projektu
+## Jak działa tutor
 
-```
+Domyślny agent projektu pracuje w trybie:
+
+1. analizuje kontekst bieżącej nauki,
+2. wykonuje zadanie dydaktyczne,
+3. zapisuje postępy, błędy i nowe ustalenia.
+
+W praktyce oznacza to, że po każdej sensownej sesji repo może zostać zaktualizowane o:
+
+- nowe ćwiczenia,
+- ocenę writingu lub speakingu,
+- wnioski o najczęstszych błędach,
+- aktualny plan nauki,
+- materiały Anki do dalszej pracy.
+
+## Struktura projektu
+
+```text
 fce-anki-automation/
 ├── .github/
-│   ├── copilot-instructions.md        # 📋 Główne instrukcje dla Copilota
-│   └── prompts/                        # 🤖 Prompty dla agentów AI
-│       ├── vocabulary.prompt.md        #    → Konwersja list słów
-│       ├── grammar.prompt.md           #    → Generowanie kart gramatycznych
-│       ├── phrasal-verbs.prompt.md     #    → Czasowniki frazowe
-│       ├── collocations.prompt.md      #    → Kolokacje
-│       └── use-of-english.prompt.md    #    → Zadania Use of English
-├── templates/
-│   ├── note-types.md                   # 📝 Specyfikacja typów notatek Anki
-│   └── anki-card-style.css             # 🎨 Style CSS dla kart
+│   ├── copilot-instructions.md
+│   └── prompts/
+├── User/
+│   ├── current_goals.md
+│   ├── most_popular_mistakes.md
+│   ├── user_behavior.md
+│   └── user_progress.md
+├── knowledge/
+│   └── expert_knowledge.md
+├── practice/
+│   ├── anki-checks/
+│   ├── grammar/
+│   ├── listening/
+│   ├── reading-use-of-english/
+│   ├── speaking/
+│   ├── vocabulary/
+│   └── writing/
+│       ├── corrected/
+│       ├── feedback/
+│       └── raw/
+├── plans/
+│   ├── mock-exams/
+│   └── weekly/
+├── progress/
+│   ├── assessments/
+│   └── reports/
+├── materials/
+│   ├── lesson-notes/
+│   └── reference/
 ├── input/
-│   ├── word-lists/                     # 📥 Listy słów do przetworzenia
-│   ├── grammar-topics/                 # 📥 Tematy gramatyczne
-│   └── examples/                       # 📖 Przykładowe pliki wejściowe
-├── output/                             # 📤 Wygenerowane pliki TSV
+├── output/
 ├── scripts/
-│   ├── validate_output.py              # ✅ Walidacja plików TSV
-│   └── merge_decks.py                  # 🔗 Łączenie plików TSV
+├── templates/
 └── docs/
-    ├── workflow.md                     # 📘 Jak korzystać z projektu
-    ├── fce-topics.md                   # 📚 Lista tematów FCE
-    └── anki-import-guide.md            # 📖 Przewodnik importu do Anki
 ```
 
-## 🚀 Szybki start
+## Szybki start
 
-### 1. Przygotuj materiał wejściowy
+### 1. Zacznij od pracy z tutorem
 
-Umieść swoją listę słów lub opis tematu w katalogu `input/`:
+Przykładowe polecenia do Copilot Chat:
 
-```bash
-echo "accomplish
-inevitable
-thoroughly
-sustainable
-approximately" > input/word-lists/general-b2.txt
+```text
+Przeanalizuj moje cele, błędy i aktualny progress, a potem przygotuj mi plan nauki na 7 dni pod FCE.
 ```
 
-### 2. Użyj GitHub Copilot do generowania kart
-
-**Opcja A – Copilot Chat (VS Code):**
-```
-Przetworz plik input/word-lists/general-b2.txt na karty Anki
-zgodnie z instrukcjami z .github/prompts/vocabulary.prompt.md
-i zapisz wynik w output/
+```text
+Przeprowadź ze mną Writing Part 1. Najpierw daj task, potem oceń mój tekst i zapisz raw, feedback i corrected do odpowiednich katalogów.
 ```
 
-**Opcja B – Copilot Coding Agent (GitHub Issue):**
-Utwórz issue z opisem zadania – agent automatycznie wygeneruje plik TSV.
-
-### 3. Zwaliduj wynik
-
-```bash
-python scripts/validate_output.py output/fce-vocabulary-general-2024-01-15.tsv
+```text
+Przygotuj mi 12 zadań Use of English celowanych w moje najczęstsze błędy i zapisz je do practice/reading-use-of-english/.
 ```
 
-### 4. Importuj do Anki
+### 2. Używaj Anki jako modułu powtórek
 
-Otwórz Anki → **Plik** → **Importuj** → wybierz wygenerowany plik `.tsv`
+Moduł Anki nadal działa i jest wspierany przez istniejące prompty oraz skrypty walidacyjne. Tutor może generować fiszki, zlecać ich naukę i później sprawdzać aktywne użycie materiału.
 
-Szczegółowy przewodnik: [docs/anki-import-guide.md](docs/anki-import-guide.md)
+### 3. Archiwizuj realną pracę
 
-## 🤖 Typy kart
+- własne teksty zapisuj w `practice/writing/raw/`,
+- wspólne poprawki w `practice/writing/corrected/`,
+- oceny i komentarze w `practice/writing/feedback/`,
+- testy i zestawy ćwiczeń w odpowiednich katalogach `practice/`,
+- plany nauki w `plans/`,
+- raporty postępu w `progress/`.
 
-| Typ | Prompt | Opis |
-|-----|--------|------|
-| **Vocabulary** | `vocabulary.prompt.md` | Słowo EN → Tłumaczenie PL + IPA + definicja + przykłady |
-| **Grammar** | `grammar.prompt.md` | Reguła → Formuła + wyjaśnienie + typowe błędy |
-| **Phrasal Verbs** | `phrasal-verbs.prompt.md` | Czasownik frazowy → Znaczenia + synonimy formalne |
-| **Collocations** | `collocations.prompt.md` | Kolokacja → Tłumaczenie + typ + przykłady |
-| **Use of English** | `use-of-english.prompt.md` | Zadanie FCE → Odpowiedź + wyjaśnienie |
+## Najważniejsze pliki startowe
 
-## 📋 Dokumentacja
+- [docs/workflow.md](docs/workflow.md)
+- [docs/study-system.md](docs/study-system.md)
+- [docs/skills-guide.md](docs/skills-guide.md)
+- [knowledge/expert_knowledge.md](knowledge/expert_knowledge.md)
+- [docs/fce-topics.md](docs/fce-topics.md)
+- [docs/anki-import-guide.md](docs/anki-import-guide.md)
+- [templates/note-types.md](templates/note-types.md)
 
-- [Workflow – jak korzystać z projektu](docs/workflow.md)
-- [Tematy FCE – kompletna lista](docs/fce-topics.md)
-- [Przewodnik importu do Anki](docs/anki-import-guide.md)
-- [Specyfikacja typów notatek](templates/note-types.md)
+## Moduł Anki
 
-## 🛠️ Narzędzia
+Obsługiwane typy materiałów:
 
-### Walidacja plików TSV
-```bash
-# Waliduj pojedynczy plik
-python scripts/validate_output.py output/fce-vocabulary-travel.tsv
+- vocabulary,
+- grammar,
+- phrasal verbs,
+- collocations,
+- use of english.
 
-# Waliduj wszystkie pliki w katalogu
-python scripts/validate_output.py output/
+Promptów do generowania fiszek nadal używa się z katalogu `.github/prompts/`, a gotowe pliki można walidować skryptem `scripts/validate_output.py` i łączyć `scripts/merge_decks.py`.
 
-# Waliduj z podaniem typu
-python scripts/validate_output.py output/moj-plik.tsv --type vocabulary
-```
+## Oficjalna podstawa wiedzy
 
-### Łączenie plików
-```bash
-# Połącz wszystkie pliki vocabulary w jeden
-python scripts/merge_decks.py output/fce-vocabulary-*.tsv -o output/fce-vocabulary-all.tsv
-```
+Ekspercka wiedza agenta została oparta na oficjalnych materiałach Cambridge dotyczących B2 First, podsumowanych w [knowledge/expert_knowledge.md](knowledge/expert_knowledge.md). Ten plik jest źródłem referencyjnym dla struktury egzaminu, typów zadań i oczekiwań wobec kandydata.
 
-## 📖 Przykładowe pliki wejściowe
-
-W katalogu `input/examples/` znajdziesz przykłady:
-- `vocabulary-travel.txt` – lista słów z tematu podróży
-- `grammar-conditionals.txt` – temat: tryby warunkowe
-- `phrasal-verbs-get.txt` – phrasal verbs z GET
-- `collocations-make-do.txt` – kolokacje MAKE vs DO
-- `use-of-english-kwt.txt` – Key Word Transformation
-
-## 📄 Licencja
+## Licencja
 
 Projekt edukacyjny do użytku osobistego.

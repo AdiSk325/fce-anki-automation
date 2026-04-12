@@ -1,185 +1,134 @@
-# Tematy FCE – Kompletna lista
+# Mapa materiału FCE
 
-## Przegląd egzaminu FCE (B2 First)
+## Cztery obszary egzaminu
 
-FCE (First Certificate in English) to egzamin na poziomie B2 wg CEFR.
-Składa się z 4 części:
+Na poziomie roboczym warto planować naukę według czterech papers egzaminu i jednego przekroju językowego.
 
-1. **Reading and Use of English** (1h 15min) – 7 części
-2. **Writing** (1h 20min) – 2 części
-3. **Listening** (ok. 40min) – 4 części
-4. **Speaking** (14min) – 4 części
+### 1. Reading and Use of English
 
----
+Obszary do trenowania:
 
-## Tematy tematyczne FCE
+- rozumienie sensu ogólnego i szczegółu,
+- rozpoznawanie opinii, nastawienia i celu autora,
+- śledzenie logiki tekstu,
+- słownictwo egzaminacyjne,
+- kolokacje, phrasal verbs, linking words,
+- gramatyka funkcjonalna,
+- transformacje i word formation.
 
-Poniższe tematy pojawiają się regularnie na egzaminie i powinny być uwzględnione w kartach Anki:
+### 2. Writing
 
-### 1. Podróże i turystyka (Travel & Tourism)
-- Typy podróży i wakacji
-- Transport i komunikacja
-- Zakwaterowanie
-- Zwiedzanie i atrakcje
-- Problemy w podróży
+Obszary do trenowania:
 
-### 2. Edukacja i nauka (Education & Learning)
-- System edukacji
-- Studia wyższe
-- Nauka przez całe życie
-- Umiejętności i kwalifikacje
-- Metody nauczania
+- odpowiadanie dokładnie na polecenie,
+- utrzymanie celu komunikacyjnego,
+- organizacja tekstu,
+- register i ton,
+- rozwijanie argumentu,
+- poprawność i zakres językowy.
 
-### 3. Praca i kariera (Work & Career)
-- Szukanie pracy i CV
-- Rozmowy kwalifikacyjne
-- Środowisko pracy
-- Kariera i rozwój zawodowy
-- Praca zdalna
+### 3. Listening
 
-### 4. Środowisko (Environment)
-- Zmiany klimatyczne
-- Ochrona przyrody
-- Recycling i zrównoważony rozwój
-- Zagrożenia ekologiczne
-- Energia odnawialna
+Obszary do trenowania:
 
-### 5. Technologia (Technology)
-- Internet i media społecznościowe
-- Urządzenia cyfrowe
-- Sztuczna inteligencja
-- Bezpieczeństwo online
-- Wpływ technologii na życie
+- rozumienie głównej myśli,
+- wychwytywanie szczegółów,
+- identyfikacja opinii i intencji mówiącego,
+- rozpoznawanie parafrazy,
+- utrzymywanie koncentracji w dłuższych nagraniach.
 
-### 6. Zdrowie i styl życia (Health & Lifestyle)
-- Zdrowe odżywianie
-- Sport i aktywność fizyczna
-- Zdrowie psychiczne
-- Wizyty u lekarza
-- Nawyki i uzależnienia
+### 4. Speaking
 
-### 7. Relacje i życie towarzyskie (Relationships & Social Life)
-- Rodzina i przyjaciele
-- Konflikty i rozwiązywanie problemów
-- Komunikacja międzyludzka
-- Media społecznościowe a relacje
-- Ślub i ceremonie
+Obszary do trenowania:
 
-### 8. Kultura i rozrywka (Culture & Entertainment)
-- Film, muzyka, teatr
-- Książki i literatura
-- Festiwale i wydarzenia
-- Sztuka i muzea
-- Hobby i zainteresowania
+- płynność i inicjowanie wypowiedzi,
+- porównywanie, spekulowanie i uzasadnianie,
+- reagowanie na partnera,
+- rozwijanie odpowiedzi,
+- zakres i poprawność językowa,
+- wymowa oraz komunikacyjna przejrzystość.
 
-### 9. Zakupy i usługi (Shopping & Services)
-- Zakupy online vs tradycyjne
-- Reklamacje i zwroty
-- Moda i trendy
-- Reklama i marketing
-- Pieniądze i oszczędzanie
+### 5. Language systems
 
-### 10. Dom i mieszkanie (Home & Living)
-- Typy mieszkań
-- Wyposażenie domu
-- Sąsiedztwo i społeczność
-- Przeprowadzka
-- Życie w mieście vs na wsi
+To przekrojowy moduł wzmacniający wszystkie papers:
 
-### 11. Jedzenie i gotowanie (Food & Cooking)
-- Kuchnie świata
-- Restauracje i jedzenie na mieście
-- Gotowanie i przepisy
-- Diety i alergie
-- Tradycje kulinarne
+- gramatyka B2,
+- słownictwo tematyczne,
+- środki spójności,
+- funkcje językowe,
+- parafraza,
+- precyzja i naturalność użycia.
 
-### 12. Media i komunikacja (Media & Communication)
-- Prasa, radio, telewizja
-- Media społecznościowe
-- Fake news i wiarygodność
-- Reklama
-- Komunikacja formalna i nieformalna
+## Główne tematy leksykalne
 
----
+Poniższe domeny warto stale obracać w ćwiczeniach, writingu, speakingu i Anki:
 
-## Zagadnienia gramatyczne FCE
+- travel and tourism,
+- education and learning,
+- work and career,
+- environment,
+- technology,
+- health and lifestyle,
+- relationships and social life,
+- culture and entertainment,
+- shopping and services,
+- home and living,
+- food and cooking,
+- media and communication.
 
-### Czasy (Tenses)
-- Present Simple & Continuous
-- Past Simple & Continuous
-- Present Perfect Simple & Continuous
-- Past Perfect Simple & Continuous
-- Future forms (will, going to, Present Continuous, Present Simple)
-- Future Perfect & Future Continuous
+## Główne bloki gramatyczne
 
-### Tryby warunkowe (Conditionals)
-- Zero Conditional
-- First Conditional
-- Second Conditional
-- Third Conditional
-- Mixed Conditionals
+- present, past i future forms,
+- present perfect i past perfect,
+- conditionals i mixed conditionals,
+- passive voice i causative,
+- reported speech,
+- modal verbs i modal perfects,
+- relative clauses,
+- articles i determiners,
+- gerund i infinitive,
+- comparatives i structures with too/enough,
+- wish, if only, used to, be used to, get used to,
+- linking words, inversion, cleft sentences, participle clauses.
 
-### Strona bierna (Passive Voice)
-- Passive w różnych czasach
-- Passive z modals
-- Causative (have/get something done)
+## Priorytety dla Use of English
 
-### Mowa zależna (Reported Speech)
-- Reported statements
-- Reported questions
-- Reported commands/requests
-- Reporting verbs
+### Multiple-choice cloze
 
-### Czasowniki modalne (Modal Verbs)
-- Ability, permission, obligation
-- Deduction and speculation
-- Modal perfects
+- kolokacje,
+- mylące słowa,
+- phrasal verbs,
+- linkers i fixed phrases.
 
-### Zdania względne (Relative Clauses)
-- Defining vs Non-defining
-- Relative pronouns (who, which, that, whose, where, when)
-- Omitting relative pronouns
+### Open cloze
 
-### Inne struktury
-- Wish / If only
-- Used to / would / be used to / get used to
-- Gerund vs Infinitive
-- Articles (a/an, the, zero article)
-- Comparatives and superlatives
-- So/such, too/enough
-- Both/either/neither
-- All/every/each/whole
-- Linking words and connectors
-- Participle clauses
-- Inversion
-- Cleft sentences
+- articles,
+- prepositions,
+- auxiliary verbs,
+- pronouns,
+- quantifiers,
+- relative words.
 
----
+### Word formation
 
-## Use of English – Kluczowe umiejętności
+- prefiksy negacyjne i intensyfikujące,
+- sufiksy rzeczownikowe, przymiotnikowe i przysłówkowe,
+- zmiana kategorii słowa,
+- rozpoznawanie roli luki w zdaniu.
 
-### Part 1: Multiple-choice cloze
-- Kolokacje
-- Phrasal verbs
-- Linking words
-- Confusing words
+### Key word transformation
 
-### Part 2: Open cloze
-- Przyimki
-- Słowa funkcyjne (articles, quantifiers)
-- Auxiliary verbs
-- Relative pronouns
+- parafraza z zachowaniem sensu,
+- zmiana struktury gramatycznej,
+- transformacje active/passive,
+- reported speech,
+- conditionals,
+- wish i modal perfects,
+- comparative structures,
+- causative i other fixed transformations.
 
-### Part 3: Word formation
-- Prefiksy (un-, in-, re-, over-, mis-, dis-)
-- Sufiksy rzeczownikowe (-tion, -ment, -ness, -ity)
-- Sufiksy przymiotnikowe (-ful, -less, -ous, -ive)
-- Sufiksy przysłówkowe (-ly)
-- Konwersja (noun→verb, adj→noun)
+## Jak używać tej mapy
 
-### Part 4: Key Word Transformation
-- Transformacje gramatyczne
-- Synonimi i parafrazy
-- Zmiana struktury zdania
-- Aktyw ↔ pasyw
-- Mowa bezpośrednia ↔ zależna
+- plan tygodniowy powinien dotykać przynajmniej dwóch papers i jednego obszaru language systems,
+- jeśli pojawia się powtarzalny błąd, należy przypiąć go do konkretnego paperu i konkretnej kategorii językowej,
+- fiszki Anki powinny wzmacniać to, co pojawia się później w aktywnym użyciu: writing, speaking i Use of English.
