@@ -16,6 +16,7 @@
 - Aktualny obraz po dwóch próbkach: reading jest wyraźnie mocniejszy niż precyzja struktur i chunks w Use of English.
 - Na bazie dzisiejszych powtarzalnych błędów powstał pierwszy celowany zestaw Anki dla Use of English oraz aktywny check transferowy.
 - Z notatek z lekcji Preply powstały pierwsze tematyczne decki Anki dla workplace language, które mają być dalej rozwijane jako stałe zestawy w `output/`.
+- Z dzisiejszych notatek słownictwa powstał nowy tematyczny deck Anki dla character adjectives i habit language oraz osobny check transferowy.
 
 ## Co aktualizować dalej
 
