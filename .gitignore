@@ -23,3 +23,6 @@ tmp/
 
 # Node (if needed)
 node_modules/
+
+# screens
+*.png
