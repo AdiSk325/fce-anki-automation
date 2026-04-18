@@ -82,19 +82,19 @@ def fetch_html(url: str) -> str:
 
 def strip_html_blocks(raw_html: str) -> str:
     cleaned = re.sub(
-        r"<script\b[^>]*>.*?</script\s*>",
+        r"<script\b[^>]*>.*?</script\s*[^>]*>",
         " ",
         raw_html,
         flags=re.IGNORECASE | re.DOTALL,
     )
     cleaned = re.sub(
-        r"<style\b[^>]*>.*?</style\s*>",
+        r"<style\b[^>]*>.*?</style\s*[^>]*>",
         " ",
         cleaned,
         flags=re.IGNORECASE | re.DOTALL,
     )
     cleaned = re.sub(
-        r"<noscript\b[^>]*>.*?</noscript\s*>",
+        r"<noscript\b[^>]*>.*?</noscript\s*[^>]*>",
         " ",
         cleaned,
         flags=re.IGNORECASE | re.DOTALL,
