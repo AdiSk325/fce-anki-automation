@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import argparse
 import html
+import ipaddress
 import re
 import sys
 from datetime import date
@@ -25,6 +26,26 @@ ROOT_DIR = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT_DIR = ROOT_DIR / "input" / "podcast-transcripts"
 
 
+def validate_remote_url(url: str) -> None:
+    parsed = urlparse(url)
+    if parsed.scheme not in {"http", "https"}:
+        raise ValueError("Dozwolone są tylko URL-e HTTP/HTTPS")
+    if not parsed.hostname:
+        raise ValueError("URL musi zawierać hostname")
+
+    hostname = parsed.hostname.lower()
+    if hostname in {"localhost"}:
+        raise ValueError("Lokalne hosty nie są dozwolone")
+
+    try:
+        ip = ipaddress.ip_address(hostname)
+    except ValueError:
+        return
+
+    if ip.is_loopback or ip.is_private or ip.is_link_local:
+        raise ValueError("Adresy lokalne/prywatne nie są dozwolone")
+
+
 def fetch_html(url: str) -> str:
     request = Request(
         url,
@@ -33,20 +54,29 @@ def fetch_html(url: str) -> str:
             "Accept-Language": "en-US,en;q=0.9",
         },
     )
-    with urlopen(request, timeout=30) as response:  # nosec B310
+    with urlopen(request, timeout=30) as response:
         charset = response.headers.get_content_charset() or "utf-8"
         return response.read().decode(charset, errors="replace")
 
 
 def strip_html_blocks(raw_html: str) -> str:
     cleaned = re.sub(
-        r"<script\b[^>]*>.*?</script\s*>", " ", raw_html, flags=re.IGNORECASE | re.DOTALL
+        r"<script\b[^>]*>.*?</script(?:\s+[^>]*)?>",
+        " ",
+        raw_html,
+        flags=re.IGNORECASE | re.DOTALL,
     )
     cleaned = re.sub(
-        r"<style\b[^>]*>.*?</style\s*>", " ", cleaned, flags=re.IGNORECASE | re.DOTALL
+        r"<style\b[^>]*>.*?</style(?:\s+[^>]*)?>",
+        " ",
+        cleaned,
+        flags=re.IGNORECASE | re.DOTALL,
     )
     cleaned = re.sub(
-        r"<noscript\b[^>]*>.*?</noscript\s*>", " ", cleaned, flags=re.IGNORECASE | re.DOTALL
+        r"<noscript\b[^>]*>.*?</noscript(?:\s+[^>]*)?>",
+        " ",
+        cleaned,
+        flags=re.IGNORECASE | re.DOTALL,
     )
     return cleaned
 
@@ -166,6 +196,12 @@ def main() -> int:
     parser.add_argument("--output", help="Docelowa ścieżka pliku markdown (nadpisuje automatyczną nazwę)")
 
     args = parser.parse_args()
+
+    try:
+        validate_remote_url(args.url)
+    except ValueError as exc:
+        print(f"❌ Niepoprawny URL: {exc}")
+        return 1
 
     try:
         page_html = fetch_html(args.url)
