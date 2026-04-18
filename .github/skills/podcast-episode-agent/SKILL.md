@@ -30,7 +30,7 @@ Review before work:
 ## Procedure
 
 1. Download transcript from the episode URL:
-   - run from repo root: `python scripts/fetch_podcast_transcript.py <URL>` (Python 3 required)
+   - run from repo root: `python scripts/fetch_podcast_transcript.py <URL>` (Python 3.9+ required)
    - output goes to `input/podcast-transcripts/YYYY-MM-DD-episode-slug.md`
 2. Read the downloaded transcript and identify:
    - topic and core message,

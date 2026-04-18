@@ -24,9 +24,20 @@ from urllib.request import Request, urlopen
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT_DIR = ROOT_DIR / "input" / "podcast-transcripts"
+STOP_KEYWORDS = [
+    "vocabulary",
+    "keywords?",
+    "sources?",
+    "support this podcast",
+    "patreon",
+    "newsletter",
+    "subscribe",
+    "join our",
+]
+
 STOP_PATTERNS = [
     re.compile(
-        r"\b(vocabulary|keywords?|sources?|support this podcast|patreon|newsletter|subscribe|join our)\b",
+        rf"\b({'|'.join(STOP_KEYWORDS)})\b",
         re.IGNORECASE,
     ),
     re.compile(
@@ -194,6 +205,13 @@ def write_transcript_markdown(output_path: Path, *, source_url: str, title: str,
     output_path.write_text("\n".join(content), encoding="utf-8")
 
 
+def parse_iso_date(date_text: str) -> str:
+    try:
+        return date.fromisoformat(date_text).isoformat()
+    except ValueError as exc:
+        raise ValueError("Parametr --date musi mieć format YYYY-MM-DD") from exc
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Pobiera transkrypcję podcastu i zapisuje do markdown")
     parser.add_argument("url", help="URL odcinka z transkrypcją")
@@ -231,7 +249,7 @@ def main() -> int:
         if not output_path.is_absolute():
             output_path = ROOT_DIR / output_path
     else:
-        prefix_date = args.file_date or date.today().isoformat()
+        prefix_date = parse_iso_date(args.file_date) if args.file_date else date.today().isoformat()
         output_path = DEFAULT_OUTPUT_DIR / f"{prefix_date}-{slug}.md"
 
     write_transcript_markdown(

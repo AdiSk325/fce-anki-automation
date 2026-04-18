@@ -10,7 +10,7 @@ Zbuduj kompletny pakiet nauki na bazie transkrypcji odcinka podcastu.
 ## Required workflow
 
 1. Pobierz transkrypcję:
-   - uruchom z root repo: `python scripts/fetch_podcast_transcript.py <URL>` (Python 3)
+   - uruchom z root repo: `python scripts/fetch_podcast_transcript.py <URL>` (Python 3.9+)
 2. Zapisz pełny materiał do repo:
    - transcript: `input/podcast-transcripts/YYYY-MM-DD-episode-slug.md`
    - vocabulary: `materials/podcast-notes/YYYY-MM-DD-episode-slug-vocabulary.md`
