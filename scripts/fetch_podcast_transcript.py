@@ -24,6 +24,16 @@ from urllib.request import Request, urlopen
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT_DIR = ROOT_DIR / "input" / "podcast-transcripts"
+STOP_PATTERNS = [
+    re.compile(
+        r"\b(vocabulary|keywords?|sources?|support this podcast|patreon|newsletter|subscribe|join our)\b",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"\b(leave a review|thanks for listening|see you next time)\b",
+        re.IGNORECASE,
+    ),
+]
 
 
 def validate_remote_url(url: str) -> None:
@@ -50,7 +60,7 @@ def fetch_html(url: str) -> str:
     request = Request(
         url,
         headers={
-            "User-Agent": "Mozilla/5.0 (compatible; fce-anki-automation/1.0)",
+            "User-Agent": "Mozilla/5.0 (compatible; fce-learning-assistant/1.0)",
             "Accept-Language": "en-US,en;q=0.9",
         },
     )
@@ -137,15 +147,10 @@ def find_transcript_lines(lines: list[str]) -> tuple[list[str], str]:
     else:
         reason = "Transcript heading found; extracted section after heading"
 
-    stop_patterns = [
-        re.compile(r"\b(vocabulary|keywords?|sources?|support this podcast|patreon|newsletter|subscribe|join our)\b", re.IGNORECASE),
-        re.compile(r"\b(leave a review|thanks for listening|see you next time)\b", re.IGNORECASE),
-    ]
-
     end_idx = len(lines)
     for idx in range(start_idx, len(lines)):
         line = lines[idx]
-        if any(pattern.search(line) for pattern in stop_patterns):
+        if any(pattern.search(line) for pattern in STOP_PATTERNS):
             end_idx = idx
             break
 
