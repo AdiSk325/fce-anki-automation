@@ -30,7 +30,7 @@ Review before work:
 ## Procedure
 
 1. Download transcript from the episode URL:
-   - run `python3 /home/runner/work/fce-anki-automation/fce-anki-automation/scripts/fetch_podcast_transcript.py <URL>`
+   - run from repo root: `python3 scripts/fetch_podcast_transcript.py <URL>`
    - output goes to `input/podcast-transcripts/YYYY-MM-DD-episode-slug.md`
 2. Read the downloaded transcript and identify:
    - topic and core message,

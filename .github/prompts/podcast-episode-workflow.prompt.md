@@ -10,7 +10,7 @@ Zbuduj kompletny pakiet nauki na bazie transkrypcji odcinka podcastu.
 ## Required workflow
 
 1. Pobierz transkrypcję:
-   - uruchom `python3 /home/runner/work/fce-anki-automation/fce-anki-automation/scripts/fetch_podcast_transcript.py <URL>`
+   - uruchom z root repo: `python3 scripts/fetch_podcast_transcript.py <URL>`
 2. Zapisz pełny materiał do repo:
    - transcript: `input/podcast-transcripts/YYYY-MM-DD-episode-slug.md`
    - vocabulary: `materials/podcast-notes/YYYY-MM-DD-episode-slug-vocabulary.md`
