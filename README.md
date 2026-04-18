@@ -87,6 +87,10 @@ Przeprowadź ze mną Writing Part 1. Najpierw daj task, potem oceń mój tekst i
 Przygotuj mi 12 zadań Use of English celowanych w moje najczęstsze błędy i zapisz je do practice/reading-use-of-english/.
 ```
 
+```text
+Weź ten odcinek podcastu z transkrypcją i przygotuj pełny pakiet: słówka + grammar + listening B2 First z answer key.
+```
+
 ### 2. Używaj Anki jako modułu powtórek
 
 Moduł Anki nadal działa i jest wspierany przez istniejące prompty oraz skrypty walidacyjne. Tutor może generować fiszki, zlecać ich naukę i później sprawdzać aktywne użycie materiału.
@@ -121,6 +125,17 @@ Obsługiwane typy materiałów:
 - use of english.
 
 Promptów do generowania fiszek nadal używa się z katalogu `.github/prompts/`, a gotowe pliki można walidować skryptem `scripts/validate_output.py` i łączyć `scripts/merge_decks.py`.
+
+## Workflow podcast -> pakiet FCE
+
+Repo obsługuje teraz pełny workflow oparty na transkrypcjach podcastów:
+
+- pobranie transkrypcji do `input/podcast-transcripts/` przez `scripts/fetch_podcast_transcript.py`,
+- przygotowanie notatki słownictwa do `materials/podcast-notes/`,
+- przygotowanie ćwiczenia gramatycznego do `practice/grammar/`,
+- przygotowanie ćwiczenia Listening B2 First + answer key (z referencjami do linii transkrypcji) do `practice/listening/`.
+
+Do tego workflow możesz użyć skilla `podcast-episode-agent` albo promptu `.github/prompts/podcast-episode-workflow.prompt.md`.
 
 ## Oficjalna podstawa wiedzy
 

@@ -85,6 +85,18 @@ Najlepsze sytuacje:
 - po słabszym wyniku potrzebujesz planu naprawczego,
 - chcesz przejść z chaotycznej nauki do uporządkowanego cyklu.
 
+### `/podcast-episode-agent`
+
+Używaj, gdy chcesz przerobić odcinek podcastu z transkrypcją na gotowy pakiet nauki FCE.
+
+Najlepsze sytuacje:
+
+- masz URL odcinka z transkrypcją,
+- chcesz automatycznie pobrać transkrypt do repo,
+- chcesz wygenerować słownik nowych słów z definicją i tłumaczeniem PL,
+- chcesz ćwiczenie gramatyczne oparte na realnym materiale,
+- chcesz ćwiczenie Listening B2 First oraz answer key z referencjami do źródła.
+
 ## Jak wybierać skill
 
 Najprostsza reguła:
@@ -95,7 +107,8 @@ Najprostsza reguła:
 - jeśli chcesz uporządkować pamięć i stan repo, użyj `/memory-checkpoint`,
 - jeśli chcesz zapisać stan do git, użyj `/gitflow`,
 - jeśli pracujesz z fiszkami jako częścią nauki, użyj `/anki-cycle`,
-- jeśli chcesz planu, użyj `/study-plan`.
+- jeśli chcesz planu, użyj `/study-plan`,
+- jeśli pracujesz na transkrypcji podcastu, użyj `/podcast-episode-agent`.
 
 ## Dobra praktyka
 
