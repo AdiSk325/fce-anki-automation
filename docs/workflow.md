@@ -68,6 +68,13 @@ Po zakończeniu tutor zapisuje to, co ma wartość na przyszłość:
 4. Tutor przeprowadza aktywne sprawdzenie w `practice/anki-checks/`.
 5. Trudne elementy wracają do kolejnych ćwiczeń.
 
+### Podcast transcript workflow
+
+1. Tutor pobiera transkrypcję odcinka do `input/podcast-transcripts/`.
+2. Tworzy notatkę słownictwa w `materials/podcast-notes/`.
+3. Tworzy ćwiczenie gramatyczne w `practice/grammar/`.
+4. Tworzy ćwiczenie Listening B2 First oraz answer key z referencjami do linii transkrypcji w `practice/listening/`.
+
 ## Polecane polecenia startowe
 
 ```text

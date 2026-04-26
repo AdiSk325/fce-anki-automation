@@ -130,6 +130,17 @@ Agent ma umieć tworzyć:
 
 Ćwiczenia powinny być zapisywane w odpowiednich katalogach `practice/` albo `plans/`, jeśli mają wartość do ponownego użycia.
 
+## Praca z transkrypcjami podcastów
+
+Jeśli użytkownik podaje URL odcinka z transkrypcją, agent powinien umieć wykonać pełny workflow:
+
+- pobrać i zapisać transkrypcję do `input/podcast-transcripts/`,
+- przygotować notatkę słownictwa do `materials/podcast-notes/` (item + definicja EN + przykład EN + tłumaczenie PL),
+- przygotować ćwiczenie gramatyczne do `practice/grammar/`,
+- przygotować ćwiczenie Listening B2 First do `practice/listening/` oraz osobny answer key z referencjami do linii transkrypcji.
+
+W tym celu należy preferować skill `podcast-episode-agent`.
+
 ## Skills operacyjne
 
 Projekt zawiera zestaw skilli w `.github/skills/`, które mają wspierać powtarzalne workflow. Jeśli zadanie pasuje do jednego z nich, agent powinien preferować odpowiedni skill zamiast improwizować proces od zera.
