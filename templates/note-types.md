@@ -94,7 +94,17 @@ Każdy typ odpowiada innemu rodzajowi materiału edukacyjnego FCE.
 **Kierunki nauki:**
 - Card 1: Task → Answer + Explanation
 
+**Typ `translation` (tłumaczenie zdań PL → EN):**
+- Task: `<div class="tr">` z poleceniem (`.instruction`), zdaniem po polsku (`.pl-sentence`) i czasownikiem do użycia (`.keyword`) – jak słowo kluczowe w KWT
+- Answer: zdanie wzorcowe w `.answer` + opcjonalnie inne poprawne wersje w `.full-sentence`
+- Explanation: typ konstrukcji i reguła szyku + typowy błąd (`.wrong`)
+- Tags: `fce use-of-english translation [temat]`
+
 ---
+
+## Szablony kart w paczce `.apkg`
+
+Skrypt `scripts/build_apkg.py` tworzy te typy notatek automatycznie, z kierunkami nauki jak wyżej i CSS z `templates/anki-card-style.css`. Na kartach odwrotnych (znaczenie → czasownik, tłumaczenie → kolokacja) elementy zdradzające odpowiedź (`.grammar-note`, `.note`) są ukryte do momentu odsłonięcia karty. Szczegóły importu: `docs/anki-import-guide.md`.
 
 ## Instrukcja importu do Anki
 

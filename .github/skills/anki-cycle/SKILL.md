@@ -33,9 +33,10 @@ Review:
 2. Choose the right Anki note type.
 3. Generate or update TSV material in `output/`.
 4. Validate with `scripts/validate_output.py` when relevant.
-5. Tell the user how the cards fit into the current study plan.
-6. Create a follow-up check in `practice/anki-checks/` when the cards are intended for real retention.
-7. If the cards come from repeated mistakes, update memory so the tutor knows why these cards exist.
+5. Package the validated TSV files with `scripts/build_apkg.py` into an `.apkg` in `output/`, so the user can open it directly in AnkiDroid.
+6. Tell the user how the cards fit into the current study plan.
+7. Create a follow-up check in `practice/anki-checks/` when the cards are intended for real retention.
+8. If the cards come from repeated mistakes, update memory so the tutor knows why these cards exist.
 
 ## Important rule
 
