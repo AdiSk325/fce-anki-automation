@@ -100,6 +100,12 @@ Każdy typ odpowiada innemu rodzajowi materiału edukacyjnego FCE.
 - Explanation: typ konstrukcji i reguła szyku + typowy błąd (`.wrong`)
 - Tags: `fce use-of-english translation [temat]`
 
+**Typy wymowy `word-stress` i `sound-spelling` (Speaking – pronunciation):**
+- Task: `<div class="tr">` z poleceniem (`.instruction`) i słowem w `.word` (przy `word-stress` podzielonym na sylaby: `de · ter · mi · na · tion`)
+- Answer: odpowiedź w `.answer` (akcentowana sylaba jako `<b><u>…</u></b>` albo /g/ vs /dʒ/) + IPA i tłumaczenie w `.full-sentence`
+- Explanation: reguła (np. akcent przed `-tion`, `-ic`, `-ial`; g + e/i/y → /dʒ/) i wyjątki
+- Tags: `fce use-of-english word-stress pronunciation [temat]` / `fce use-of-english sound-spelling pronunciation [temat]`
+
 ---
 
 ## Szablony kart w paczce `.apkg`

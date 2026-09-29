@@ -262,6 +262,15 @@ hr {
     margin: 8px 0 0;
 }
 
+/* Pojedyncze słowo na kartach wymowy (word-stress, sound-spelling) */
+.tr .word {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    color: #1a237e;
+    margin: 12px 0 4px;
+}
+
 /* Tryb nocny (Anki Desktop, AnkiDroid, AnkiMobile) */
 .nightMode.card, .night_mode.card,
 .nightMode .card, .night_mode .card {
@@ -270,7 +279,8 @@ hr {
 }
 
 .nightMode .front, .night_mode .front,
-.nightMode .tr .pl-sentence, .night_mode .tr .pl-sentence {
+.nightMode .tr .pl-sentence, .night_mode .tr .pl-sentence,
+.nightMode .tr .word, .night_mode .tr .word {
     color: #9fa8da;
 }
 
