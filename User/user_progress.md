@@ -17,6 +17,7 @@
 - Na bazie dzisiejszych powtarzalnych błędów powstał pierwszy celowany zestaw Anki dla Use of English oraz aktywny check transferowy.
 - Z notatek z lekcji Preply powstały pierwsze tematyczne decki Anki dla workplace language, które mają być dalej rozwijane jako stałe zestawy w `output/`.
 - Z dzisiejszych notatek słownictwa powstał nowy tematyczny deck Anki dla character adjectives i habit language oraz osobny check transferowy.
+- 2026-09-29: rozpoczęty temat multi-word verbs (podręcznik, unit 3A – 4 typy konstrukcji i szyk w Type 2). Powstała paczka AnkiDroid `output/fce-multi-word-verbs-3a.apkg` (191 kart: reguły, znaczenia 35 czasowników, 64 zdania do tłumaczenia) i check `practice/anki-checks/2026-09-29-anki-check-multi-word-verbs-3a.md`. Wynik checku: do uzupełnienia po nauce kart.
 
 ## Co aktualizować dalej
 
