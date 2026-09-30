@@ -12,6 +12,7 @@
 - Przy gramatyce chce, poza kartami ze znaczeniami, zdań PL → EN do tłumaczenia, które ćwiczą konstrukcję (np. szyk), a nie tylko reguły.
 - Sam rozróżnia wiedzę bierną i czynną (notatka: *straight away* – „znam, ale nie używam”). Przy słownictwie dawaj zadania produkcyjne: tłumaczenia PL → EN, własne zdania, mówienie. Samo rozpoznawanie nie wystarcza.
 - Do ćwiczeń podręcznikowych dopisuje własne zdania z życia (praca, chór, muzyka, samochód). Poprawiaj je i włączaj do talii jako tłumaczenia (tag `my-sentences`).
+- W tekstach z podręcznika zaznacza kolorem słownictwo do nauki. Zakres talii to zaznaczenia plus dopiski; niezaznaczone słowa z tekstu dodawaj najwyżej jako karty z tagiem `extra`.
 - Materiał kursowy: Empower Upper-Intermediate (Cambridge). Część słownictwa z wcześniejszych stron była już opracowana – przed tworzeniem talii sprawdzaj `output/` i `practice/vocabulary/`, żeby nie dublować kart.
 
 ## Jak pracować z użytkownikiem
