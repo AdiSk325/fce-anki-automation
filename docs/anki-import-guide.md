@@ -4,8 +4,47 @@ Moduł Anki jest częścią większego systemu nauki w tym repo. Najlepiej używ
 
 ## Wymagania
 
-- **Anki** (wersja 2.1+): https://apps.ankiweb.net/
-- Pliki `.tsv` wygenerowane przez ten projekt
+- **Anki** (wersja 2.1+): https://apps.ankiweb.net/ albo **AnkiDroid** (Android) / **AnkiMobile** (iOS)
+- Pliki `.tsv` wygenerowane przez ten projekt albo gotowa paczka `.apkg`
+
+## Najprostsza droga: paczka `.apkg` (także na telefon)
+
+Paczka `.apkg` zawiera od razu typy notatek (pola, szablony kart, CSS z `templates/anki-card-style.css`, łącznie z trybem nocnym) i strukturę talii. Nie trzeba niczego konfigurować ręcznie, więc to najlepsza opcja dla AnkiDroid.
+
+### Budowanie paczki
+
+```bash
+python scripts/build_apkg.py \
+  "output/fce-grammar-multi-word-verbs-3a.tsv=1 Rules" \
+  "output/fce-phrasal-verbs-multi-word-verbs-3a.tsv=2 Meanings" \
+  "output/fce-use-of-english-multi-word-verbs-3a-translation.tsv=3 Translation" \
+  --deck "FCE Preparation::3A Multi-word verbs" \
+  -o output/fce-multi-word-verbs-3a.apkg
+```
+
+- Każdy plik TSV może mieć własną podtalię (`plik.tsv=Podtalia`); bez `=` trafia do talii z `--deck`.
+- Typ notatki jest wykrywany z nazwy pliku, tak jak w `validate_output.py`.
+- Przed budowaniem zwaliduj pliki TSV (`validate_output.py`).
+- Notatki mają stałe identyfikatory (GUID liczony z pierwszego pola), więc po poprawkach wystarczy zbudować paczkę ponownie i zaimportować ją jeszcze raz. Anki zaktualizuje istniejące notatki i zachowa historię powtórek. Zmiana treści pierwszego pola tworzy nową notatkę.
+
+### Import na Androidzie (AnkiDroid)
+
+1. Pobierz plik `.apkg` na telefon, np. z GitHuba (plik w `output/` → **Download raw file**) albo z załącznika w czacie.
+2. Stuknij pobrany plik i wybierz **AnkiDroid** (albo w AnkiDroid: menu **⋮** → **Importuj** → wskaż plik).
+3. Talia pojawi się na liście, np. `FCE Preparation › 3A Multi-word verbs` z podtaliami.
+4. Jeśli korzystasz z AnkiWeb, zsynchronizuj AnkiDroid, żeby karty pojawiły się też na komputerze.
+
+### Import w Anki Desktop
+
+**Plik** → **Importuj** → wybierz `.apkg`, potem zsynchronizuj z AnkiWeb, żeby karty trafiły na telefon.
+
+### Uwaga o istniejących typach notatek
+
+Jeśli w Anki istnieje już ręcznie utworzony typ notatki o tej samej nazwie (np. `FCE Phrasal Verbs`), Anki doda typ z paczki pod nazwą z plusem (`FCE Phrasal Verbs+`). Karty działają normalnie. Kolejne paczki z tego repo trafiają już w ten sam typ z plusem, bo mają stałe ID.
+
+## Ręczny import TSV (Anki Desktop)
+
+Poniższe kroki są potrzebne tylko przy imporcie plików `.tsv` bez paczki `.apkg`.
 
 ## Przygotowanie Anki
 

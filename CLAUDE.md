@@ -25,6 +25,9 @@ python scripts/validate_output.py output/file.tsv --type vocabulary
 
 # Merge multiple TSV files into one deck
 python scripts/merge_decks.py output/*.tsv -o output/merged.tsv
+
+# Package TSV files into an .apkg (note types + CSS + decks) for AnkiDroid / Anki Desktop
+python scripts/build_apkg.py "output/fce-grammar-x.tsv=Subdeck" output/fce-phrasal-verbs-x.tsv --deck "FCE Preparation::Topic" -o output/fce-x.apkg
 ```
 
 Supported `--type` values for validation: `vocabulary`, `grammar`, `phrasal-verbs`, `collocations`, `use-of-english`.
@@ -66,7 +69,9 @@ TSV files in `output/` follow strict schemas defined in `templates/note-types.md
 
 Format: TSV, UTF-8 without BOM. Always validate with `validate_output.py` before treating a file as ready to import.
 
-The Anki cycle is: diagnose gaps → generate TSV → validate → user studies in Anki → create active recall check in `practice/anki-checks/` → grade check → update memory.
+The Anki cycle is: diagnose gaps → generate TSV → validate → build `.apkg` with `build_apkg.py` (the user studies on Android via AnkiDroid) → user studies in Anki → create active recall check in `practice/anki-checks/` → grade check → update memory.
+
+For sentence-translation cards (PL → EN), use the `FCE Use of English` type with `Type` = `translation` (format in `templates/note-types.md`).
 
 ### File Naming Convention
 

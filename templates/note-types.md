@@ -94,7 +94,23 @@ Każdy typ odpowiada innemu rodzajowi materiału edukacyjnego FCE.
 **Kierunki nauki:**
 - Card 1: Task → Answer + Explanation
 
+**Typ `translation` (tłumaczenie zdań PL → EN):**
+- Task: `<div class="tr">` z poleceniem (`.instruction`), zdaniem po polsku (`.pl-sentence`) i czasownikiem do użycia (`.keyword`) – jak słowo kluczowe w KWT
+- Answer: zdanie wzorcowe w `.answer` + opcjonalnie inne poprawne wersje w `.full-sentence`
+- Explanation: typ konstrukcji i reguła szyku + typowy błąd (`.wrong`)
+- Tags: `fce use-of-english translation [temat]`
+
+**Typy wymowy `word-stress` i `sound-spelling` (Speaking – pronunciation):**
+- Task: `<div class="tr">` z poleceniem (`.instruction`) i słowem w `.word` (przy `word-stress` podzielonym na sylaby: `de · ter · mi · na · tion`)
+- Answer: odpowiedź w `.answer` (akcentowana sylaba jako `<b><u>…</u></b>` albo /g/ vs /dʒ/) + IPA i tłumaczenie w `.full-sentence`
+- Explanation: reguła (np. akcent przed `-tion`, `-ic`, `-ial`; g + e/i/y → /dʒ/) i wyjątki
+- Tags: `fce use-of-english word-stress pronunciation [temat]` / `fce use-of-english sound-spelling pronunciation [temat]`
+
 ---
+
+## Szablony kart w paczce `.apkg`
+
+Skrypt `scripts/build_apkg.py` tworzy te typy notatek automatycznie, z kierunkami nauki jak wyżej i CSS z `templates/anki-card-style.css`. Na kartach odwrotnych (znaczenie → czasownik, tłumaczenie → kolokacja) elementy zdradzające odpowiedź (`.grammar-note`, `.note`) są ukryte do momentu odsłonięcia karty. Szczegóły importu: `docs/anki-import-guide.md`.
 
 ## Instrukcja importu do Anki
 
