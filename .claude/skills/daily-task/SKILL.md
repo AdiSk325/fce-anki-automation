@@ -25,10 +25,10 @@ Read only what is needed:
 1. Determine today's weekday (Europe/Warsaw) and the time the user has. If the user gives no time, assume 10–15 minutes on weekdays and 60–90 minutes at the weekend.
 2. If the week plan has a task for today, give it as written (for a micro-task, paste the items into the answer so the user does not need to open the repo).
 3. If there is no plan or no task for today:
-   - weekday: create one micro-task in the answer (5 items: KWT, open cloze or PL → EN sentences) targeting a recorded mistake or the newest Anki deck,
+   - weekday: create one micro-task (5 items: KWT, open cloze or PL → EN sentences) targeting a recorded mistake or the newest Anki deck. When the `ArtifactData` tool is available, add it as a set to the phone quiz app and give the link (`docs/pieciominutowka.md`); otherwise put the items in the answer,
    - weekend: point to the pending Writing task in `practice/writing/tasks/`; if there is none, the oldest Anki check with status `do zrobienia`.
 4. Always end with a one-line reminder about daily Anki reviews and how to hand in answers (paste them in the chat).
-5. When the user sends answers later, grade them with the `check-exercise` skill and update the status line or memory files as that skill describes.
+5. When the user sends answers later (in the chat, or in the quiz app: "sprawdź Pięciominutówkę"), grade them with the `check-exercise` skill and update the status line or memory files as that skill describes.
 
 ## Output standard
 

@@ -102,6 +102,7 @@ All exercise and material files use `YYYY-MM-DD-descriptive-slug.md`. This enabl
 | Progress reports and assessments | `progress/` |
 | Ready-to-import Anki TSV files | `output/` |
 | Source word lists and raw inputs | `input/` |
+| Quick sets for the phone quiz app (Pięciominutówka) | `apps/pieciominutowka/sets/` |
 
 ### Skills
 
@@ -122,6 +123,10 @@ Nine reusable skills live in `.claude/skills/` (`.github/skills` is a symlink to
 ### Weekly rhythm and routines
 
 The learner works briefly on weekdays (phone, Anki, one 10–15 minute micro-task) and longer at the weekend (Writing plus a recall check or a Use of English set). Two Claude Routines start fresh sessions with push notifications: **Plan tygodnia** (Monday 7:44 Europe/Warsaw) and **Pakiet na weekend** (Friday 16:43). Their procedures live in `docs/routines.md`: change the procedure there, not in the routine prompt.
+
+### Phone quiz app (Pięciominutówka)
+
+A private claude.ai artifact (https://claude.ai/artifact/VxakPzW5TXhT9fjtKv352t) where the learner solves short B2 First sets on the phone. Page source: `apps/pieciominutowka/page.html`; each set is a JSON file in `apps/pieciominutowka/sets/` mirrored into the artifact's database, and every attempt lands in its `attempts` collection for the tutor to grade. Data model and procedures (add a set, grade an attempt, republish the page) are in `docs/pieciominutowka.md`. When the learner asks for a quick test or says "sprawdź Pięciominutówkę", work through the app instead of the chat.
 
 ### Git policy
 
