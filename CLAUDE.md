@@ -105,10 +105,11 @@ All exercise and material files use `YYYY-MM-DD-descriptive-slug.md`. This enabl
 
 ### Skills
 
-Eight reusable skills live in `.claude/skills/` (`.github/skills` is a symlink to it for Copilot) and cover the most common multi-step workflows. Prefer a skill over improvising a process from scratch when one fits:
+Nine reusable skills live in `.claude/skills/` (`.github/skills` is a symlink to it for Copilot) and cover the most common multi-step workflows. Prefer a skill over improvising a process from scratch when one fits:
 
 | Skill | Use when |
 |-------|---------|
+| `/daily-task` | The user asks what to do today or has a few minutes (one task sized to the day) |
 | `/create-exercise` | Generating a new exercise, worksheet, or test |
 | `/check-exercise` | Grading completed work and logging errors to memory |
 | `/anki-cycle` | Running the full Anki learn→check loop |
@@ -117,6 +118,14 @@ Eight reusable skills live in `.claude/skills/` (`.github/skills` is a symlink t
 | `/gitflow` | Creating logical commits that reflect study milestones |
 | `/study-plan` | Building weekly or sprint plans |
 | `/podcast-episode-agent` | Podcast URL → transcript + vocab notes + grammar exercise + listening exercise |
+
+### Weekly rhythm and routines
+
+The learner works briefly on weekdays (phone, Anki, one 10–15 minute micro-task) and longer at the weekend (Writing plus a recall check or a Use of English set). Two Claude Routines start fresh sessions with push notifications: **Plan tygodnia** (Monday 7:44 Europe/Warsaw) and **Pakiet na weekend** (Friday 16:43). Their procedures live in `docs/routines.md`: change the procedure there, not in the routine prompt.
+
+### Git policy
+
+Set by the user on 2026-10-04: after finishing a change, open a PR to `main` and merge it yourself (merge commit) once the `checks` workflow is green. Do not wait for the user to ask for the merge. If the working branch's previous PR is already merged, restart the branch from `origin/main` first.
 
 ### Prompt Templates
 
