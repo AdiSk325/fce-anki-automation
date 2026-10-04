@@ -1,0 +1,81 @@
+{
+  "title": "Wt 6.10 – Present Perfect PL → EN",
+  "created": "2026-10-06T05:00:00Z",
+  "minutes": 8,
+  "focus": "Present Perfect, for / since",
+  "intro": "Mikro-zadanie z planu tygodnia: pięć zdań, w których polski czas teraźniejszy to po angielsku Present Perfect.",
+  "items": [
+    {
+      "id": "q1",
+      "kind": "write",
+      "label": "Tłumaczenie PL → EN",
+      "instruction": "Przetłumacz na angielski, bez podglądania kart.",
+      "source": "Przez lata coraz bardziej angażuję się w chór.",
+      "answers": [
+        "Over the years, I've got more and more involved in the choir.",
+        "Over the years, I've become more and more involved in the choir.",
+        "Over the years, I've been getting more and more involved in the choir.",
+        "Over the years, I've gotten more and more involved in the choir."
+      ],
+      "review": true,
+      "explain": "Over the years + Present Perfect, bo zmiana trwa do teraz. Nie *through the years* i nie Present Simple (Twój błąd z 29.09)."
+    },
+    {
+      "id": "q2",
+      "kind": "write",
+      "label": "Tłumaczenie PL → EN",
+      "instruction": "Przetłumacz na angielski, bez podglądania kart.",
+      "source": "Uczę się angielskiego od trzech lat.",
+      "answers": [
+        "I've been learning English for three years.",
+        "I've been studying English for three years."
+      ],
+      "review": true,
+      "explain": "for + okres → Present Perfect Continuous. Nie *I learn English since three years*."
+    },
+    {
+      "id": "q3",
+      "kind": "write",
+      "label": "Tłumaczenie PL → EN",
+      "instruction": "Przetłumacz na angielski, bez podglądania kart.",
+      "source": "Mieszkam w tym mieście od 2019 roku.",
+      "answers": [
+        "I've lived in this city since 2019.",
+        "I've been living in this city since 2019.",
+        "I've lived in this town since 2019.",
+        "I've been living in this town since 2019."
+      ],
+      "review": true,
+      "explain": "since + punkt w czasie → Present Perfect. Live brzmi dobrze w Simple i w Continuous."
+    },
+    {
+      "id": "q4",
+      "kind": "write",
+      "label": "Tłumaczenie PL → EN",
+      "instruction": "Przetłumacz na angielski, bez podglądania kart.",
+      "source": "Wiele się zmieniło, odkąd pracuję w tej firmie.",
+      "answers": [
+        "A lot has changed since I started working for this company.",
+        "A lot has changed since I started working at this company.",
+        "A lot has changed since I joined this company.",
+        "Much has changed since I joined this company.",
+        "A lot has changed since I started working here."
+      ],
+      "review": true,
+      "explain": "W zdaniu głównym Present Perfect (has changed), po since Past Simple (since I started / joined). Nie *since I work here*."
+    },
+    {
+      "id": "q5",
+      "kind": "write",
+      "label": "Tłumaczenie PL → EN",
+      "instruction": "Przetłumacz na angielski, bez podglądania kart.",
+      "source": "Jak długo znasz swojego lektora?",
+      "answers": [
+        "How long have you known your teacher?",
+        "How long have you known your tutor?"
+      ],
+      "review": true,
+      "explain": "How long + Present Perfect. Nie *How long do you know…*; know nie ma formy Continuous."
+    }
+  ]
+}

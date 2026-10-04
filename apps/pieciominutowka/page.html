@@ -240,6 +240,9 @@ mark.review { color: var(--warn); border-color: var(--warn); }
     return String(s == null ? "" : s).toLowerCase()
       .replace(/[‘’‛`´]/g, "'")
       .replace(/\bcanceled\b/g, "cancelled")
+      /* contractions count as their full forms: I've = I have, didn't = did not ('s and 'd stay, they are ambiguous) */
+      .replace(/\b(can't|cannot)\b/g, "can not").replace(/\bwon't\b/g, "will not").replace(/\bshan't\b/g, "shall not")
+      .replace(/n't\b/g, " not").replace(/'ve\b/g, " have").replace(/'re\b/g, " are").replace(/'m\b/g, " am").replace(/'ll\b/g, " will")
       .replace(/[.,!?;:"“”„()]+/g, " ")
       .replace(/\s+/g, " ").trim();
   }
@@ -332,14 +335,22 @@ mark.review { color: var(--warn); border-color: var(--warn); }
       body = '<div class="state"><b>Nie ma jeszcze żadnego zestawu.</b>' +
         "<p>Napisz w czacie z tutorem: „dodaj zestaw do Pięciominutówki”.</p></div>";
     } else {
-      body = '<div class="section-title"><h2>Zestawy</h2><span class="tag">' + S.sets.length + "</span></div>" +
-        '<ul class="sets">' + S.sets.map(function (s) {
+      /* to do first, in date order (the next one on top); finished sets below, most recent attempt first */
+      var todo = [], done = [];
+      S.sets.forEach(function (s) { (attemptsFor(s.id).length ? done : todo).push(s); });
+      todo.sort(function (a, b) { return String(a.created || "").localeCompare(String(b.created || "")); });
+      done.sort(function (a, b) { return String(attemptsFor(b.id)[0].finishedAt || "").localeCompare(String(attemptsFor(a.id)[0].finishedAt || "")); });
+      var cards = function (list) {
+        return '<ul class="sets">' + list.map(function (s) {
           var n = s.items.length;
           return '<li><button class="card" type="button" data-act="open" data-id="' + esc(s.id) + '">' +
             '<span class="t">' + esc(s.title || s.id) + "</span>" + statusChip(s) +
             '<span class="m">' + n + " " + zadan(n) + " · ok. " + esc(s.minutes || 5) + " min" +
             (s.focus ? " · " + esc(s.focus) : "") + "</span></button></li>";
         }).join("") + "</ul>";
+      };
+      body = (todo.length ? '<div class="section-title"><h2>Do zrobienia</h2><span class="tag">' + todo.length + "</span></div>" + cards(todo) : "") +
+        (done.length ? '<div class="section-title"><h2>Zrobione</h2><span class="tag">' + done.length + "</span></div>" + cards(done) : "");
     }
     var hint = '<p class="hint">Nowe zestawy dodaje tutor. Po rozwiązaniu napisz w czacie „sprawdź Pięciominutówkę”, żeby ocenił tłumaczenia i zapisał wynik w repozytorium.</p>';
     view.innerHTML = '<div class="stack">' + head + body + hint + "</div>";
