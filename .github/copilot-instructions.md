@@ -143,7 +143,7 @@ W tym celu należy preferować skill `podcast-episode-agent`.
 
 ## Skills operacyjne
 
-Projekt zawiera zestaw skilli w `.github/skills/`, które mają wspierać powtarzalne workflow. Jeśli zadanie pasuje do jednego z nich, agent powinien preferować odpowiedni skill zamiast improwizować proces od zera.
+Projekt zawiera zestaw skilli w `.claude/skills/` (dostępnych też jako `.github/skills/`), które mają wspierać powtarzalne workflow. Jeśli zadanie pasuje do jednego z nich, agent powinien preferować odpowiedni skill zamiast improwizować proces od zera.
 
 Najważniejsze skille:
 

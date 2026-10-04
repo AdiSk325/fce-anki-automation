@@ -28,7 +28,15 @@ python scripts/merge_decks.py output/*.tsv -o output/merged.tsv
 
 # Package TSV files into an .apkg (note types + CSS + decks) for AnkiDroid / Anki Desktop
 python scripts/build_apkg.py "output/fce-grammar-x.tsv=Subdeck" output/fce-phrasal-verbs-x.tsv --deck "FCE Preparation::Topic" -o output/fce-x.apkg
+
+# Regenerate TSV files from deck sources (decks/*.py use the HTML helpers in scripts/cardlib.py)
+python decks/ability_achievement_3a.py
+
+# Run the test suite (also runs in CI on every PR, together with validate_output.py)
+python -m unittest discover -s tests
 ```
+
+New card decks are written as a Python source in `decks/` built from `scripts/cardlib.py` helpers, then rendered to `output/*.tsv`. Never change the first field of an existing row: `build_apkg.py` derives the Anki note GUID from note type + first field, and the learner has all packages imported in AnkiDroid, so a changed first field becomes a duplicate card and loses review history. `tests/test_build_apkg.py` pins the IDs, and `tests/test_decks.py` checks that `decks/` reproduces `output/` byte for byte.
 
 Supported `--type` values for validation: `vocabulary`, `grammar`, `phrasal-verbs`, `collocations`, `use-of-english`.
 
@@ -95,7 +103,7 @@ All exercise and material files use `YYYY-MM-DD-descriptive-slug.md`. This enabl
 
 ### Skills
 
-Eight reusable skills live in `.github/skills/` and cover the most common multi-step workflows. Prefer a skill over improvising a process from scratch when one fits:
+Eight reusable skills live in `.claude/skills/` (`.github/skills` is a symlink to it for Copilot) and cover the most common multi-step workflows. Prefer a skill over improvising a process from scratch when one fits:
 
 | Skill | Use when |
 |-------|---------|
