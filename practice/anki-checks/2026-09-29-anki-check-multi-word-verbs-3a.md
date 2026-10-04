@@ -1,5 +1,7 @@
 # Anki Check – 3A Multi-word verbs
 
+**Status:** do zrobienia
+
 ## Kiedy zrobić
 
 Po przerobieniu nowych kart z talii `FCE Preparation::3A Multi-word verbs` (paczka `output/fce-multi-word-verbs-3a.apkg`) – najlepiej 2–3 dni po tym, jak w Anki skończą się nowe karty z podtalii `3 Translation`.
