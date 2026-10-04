@@ -1,0 +1,74 @@
+{
+  "title": "Śr 7.10 – pięć transformacji KWT",
+  "created": "2026-10-07T05:00:00Z",
+  "minutes": 8,
+  "focus": "strona bierna, need, Present Perfect",
+  "intro": "Mikro-zadanie z planu tygodnia: struktury z kwietniowej diagnozy. Po każdej odpowiedzi przeczytaj całe drugie zdanie.",
+  "items": [
+    {
+      "id": "q1",
+      "kind": "kwt",
+      "label": "Part 4 · Key word transformation",
+      "instruction": "Uzupełnij drugie zdanie tak, żeby znaczyło to samo co pierwsze. Użyj słowa z ramki bez zmiany jego formy. Wpisz od 2 do 5 słów, licząc słowo z ramki.",
+      "source": "People think that he is the best player in the team.",
+      "keyword": "THOUGHT",
+      "text": "He {gap} the best player in the team.",
+      "answers": [
+        "is thought to be"
+      ],
+      "explain": "Bierna konstrukcja raportowania: sb is thought / said / believed to be…"
+    },
+    {
+      "id": "q2",
+      "kind": "kwt",
+      "label": "Part 4 · Key word transformation",
+      "instruction": "Uzupełnij drugie zdanie tak, żeby znaczyło to samo co pierwsze. Użyj słowa z ramki bez zmiany jego formy. Wpisz od 2 do 5 słów, licząc słowo z ramki.",
+      "source": "It wasn't necessary for me to rewrite the report.",
+      "keyword": "NEED",
+      "text": "I {gap} the report.",
+      "answers": [
+        "didn't need to rewrite"
+      ],
+      "explain": "didn't need to do = nie było takiej potrzeby (i zwykle tego nie zrobiono). Porównaj needn't have done w zadaniu 4."
+    },
+    {
+      "id": "q3",
+      "kind": "kwt",
+      "label": "Part 4 · Key word transformation",
+      "instruction": "Uzupełnij drugie zdanie tak, żeby znaczyło to samo co pierwsze. Użyj słowa z ramki bez zmiany jego formy. Wpisz od 2 do 5 słów, licząc słowo z ramki.",
+      "source": "I started learning the piano five years ago.",
+      "keyword": "BEEN",
+      "text": "I {gap} the piano for five years.",
+      "answers": [
+        "have been learning"
+      ],
+      "explain": "started … ago → have been doing … for. Słowo BEEN wymusza Present Perfect Continuous."
+    },
+    {
+      "id": "q4",
+      "kind": "kwt",
+      "label": "Part 4 · Key word transformation",
+      "instruction": "Uzupełnij drugie zdanie tak, żeby znaczyło to samo co pierwsze. Użyj słowa z ramki bez zmiany jego formy. Wpisz od 2 do 5 słów, licząc słowo z ramki.",
+      "source": "You bought a ticket, but the entry was free.",
+      "keyword": "NEEDN'T",
+      "text": "You {gap} a ticket.",
+      "answers": [
+        "needn't have bought"
+      ],
+      "explain": "needn't have done = coś zostało zrobione niepotrzebnie (bilet kupiony, a wstęp był wolny)."
+    },
+    {
+      "id": "q5",
+      "kind": "kwt",
+      "label": "Part 4 · Key word transformation",
+      "instruction": "Uzupełnij drugie zdanie tak, żeby znaczyło to samo co pierwsze. Użyj słowa z ramki bez zmiany jego formy. Wpisz od 2 do 5 słów, licząc słowo z ramki.",
+      "source": "We enjoyed the match, although it rained.",
+      "keyword": "SPITE",
+      "text": "We enjoyed the match {gap} the rain.",
+      "answers": [
+        "in spite of"
+      ],
+      "explain": "although + zdanie → in spite of + rzeczownik (the rain)."
+    }
+  ]
+}

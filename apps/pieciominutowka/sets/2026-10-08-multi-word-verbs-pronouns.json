@@ -1,0 +1,64 @@
+{
+  "title": "Czw 8.10 – zaimek w multi-word verbs",
+  "created": "2026-10-08T05:00:00Z",
+  "minutes": 5,
+  "focus": "szyk Type 2, 3 i 4",
+  "intro": "Mikro-zadanie z planu tygodnia. Uważaj: nie każdy czasownik da się rozdzielić.",
+  "items": [
+    {
+      "id": "q1",
+      "kind": "write",
+      "label": "Multi-word verbs · word order",
+      "instruction": "Zastąp „the kids” zaimkiem i napisz całe zdanie.",
+      "source": "I'll pick up the kids at five.",
+      "answers": [
+        "I'll pick them up at five."
+      ],
+      "explain": "pick sb up – Type 2 (rozdzielny): zaimek stoi między czasownikiem a partykułą."
+    },
+    {
+      "id": "q2",
+      "kind": "write",
+      "label": "Multi-word verbs · word order",
+      "instruction": "Zastąp „this problem” zaimkiem i napisz całe zdanie.",
+      "source": "Can you figure out this problem?",
+      "answers": [
+        "Can you figure it out?"
+      ],
+      "explain": "figure sth out – Type 2: figure it out, nigdy *figure out it."
+    },
+    {
+      "id": "q3",
+      "kind": "write",
+      "label": "Multi-word verbs · word order",
+      "instruction": "Zastąp „the meeting” zaimkiem i napisz całe zdanie.",
+      "source": "They called off the meeting.",
+      "answers": [
+        "They called it off."
+      ],
+      "explain": "call sth off – Type 2: called it off."
+    },
+    {
+      "id": "q4",
+      "kind": "write",
+      "label": "Multi-word verbs · word order",
+      "instruction": "Zastąp „the idea” zaimkiem i napisz całe zdanie.",
+      "source": "She came up with the idea during the lesson.",
+      "answers": [
+        "She came up with it during the lesson."
+      ],
+      "explain": "come up with sth – Type 4 (dwie partykuły): nierozdzielny, zaimek na końcu."
+    },
+    {
+      "id": "q5",
+      "kind": "write",
+      "label": "Multi-word verbs · word order",
+      "instruction": "Zastąp „his grandmother” zaimkiem i napisz całe zdanie.",
+      "source": "He looks after his grandmother every weekend.",
+      "answers": [
+        "He looks after her every weekend."
+      ],
+      "explain": "look after sb – Type 3 (nierozdzielny): zaimek po partykule."
+    }
+  ]
+}

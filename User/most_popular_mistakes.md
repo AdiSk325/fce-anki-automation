@@ -10,9 +10,9 @@
 
 - obszar: use-of-english
 	błąd: incomplete transformation structures in key word transformation
-	poprawna forma: `is thought to be`, `didn't need to rewrite`, `have been learning`, `needn't have bought`
-	krótka uwaga dydaktyczna: w KWT trzeba pilnować pełnej struktury gramatycznej, czasu i aspektu, nie tylko ogólnego sensu
-	data ostatniego wystąpienia: 2026-04-12
+	poprawna forma: `is thought to be`, `didn't need to rewrite`, `have been learning`, `needn't have bought`, `pays to book` (2026-10-04: wpisane tylko *pays to*, bez czasownika)
+	krótka uwaga dydaktyczna: w KWT trzeba pilnować pełnej struktury gramatycznej, czasu i aspektu, nie tylko ogólnego sensu; po wpisaniu przeczytać całe drugie zdanie i sprawdzić, czy ma czasownik
+	data ostatniego wystąpienia: 2026-10-04
 
 - obszar: grammar
 	błąd: Present Simple zamiast Present Perfect przy sytuacji lub zmianie trwającej do teraz; kalka „przez lata” → *through the years*

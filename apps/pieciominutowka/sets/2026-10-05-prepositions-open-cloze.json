@@ -1,0 +1,64 @@
+{
+  "title": "Pon 5.10 – przyimki w open cloze",
+  "created": "2026-10-05T05:00:00Z",
+  "minutes": 5,
+  "focus": "stałe połączenia z przyimkiem",
+  "intro": "Mikro-zadanie z planu tygodnia: przymiotniki, czasowniki i wyrażenia, które zawsze idą z tym samym przyimkiem.",
+  "items": [
+    {
+      "id": "q1",
+      "kind": "cloze",
+      "label": "Part 2 · Open cloze",
+      "instruction": "Wpisz jedno słowo.",
+      "text": "She is very sensitive {gap} criticism.",
+      "answers": [
+        "to"
+      ],
+      "explain": "sensitive TO sth – wrażliwy na coś."
+    },
+    {
+      "id": "q2",
+      "kind": "cloze",
+      "label": "Part 2 · Open cloze",
+      "instruction": "Wpisz jedno słowo.",
+      "text": "I'm not aware {gap} any problem with the booking.",
+      "answers": [
+        "of"
+      ],
+      "explain": "aware OF sth – świadomy czegoś."
+    },
+    {
+      "id": "q3",
+      "kind": "cloze",
+      "label": "Part 2 · Open cloze",
+      "instruction": "Wpisz jedno słowo.",
+      "text": "Our choir has contributed {gap} the local festival for years.",
+      "answers": [
+        "to"
+      ],
+      "explain": "contribute TO sth – mieć wkład w coś, przyczyniać się do czegoś."
+    },
+    {
+      "id": "q4",
+      "kind": "cloze",
+      "label": "Part 2 · Open cloze",
+      "instruction": "Wpisz jedno słowo.",
+      "text": "Playing the guitar has always come naturally {gap} him.",
+      "answers": [
+        "to"
+      ],
+      "explain": "come naturally TO sb – przychodzić komuś z łatwością (talia 3A)."
+    },
+    {
+      "id": "q5",
+      "kind": "cloze",
+      "label": "Part 2 · Open cloze",
+      "instruction": "Wpisz jedno słowo.",
+      "text": "He won the race in spite {gap} a knee injury.",
+      "answers": [
+        "of"
+      ],
+      "explain": "in spite OF + rzeczownik lub -ing. Uwaga: despite bez of."
+    }
+  ]
+}

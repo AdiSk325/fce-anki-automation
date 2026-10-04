@@ -4,11 +4,11 @@
 
 | Paper | Ostatni wynik | Mocne | Słabe |
 |-------|---------------|-------|-------|
-| Reading and Use of English | Diagnoza 24/36 (2026-04-12), repair drill 6/13 | reading MC, word formation, multiple matching | open cloze, KWT (główny bloker), gapped text |
+| Reading and Use of English | Diagnoza 24/36 (2026-04-12), repair drill 6/13, szybki test 3/5 (2026-10-04) | reading MC, word formation, multiple matching; stałe przyimki w prostych lukach (4.10) | open cloze, KWT (główny bloker), gapped text |
 | Writing | brak próbek – diagnoza zadana 2026-10-04 | – | – |
 | Listening | brak próbek | – | – |
 | Speaking | brak próbek | – | – |
-| Słownictwo / Anki | 5 paczek zaimportowanych w AnkiDroid (1A, 2A, 3A Multi-word verbs, 3A Ability and achievement, talia kwietniowa), regularne powtórki | rozpoznanie słownictwa z podręcznika (1A 16/16, 2A *g* 12/12) | aktywne użycie: 2A-d tylko 1/5 zdań w pełni poprawnych; 0/6 sprawdzianów zrobionych |
+| Słownictwo / Anki | 5 paczek zaimportowanych w AnkiDroid (1A, 2A, 3A Multi-word verbs, 3A Ability and achievement, talia kwietniowa), regularne powtórki | rozpoznanie słownictwa z podręcznika (1A 16/16, 2A *g* 12/12) | aktywne użycie: 2A-d tylko 1/5 zdań w pełni poprawnych; *turn out* z talii 3A nieprzywołane w tłumaczeniu bez podpowiedzi (4.10); 0/6 sprawdzianów zrobionych |
 
 Wyniki per paper aktualizuj w tej tabeli, a szczegóły dopisuj do historii poniżej.
 
@@ -29,6 +29,7 @@ Wyniki per paper aktualizuj w tej tabeli, a szczegóły dopisuj do historii poni
 - 2026-09-29: rozpoczęty temat multi-word verbs (podręcznik, unit 3A – 4 typy konstrukcji i szyk w Type 2). Powstała paczka AnkiDroid `output/fce-multi-word-verbs-3a.apkg` (191 kart: reguły, znaczenia 35 czasowników, 64 zdania do tłumaczenia) i check `practice/anki-checks/2026-09-29-anki-check-multi-word-verbs-3a.md`. Wynik checku: do uzupełnienia po nauce kart.
 - 2026-09-29: podręcznik unit 1A (character adjectives) – ćwiczenia b i c: 16/16, słownictwo pewne na poziomie rozpoznania. Unit 2A (expressions with get) – rozróżnianie twardego i miękkiego *g*: 12/12; własne zdania z ćwiczenia d: znaczenie 5/5, w pełni poprawne gramatycznie 1/5 (feedback: `practice/vocabulary/2026-09-29-expressions-with-get-2a-exercise-d-feedback.md`). Powstały paczki `output/fce-expressions-with-get-2a.apkg` (72 karty) i `output/fce-character-adjectives-1a.apkg` (31 kart: word formation Part 3 + akcent) oraz check `practice/anki-checks/2026-09-29-anki-check-1a-2a-vocabulary.md`.
 - 2026-09-30: unit 3A – słownictwo *Ability and achievement* z tekstów *Learning to learn* i o sportowcach. Powstała paczka `output/fce-ability-achievement-3a.apkg` (126 kart: 31 pozycji słownictwa, kolokacji i multi-word verbs, 1 reguła *enough*, 19 open cloze, 7 word formation, 9 KWT, 21 tłumaczeń) i check `practice/anki-checks/2026-09-30-anki-check-ability-achievement-3a.md`. W notatkach poprawne użycie Present Perfect (*I have seen how it has developed*).
+- 2026-10-04: pierwszy zestaw w Pięciominutówce (aplikacja na telefon, `docs/pieciominutowka.md`): 3/5 w 1,5 min. Poprawnie: *associate with*, *a lot of*, *throw them away*. Błędy: KWT *pays to* bez *book* (niepełna struktura), tłumaczenie bez *turn out*. Szczegóły: `practice/reading-use-of-english/2026-10-04-quick-test.md`.
 
 ## Co aktualizować dalej
 

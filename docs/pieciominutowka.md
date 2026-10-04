@@ -23,7 +23,7 @@ Baza aplikacji ma dwie kolekcje.
 | Pole | Znaczenie |
 |------|-----------|
 | `title` | nazwa zestawu na liście (po polsku) |
-| `created` | data ISO 8601; lista jest sortowana od najnowszego |
+| `created` | data ISO 8601, zwykle dzień, na który zestaw jest przeznaczony. Na liście „Do zrobienia” zestawy idą od najwcześniejszego, a w „Zrobione” od ostatnio rozwiązanego |
 | `minutes` | szacowany czas |
 | `focus` | krótki opis tematu (opcjonalnie) |
 | `intro` | jedno-dwa zdania przed startem (opcjonalnie) |
@@ -44,7 +44,7 @@ Zadanie (`items[]`):
 | `review` | `true`, gdy odpowiedź spoza klucza ma ocenić tutor (tłumaczenia) |
 | `explain` | wyjaśnienie po polsku, widoczne po sprawdzeniu |
 
-Porównanie ignoruje wielkość liter, interpunkcję, rodzaj apostrofu i pisownię `canceled`/`cancelled`. W luce można wpisać całe zdanie: strona sama obetnie część, która jest już wydrukowana. Formy ściągnięte (`it's` / `it is`) trzeba podać w `answers` osobno.
+Porównanie ignoruje wielkość liter, interpunkcję, rodzaj apostrofu i pisownię `canceled`/`cancelled`. Skróty `n't`, `'ve`, `'re`, `'m`, `'ll` są równoważne pełnym formom (`I've` = `I have`), więc w `answers` wystarczy jedna wersja. `'s` i `'d` są niejednoznaczne, więc obie formy trzeba podać osobno. W luce można wpisać całe zdanie: strona sama obetnie część, która jest już wydrukowana.
 
 ### `attempts/<auto-id>`
 
