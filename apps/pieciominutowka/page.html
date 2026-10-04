@@ -1,0 +1,590 @@
+<title>Pięciominutówka FCE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+:root {
+  --bg: #f6f5f8;
+  --surface: #ffffff;
+  --ink: #1d1a2b;
+  --muted: #6b6577;
+  --line: #e3dfe8;
+  --accent: #b0186e;
+  --accent-ink: #ffffff;
+  --accent-soft: #f7e3ee;
+  --ok: #1f7a4d;
+  --ok-soft: #e1f2e8;
+  --bad: #b3261e;
+  --bad-soft: #fbe5e3;
+  --warn: #9a5800;
+  --warn-soft: #fbefdc;
+  --gap-bg: #faf7fc;
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --text: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15131b; --surface: #1e1b26; --ink: #ece9f2; --muted: #a39eb0; --line: #2f2b3a;
+    --accent: #f06aae; --accent-ink: #22101a; --accent-soft: #3a1d2d;
+    --ok: #5fd39a; --ok-soft: #173326; --bad: #ff8a80; --bad-soft: #3a1c1b;
+    --warn: #f0b35a; --warn-soft: #3a2a12; --gap-bg: #191621;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #15131b; --surface: #1e1b26; --ink: #ece9f2; --muted: #a39eb0; --line: #2f2b3a;
+  --accent: #f06aae; --accent-ink: #22101a; --accent-soft: #3a1d2d;
+  --ok: #5fd39a; --ok-soft: #173326; --bad: #ff8a80; --bad-soft: #3a1c1b;
+  --warn: #f0b35a; --warn-soft: #3a2a12; --gap-bg: #191621;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--text);
+  font-size: 17px;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap { max-width: 34rem; margin: 0 auto; padding-inline: 16px; padding-block: 0 56px; }
+h1, h2 { font-family: var(--display); font-weight: 800; line-height: 1.1; text-wrap: balance; margin: 0; }
+h1 { font-size: 2rem; letter-spacing: -0.01em; }
+h2 { font-size: 1.15rem; font-weight: 600; }
+p { margin: 0; }
+button { font: inherit; color: inherit; }
+
+/* top bar */
+.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 2;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  margin-inline: -16px; padding: 10px 16px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  min-height: 56px;
+}
+.brand { display: flex; align-items: baseline; gap: 10px; min-width: 0; }
+.brand b { font-family: var(--display); font-weight: 800; font-size: 1.05rem; }
+.tag { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.back {
+  border: 0; background: none; padding: 8px 4px; margin-left: -4px;
+  font-weight: 700; color: var(--accent); cursor: pointer; min-height: 40px;
+}
+#clock { font-family: var(--mono); font-variant-numeric: tabular-nums; color: var(--muted); font-size: 0.9rem; }
+
+.stack { display: flex; flex-direction: column; gap: 16px; }
+.hero { padding-block: 28px 8px; display: flex; flex-direction: column; gap: 10px; }
+.lede { color: var(--muted); max-width: 60ch; }
+.kicker { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.section-title { display: flex; justify-content: space-between; align-items: baseline; padding-top: 18px; }
+
+/* set cards */
+.sets { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.card {
+  width: 100%; text-align: left; cursor: pointer;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  padding: 16px; display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; align-items: start;
+}
+.card:active { border-color: var(--accent); }
+.card .t { font-weight: 700; font-size: 1.05rem; min-width: 0; }
+.card .m { grid-column: 1 / -1; color: var(--muted); font-size: 0.92rem; }
+.chip {
+  display: inline-block; white-space: nowrap;
+  font-family: var(--mono); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.02em;
+  padding: 3px 9px; border-radius: 999px; background: var(--accent-soft); color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.chip.ok { background: var(--ok-soft); color: var(--ok); }
+.chip.wrong, .chip.empty { background: var(--bad-soft); color: var(--bad); }
+.chip.review, .chip.draft { background: var(--warn-soft); color: var(--warn); }
+
+/* buttons */
+.actions { display: flex; flex-wrap: wrap; gap: 10px; padding-top: 6px; }
+.btn {
+  appearance: none; border: 2px solid var(--accent); background: var(--accent); color: var(--accent-ink);
+  font-weight: 700; border-radius: 12px; padding: 10px 20px; min-height: 50px; cursor: pointer;
+  flex: 1 1 10rem;
+}
+.btn.ghost { background: transparent; color: var(--accent); }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.linkish { border: 0; background: none; padding: 0; color: var(--accent); font-weight: 700; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+
+/* set detail */
+.toc { margin: 0; padding-left: 1.4em; display: flex; flex-direction: column; gap: 4px; color: var(--muted); }
+.history { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.history li { border-bottom: 1px solid var(--line); }
+.history button {
+  width: 100%; background: none; border: 0; text-align: left; cursor: pointer;
+  padding: 12px 0; display: flex; justify-content: space-between; align-items: center; gap: 12px;
+}
+.history .d { font-variant-numeric: tabular-nums; }
+.history .n { color: var(--muted); font-size: 0.88rem; display: block; }
+
+/* drill */
+.drillhead { display: flex; align-items: center; gap: 12px; padding-block: 18px 6px; }
+.drillhead .step { font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: 0.9rem; }
+.segs { flex: 1; display: flex; gap: 4px; }
+.segs i { flex: 1; height: 5px; border-radius: 3px; background: var(--line); }
+.segs i.done { background: var(--accent); }
+.segs i.now { background: var(--accent); opacity: 0.45; }
+.task { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px 18px; display: flex; flex-direction: column; gap: 14px; }
+.label { font-family: var(--mono); font-size: 0.74rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.instr { color: var(--muted); font-size: 0.95rem; }
+.source { font-size: 1.15rem; padding-left: 12px; border-left: 3px solid var(--line); }
+.kw { text-align: center; }
+.kw span {
+  display: inline-block; border: 2px solid var(--ink); padding: 3px 14px;
+  font-family: var(--mono); font-weight: 600; letter-spacing: 0.12em; font-size: 1rem;
+}
+.gapped { font-size: 1.2rem; line-height: 2.1; }
+input.gap {
+  font: inherit; color: var(--ink); background: var(--gap-bg);
+  border: 0; border-bottom: 2px solid var(--accent); border-radius: 4px 4px 0 0;
+  padding: 0 6px; margin-inline: 3px; width: 7.5em; max-width: 100%; text-align: center; line-height: 1.5;
+}
+input.gap.wide { width: 11em; }
+input.gap:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field span { font-size: 0.85rem; color: var(--muted); }
+textarea {
+  font: inherit; font-size: 1.05rem; color: var(--ink); background: var(--gap-bg);
+  border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; width: 100%; resize: vertical;
+}
+.drillnav { display: flex; gap: 10px; padding-top: 16px; }
+.drillnav .btn.ghost { flex: 0 1 8rem; }
+
+/* results */
+.score { padding-block: 26px 6px; display: flex; flex-direction: column; gap: 6px; }
+.big { font-family: var(--display); font-weight: 800; font-size: 3.4rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.big small { font-size: 1.6rem; color: var(--muted); font-weight: 600; }
+.sub { color: var(--muted); }
+.saveline { font-size: 0.92rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; min-height: 1.4em; }
+.saveline.err { color: var(--bad); }
+.tutor { background: var(--accent-soft); border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; }
+.review { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.rv { background: var(--surface); border: 1px solid var(--line); border-left-width: 4px; border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; }
+.rv.ok { border-left-color: var(--ok); }
+.rv.wrong, .rv.empty { border-left-color: var(--bad); }
+.rv.review { border-left-color: var(--warn); }
+.rvhead { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.q { font-size: 1.02rem; }
+.q .src { display: block; color: var(--muted); font-size: 0.92rem; }
+mark { background: none; color: inherit; font-weight: 700; padding: 0 2px; border-bottom: 2px solid var(--line); }
+mark.ok { color: var(--ok); border-color: var(--ok); }
+mark.wrong, mark.empty { color: var(--bad); border-color: var(--bad); text-decoration: line-through; text-decoration-thickness: 1px; }
+mark.review { color: var(--warn); border-color: var(--warn); }
+.pair { display: grid; grid-template-columns: 7.5rem 1fr; gap: 2px 10px; font-size: 0.97rem; }
+.pair dt { color: var(--muted); font-size: 0.85rem; padding-top: 2px; }
+.pair dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.alts { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.alts li + li { border-top: 1px dotted var(--line); padding-top: 6px; }
+.why { font-size: 0.93rem; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 8px; }
+.tnote { font-size: 0.93rem; background: var(--accent-soft); border-radius: 8px; padding: 6px 10px; }
+
+.state { padding-block: 40px; display: flex; flex-direction: column; gap: 10px; color: var(--muted); }
+.state b { color: var(--ink); font-size: 1.05rem; }
+.hint { color: var(--muted); font-size: 0.9rem; padding-top: 22px; border-top: 1px solid var(--line); margin-top: 22px; }
+@media (max-width: 380px) { .pair { grid-template-columns: 1fr; } .pair dt { padding-top: 6px; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <button class="back" id="back" type="button" hidden>← Wróć</button>
+    <div class="brand" id="brand"><b>Pięciominutówka</b><span class="tag">B2 First</span></div>
+    <span id="clock" aria-live="off"></span>
+  </header>
+  <main id="view" aria-live="polite"></main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var view = document.getElementById("view");
+  var backBtn = document.getElementById("back");
+  var brand = document.getElementById("brand");
+  var clock = document.getElementById("clock");
+
+  var S = {
+    db: null, uid: null, status: "loading", errCode: null,
+    sets: [], attempts: [], attemptsLoaded: false,
+    view: { name: "home" }, drill: null,
+    local: {}, save: {}
+  };
+  var tick = null;
+
+  var VERDICT = { ok: "Dobrze", wrong: "Do poprawy", review: "Tutor sprawdzi", empty: "Brak odpowiedzi" };
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function clone(x) { return JSON.parse(JSON.stringify(x)); }
+  function mmss(sec) { sec = Math.max(0, Math.round(sec || 0)); return Math.floor(sec / 60) + ":" + String(sec % 60).padStart(2, "0"); }
+  function fmtDate(iso) {
+    try { return new Date(iso).toLocaleString("pl-PL", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }); }
+    catch (e) { return ""; }
+  }
+  function zadan(n) {
+    if (n === 1) return "zadanie";
+    var d = n % 10, h = n % 100;
+    return d >= 2 && d <= 4 && !(h >= 12 && h <= 14) ? "zadania" : "zadań";
+  }
+  function store(k, v) { try { if (v == null) localStorage.removeItem(k); else localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  function load(k) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : null; } catch (e) { return null; } }
+  function draftKey(setId) { return "fce5:draft:" + setId; }
+
+  /* ---------- grading ---------- */
+  function norm(s) {
+    return String(s == null ? "" : s).toLowerCase()
+      .replace(/[‘’‛`´]/g, "'")
+      .replace(/\bcanceled\b/g, "cancelled")
+      .replace(/[.,!?;:"“”„()]+/g, " ")
+      .replace(/\s+/g, " ").trim();
+  }
+  function hasGap(it) { return typeof it.text === "string" && it.text.indexOf("{gap}") !== -1; }
+  function gapParts(it) { var p = it.text.split("{gap}"); return [p[0] || "", p.slice(1).join("") || ""]; }
+  /* A learner may type the whole sentence into a gap: keep only the part that fills it. */
+  function gapCore(it, raw) {
+    var r = norm(raw);
+    if (!r || !hasGap(it)) return r;
+    var parts = gapParts(it), b = norm(parts[0]), a = norm(parts[1]);
+    if (b && r.indexOf(b + " ") === 0) r = r.slice(b.length + 1);
+    if (a && r.length > a.length && r.slice(-(a.length + 1)) === " " + a) r = r.slice(0, -(a.length + 1));
+    return r;
+  }
+  function grade(it, raw) {
+    var r = gapCore(it, raw);
+    if (!r) return "empty";
+    var answers = Array.isArray(it.answers) ? it.answers : [];
+    for (var i = 0; i < answers.length; i++) if (norm(answers[i]) === r) return "ok";
+    return it.review ? "review" : "wrong";
+  }
+
+  /* ---------- data helpers ---------- */
+  function setById(id) { for (var i = 0; i < S.sets.length; i++) if (S.sets[i].id === id) return S.sets[i]; return null; }
+  function attemptsFor(id) { return S.attempts.filter(function (a) { return a.setId === id; }); }
+  function findAttempt(id) {
+    for (var i = 0; i < S.attempts.length; i++) if (S.attempts[i].id === id) return S.attempts[i];
+    return S.local[id] || null;
+  }
+  function itemsOf(a) { return Array.isArray(a.items) ? a.items : ((setById(a.setId) || {}).items || []); }
+  function verdictOf(a, it) {
+    var o = a.tutor && a.tutor.items && a.tutor.items[it.id];
+    return (o && o.verdict) || (a.auto && a.auto[it.id]) || "empty";
+  }
+  function tally(a) {
+    var items = itemsOf(a), ok = 0, pending = 0;
+    items.forEach(function (it) { var v = verdictOf(a, it); if (v === "ok") ok++; else if (v === "review") pending++; });
+    return { ok: ok, pending: pending, total: items.length };
+  }
+  function statusChip(set) {
+    var d = load(draftKey(set.id));
+    if (d && d.answers && Object.keys(d.answers).length) return '<span class="chip draft">W trakcie</span>';
+    var list = attemptsFor(set.id);
+    if (!list.length) return '<span class="chip">Nowy</span>';
+    var t = tally(list[0]);
+    if (t.pending) return '<span class="chip review">Czeka na tutora</span>';
+    return '<span class="chip ' + (t.ok / Math.max(1, t.total) >= 0.8 ? "ok" : "wrong") + '">' + t.ok + "/" + t.total + "</span>";
+  }
+
+  /* ---------- navigation ---------- */
+  function go(v) { S.view = v; render(); try { window.scrollTo(0, 0); } catch (e) {} }
+  backBtn.addEventListener("click", function () {
+    var v = S.view;
+    if (v.name === "drill") { saveDraft(); go({ name: "set", setId: v.setId }); }
+    else if (v.name === "result" && setById(v.setId)) go({ name: "set", setId: v.setId });
+    else go({ name: "home" });
+  });
+
+  function render() {
+    if (tick) { clearInterval(tick); tick = null; }
+    clock.textContent = "";
+    var home = S.view.name === "home";
+    backBtn.hidden = home;
+    brand.hidden = !home;
+    var n = S.view.name;
+    if (n === "set") return renderSet();
+    if (n === "drill") return renderDrill();
+    if (n === "result") return renderResult();
+    renderHome();
+  }
+
+  /* ---------- home ---------- */
+  function renderHome() {
+    var head =
+      '<section class="hero">' +
+        '<p class="kicker">Reading and Use of English · telefon</p>' +
+        "<h1>Pięć minut, jeden zestaw</h1>" +
+        '<p class="lede">Krótkie zestawy w formacie B2 First. Odpowiadasz tutaj, automat sprawdza to, co się da, a resztę ocenia tutor w czacie.</p>' +
+      "</section>";
+    var body = "";
+    if (S.status === "loading") {
+      body = '<div class="state"><b>Ładuję zestawy…</b></div>';
+    } else if (S.status === "nodb") {
+      body = '<div class="state"><b>Brak dostępu do zapisanych zestawów.</b>' +
+        "<p>Zestawy i wyniki są przechowywane w claude.ai. Otwórz tę stronę w aplikacji Claude albo na claude.ai, będąc zalogowanym.</p></div>";
+    } else if (S.status === "error") {
+      body = '<div class="state"><b>Nie udało się wczytać zestawów.</b><p>Zamknij i otwórz stronę ponownie' +
+        (S.errCode ? " (kod: " + esc(S.errCode) + ")" : "") + ".</p></div>";
+    } else if (!S.sets.length) {
+      body = '<div class="state"><b>Nie ma jeszcze żadnego zestawu.</b>' +
+        "<p>Napisz w czacie z tutorem: „dodaj zestaw do Pięciominutówki”.</p></div>";
+    } else {
+      body = '<div class="section-title"><h2>Zestawy</h2><span class="tag">' + S.sets.length + "</span></div>" +
+        '<ul class="sets">' + S.sets.map(function (s) {
+          var n = s.items.length;
+          return '<li><button class="card" type="button" data-act="open" data-id="' + esc(s.id) + '">' +
+            '<span class="t">' + esc(s.title || s.id) + "</span>" + statusChip(s) +
+            '<span class="m">' + n + " " + zadan(n) + " · ok. " + esc(s.minutes || 5) + " min" +
+            (s.focus ? " · " + esc(s.focus) : "") + "</span></button></li>";
+        }).join("") + "</ul>";
+    }
+    var hint = '<p class="hint">Nowe zestawy dodaje tutor. Po rozwiązaniu napisz w czacie „sprawdź Pięciominutówkę”, żeby ocenił tłumaczenia i zapisał wynik w repozytorium.</p>';
+    view.innerHTML = '<div class="stack">' + head + body + hint + "</div>";
+  }
+
+  /* ---------- set detail ---------- */
+  function renderSet() {
+    var s = setById(S.view.setId);
+    if (!s) { view.innerHTML = '<div class="state"><b>Tego zestawu już nie ma.</b><button class="linkish" data-act="home">Wróć do listy</button></div>'; return; }
+    var d = load(draftKey(s.id));
+    var hasDraft = d && d.answers && Object.keys(d.answers).length;
+    var list = attemptsFor(s.id);
+    var html =
+      '<section class="hero">' +
+        '<p class="kicker">' + s.items.length + " " + zadan(s.items.length) + " · ok. " + esc(s.minutes || 5) + " min</p>" +
+        "<h1>" + esc(s.title || s.id) + "</h1>" +
+        (s.intro ? '<p class="lede">' + esc(s.intro) + "</p>" : "") +
+      "</section>" +
+      '<ol class="toc">' + s.items.map(function (it) { return "<li>" + esc(it.label || it.kind) + "</li>"; }).join("") + "</ol>" +
+      '<div class="actions">' +
+        (hasDraft
+          ? '<button class="btn" type="button" data-act="resume">Kontynuuj (' + (Math.min(d.step || 0, s.items.length - 1) + 1) + "/" + s.items.length + ')</button>' +
+            '<button class="btn ghost" type="button" data-act="start">Od nowa</button>'
+          : '<button class="btn" type="button" data-act="start">' + (list.length ? "Rozwiąż jeszcze raz" : "Zaczynam") + "</button>") +
+      "</div>";
+    if (list.length) {
+      html += '<div class="section-title"><h2>Twoje podejścia</h2></div><ul class="history">' +
+        list.map(function (a) {
+          var t = tally(a);
+          var chip = t.pending
+            ? '<span class="chip review">' + t.ok + "/" + t.total + " · " + t.pending + " do oceny</span>"
+            : '<span class="chip ' + (t.ok / Math.max(1, t.total) >= 0.8 ? "ok" : "wrong") + '">' + t.ok + "/" + t.total + "</span>";
+          return '<li><button type="button" data-act="attempt" data-id="' + esc(a.id) + '"><span><span class="d">' + esc(fmtDate(a.finishedAt)) + "</span>" +
+            '<span class="n">czas ' + mmss(a.durationSec) + (a.tutor && a.tutor.note ? " · komentarz tutora" : "") + "</span></span>" + chip + "</button></li>";
+        }).join("") + "</ul>";
+    }
+    view.innerHTML = '<div class="stack">' + html + "</div>";
+  }
+
+  /* ---------- drill ---------- */
+  function elapsed() { var d = S.drill; return d ? d.elapsedBase + (Date.now() - d.t0) / 1000 : 0; }
+  function saveDraft() {
+    var d = S.drill; if (!d) return;
+    store(draftKey(d.setId), { answers: d.answers, step: d.step, startedAt: d.startedAt, elapsed: Math.round(elapsed()) });
+  }
+  function startDrill(setId, resume) {
+    var s = setById(setId); if (!s) return go({ name: "home" });
+    var d = resume ? load(draftKey(setId)) : null;
+    S.drill = {
+      setId: setId, title: s.title || s.id, items: clone(s.items),
+      answers: (d && d.answers) || {}, step: d ? Math.min(d.step || 0, s.items.length - 1) : 0,
+      startedAt: (d && d.startedAt) || new Date().toISOString(),
+      elapsedBase: (d && d.elapsed) || 0, t0: Date.now()
+    };
+    if (!resume) store(draftKey(setId), null);
+    go({ name: "drill", setId: setId });
+  }
+  function renderDrill() {
+    var d = S.drill;
+    if (!d) return go({ name: "set", setId: S.view.setId });
+    var it = d.items[d.step], n = d.items.length, last = d.step === n - 1;
+    var segs = "";
+    for (var i = 0; i < n; i++) segs += '<i class="' + (i < d.step ? "done" : i === d.step ? "now" : "") + '"></i>';
+    var body;
+    if (hasGap(it)) {
+      var p = gapParts(it);
+      body = '<p class="gapped">' + esc(p[0]) + '<input class="gap' + (it.kind === "kwt" ? " wide" : "") + '" id="ans" type="text" aria-label="Luka" ' +
+        'autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" enterkeyhint="' + (last ? "done" : "next") + '">' + esc(p[1]) + "</p>";
+    } else {
+      body = '<label class="field"><span>Twoja odpowiedź</span><textarea id="ans" rows="3" autocomplete="off" autocapitalize="sentences" spellcheck="false" enterkeyhint="' + (last ? "done" : "next") + '"></textarea></label>';
+    }
+    view.innerHTML =
+      '<div class="drillhead"><span class="step">' + (d.step + 1) + "/" + n + '</span><div class="segs" aria-hidden="true">' + segs + "</div></div>" +
+      '<article class="task">' +
+        '<p class="label">' + esc(it.label || it.kind) + "</p>" +
+        (it.instruction ? '<p class="instr">' + esc(it.instruction) + "</p>" : "") +
+        (it.source ? '<p class="source">' + esc(it.source) + "</p>" : "") +
+        (it.keyword ? '<p class="kw"><span>' + esc(it.keyword) + "</span></p>" : "") +
+        body +
+      "</article>" +
+      '<div class="drillnav">' +
+        (d.step > 0 ? '<button class="btn ghost" type="button" data-act="prev">Wstecz</button>' : "") +
+        '<button class="btn" type="button" data-act="' + (last ? "submit" : "next") + '">' + (last ? "Sprawdź" : "Dalej") + "</button>" +
+      "</div>";
+    var ans = document.getElementById("ans");
+    ans.value = d.answers[it.id] || "";
+    ans.addEventListener("input", function () { d.answers[it.id] = ans.value; saveDraft(); });
+    ans.addEventListener("keydown", function (e) {
+      if (e.key !== "Enter" || e.shiftKey || e.isComposing) return;
+      e.preventDefault();
+      if (last) ans.blur(); else step(1);
+    });
+    try { ans.focus({ preventScroll: true }); } catch (e) {}
+    var paint = function () { clock.textContent = mmss(elapsed()); };
+    paint(); tick = setInterval(paint, 1000);
+  }
+  function step(delta) {
+    var d = S.drill; if (!d) return;
+    d.step = Math.max(0, Math.min(d.items.length - 1, d.step + delta));
+    saveDraft(); render();
+  }
+  function submit() {
+    var d = S.drill; if (!d) return;
+    var auto = {}, answers = {}, ok = 0, pending = 0;
+    d.items.forEach(function (it) {
+      var raw = String(d.answers[it.id] || "").trim();
+      answers[it.id] = raw;
+      var v = grade(it, raw); auto[it.id] = v;
+      if (v === "ok") ok++; else if (v === "review") pending++;
+    });
+    var doc = {
+      setId: d.setId, setTitle: d.title, items: d.items, answers: answers, auto: auto,
+      score: ok, pending: pending, total: d.items.length,
+      startedAt: d.startedAt, finishedAt: new Date().toISOString(), durationSec: Math.round(elapsed()),
+      by: S.uid || null
+    };
+    store(draftKey(d.setId), null);
+    var localId = "local-" + Date.now();
+    S.local[localId] = Object.assign({ id: localId }, doc);
+    S.drill = null;
+    go({ name: "result", setId: d.setId, attemptId: localId });
+    saveAttempt(localId);
+  }
+  function saveAttempt(localId) {
+    var a = S.local[localId]; if (!a || !S.db) return;
+    var body = Object.assign({}, a); delete body.id;
+    S.save = { id: localId, state: "saving" }; paintSave();
+    S.db.collection("attempts").add(body).then(function (ref) {
+      S.local[ref.id] = Object.assign({}, a, { id: ref.id });
+      S.save = { id: ref.id, state: "saved" };
+      if (S.view.name === "result" && S.view.attemptId === localId) S.view.attemptId = ref.id;
+      if (S.view.name !== "drill") render();
+    }, function (e) {
+      S.save = { id: localId, state: "error", code: e && e.code };
+      paintSave();
+    });
+  }
+  function paintSave() {
+    var el = document.getElementById("saveline"); if (!el) return;
+    var sv = S.save;
+    el.className = "saveline";
+    if (!sv || sv.id !== S.view.attemptId) { el.textContent = ""; return; }
+    if (sv.state === "saving") el.textContent = "Zapisuję wynik…";
+    else if (sv.state === "saved") el.textContent = "Zapisano. Tutor zobaczy ten wynik w czacie.";
+    else if (sv.state === "error") {
+      el.className = "saveline err";
+      el.innerHTML = "<span>" + (sv.code === "quota_exceeded" ? "Brak miejsca na nowe wyniki – daj znać tutorowi." : "Nie udało się zapisać wyniku.") +
+        '</span><button class="linkish" type="button" data-act="retry">Spróbuj ponownie</button>';
+    }
+  }
+
+  /* ---------- result ---------- */
+  function recap(it, ans, v) {
+    if (hasGap(it)) {
+      var p = gapParts(it);
+      return (it.source ? '<span class="src">' + esc(it.source) + (it.keyword ? " · " + esc(it.keyword) : "") + "</span>" : "") +
+        esc(p[0]) + '<mark class="' + v + '">' + (ans ? esc(gapCore(it, ans) || ans) : "—") + "</mark>" + esc(p[1]);
+    }
+    return '<span class="src">' + esc(it.source || it.instruction || "") + "</span>";
+  }
+  function renderResult() {
+    var a = findAttempt(S.view.attemptId);
+    if (!a) {
+      view.innerHTML = '<div class="state"><b>Nie znaleziono tego podejścia.</b><button class="linkish" type="button" data-act="home">Wróć do listy</button></div>';
+      return;
+    }
+    var items = itemsOf(a), t = tally(a);
+    var tutorItems = (a.tutor && a.tutor.items) || {};
+    var sub = (t.pending
+      ? t.pending + " " + (t.pending === 1 ? "odpowiedź czeka" : "odpowiedzi czekają") + " na tutora"
+      : (a.tutor ? "Sprawdzone przez tutora" : "Sprawdzone automatycznie")) + " · czas " + mmss(a.durationSec);
+    var html =
+      '<section class="score">' +
+        '<p class="kicker">' + esc(a.setTitle || "") + " · " + esc(fmtDate(a.finishedAt)) + "</p>" +
+        '<p class="big">' + t.ok + "<small>/" + t.total + "</small></p>" +
+        '<p class="sub">' + sub + "</p>" +
+        '<p class="saveline" id="saveline"></p>' +
+      "</section>" +
+      (a.tutor && a.tutor.note ? '<section class="tutor"><p class="label">Komentarz tutora</p><p>' + esc(a.tutor.note) + "</p></section>" : "") +
+      '<ol class="review">' + items.map(function (it, i) {
+        var ans = (a.answers || {})[it.id] || "", v = verdictOf(a, it);
+        var keys = Array.isArray(it.answers) ? it.answers : [];
+        var tn = tutorItems[it.id] && tutorItems[it.id].note;
+        return '<li class="rv ' + v + '">' +
+          '<div class="rvhead"><span class="label">' + (i + 1) + ". " + esc(it.label || it.kind) + '</span><span class="chip ' + v + '">' + VERDICT[v] + "</span></div>" +
+          '<p class="q">' + recap(it, ans, v) + "</p>" +
+          '<dl class="pair">' +
+            (hasGap(it) ? "" : "<dt>Twoja odpowiedź</dt><dd>" + (ans ? esc(ans) : "<em>brak</em>") + "</dd>") +
+            (keys.length ? "<dt>" + (it.review ? "Wzorcowo" : "Klucz") + "</dt><dd>" + esc(keys[0]) + "</dd>" : "") +
+            (keys.length > 1 ? '<dt>Też dobrze</dt><dd><ul class="alts">' + keys.slice(1).map(function (k) { return "<li>" + esc(k) + "</li>"; }).join("") + "</ul></dd>" : "") +
+          "</dl>" +
+          (it.explain ? '<p class="why">' + esc(it.explain) + "</p>" : "") +
+          (tn ? '<p class="tnote"><b>Tutor:</b> ' + esc(tn) + "</p>" : "") +
+        "</li>";
+      }).join("") + "</ol>" +
+      '<div class="actions">' +
+        (setById(a.setId) ? '<button class="btn" type="button" data-act="again">Jeszcze raz</button>' : "") +
+        '<button class="btn ghost" type="button" data-act="home">Wszystkie zestawy</button>' +
+      "</div>";
+    view.innerHTML = '<div class="stack">' + html + "</div>";
+    paintSave();
+  }
+
+  /* ---------- events ---------- */
+  view.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-act]"); if (!b) return;
+    var act = b.getAttribute("data-act"), id = b.getAttribute("data-id");
+    if (act === "open") go({ name: "set", setId: id });
+    else if (act === "start") startDrill(S.view.setId, false);
+    else if (act === "resume") startDrill(S.view.setId, true);
+    else if (act === "next") step(1);
+    else if (act === "prev") step(-1);
+    else if (act === "submit") submit();
+    else if (act === "attempt") { var a = findAttempt(id); go({ name: "result", setId: a ? a.setId : S.view.setId, attemptId: id }); }
+    else if (act === "again") startDrill(S.view.setId, false);
+    else if (act === "retry") saveAttempt(S.save.id);
+    else if (act === "home") go({ name: "home" });
+  });
+
+  /* ---------- boot ---------- */
+  function rerender() { if (S.view.name !== "drill") render(); }
+  function boot() {
+    render();
+    var c = window.claude;
+    if (!c || typeof c.use !== "function") { S.status = "nodb"; render(); return; }
+    Promise.all([
+      c.use("db").catch(function () { return null; }),
+      c.use("user").catch(function () { return null; })
+    ]).then(function (r) {
+      var db = r[0], user = r[1];
+      if (!db) { S.status = "nodb"; render(); return; }
+      S.db = db;
+      if (user) user.id().then(function (id) { S.uid = id; }, function () {});
+      db.collection("sets").onSnapshot(function (snap) {
+        S.sets = snap.docs.map(function (d) { return Object.assign({ id: d.id }, d.data()); })
+          .filter(function (s) { return Array.isArray(s.items) && s.items.length; })
+          .sort(function (a, b) { return String(b.created || "").localeCompare(String(a.created || "")); });
+        S.status = "ready"; rerender();
+      }, function (e) { S.status = "error"; S.errCode = e && e.code; rerender(); });
+      db.collection("attempts").orderBy("finishedAt", "desc").limit(200).onSnapshot(function (snap) {
+        S.attempts = snap.docs.map(function (d) { return Object.assign({ id: d.id }, d.data()); });
+        rerender();
+      }, function () {});
+    });
+  }
+  boot();
+})();
+</script>

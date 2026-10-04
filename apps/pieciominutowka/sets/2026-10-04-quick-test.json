@@ -1,0 +1,53 @@
+{
+  "title": "Niedziela 4.10 – szybki test",
+  "created": "2026-10-04T12:00:00Z",
+  "minutes": 5,
+  "focus": "przyimki, multi-word verbs, KWT",
+  "intro": "Przyimki po czasownikach i rzeczownikach, szyk multi-word verb z zaimkiem, jedna transformacja Part 4 i jedno zdanie do przetłumaczenia.",
+  "items": [
+    {
+      "id": "q1", "kind": "cloze", "label": "Part 2 · Open cloze",
+      "instruction": "Wpisz jedno słowo.",
+      "text": "I always associate the smell of pine trees {gap} Christmas.",
+      "answers": ["with"],
+      "explain": "associate sth WITH sth – stały przyimek, jak polskie „kojarzyć z”."
+    },
+    {
+      "id": "q2", "kind": "cloze", "label": "Part 2 · Open cloze",
+      "instruction": "Wpisz jedno słowo.",
+      "text": "She has made a lot {gap} progress since the summer.",
+      "answers": ["of"],
+      "explain": "a lot OF + rzeczownik. Do tego make progress, bez „a”, bo progress jest niepoliczalne."
+    },
+    {
+      "id": "q3", "kind": "write", "label": "Multi-word verbs · word order",
+      "instruction": "Zastąp „these old newspapers” zaimkiem i napisz całe zdanie.",
+      "source": "Please throw away these old newspapers.",
+      "answers": ["Please throw them away.", "Throw them away."],
+      "explain": "W rozdzielnym phrasal verb zaimek (it, them) stoi zawsze między czasownikiem a partykułą: throw them away, nigdy *throw away them."
+    },
+    {
+      "id": "q4", "kind": "kwt", "label": "Part 4 · Key word transformation",
+      "instruction": "Uzupełnij drugie zdanie tak, żeby znaczyło to samo co pierwsze. Użyj słowa z ramki bez zmiany jego formy. Wpisz od 2 do 5 słów, licząc słowo z ramki.",
+      "source": "It's worth booking the tickets early.",
+      "keyword": "PAYS",
+      "text": "It {gap} the tickets early.",
+      "answers": ["pays to book"],
+      "explain": "it pays to do sth = opłaca się coś zrobić. Po „it pays” stoi to + bezokolicznik, a po „it's worth” forma -ing."
+    },
+    {
+      "id": "q5", "kind": "write", "label": "Tłumaczenie PL → EN",
+      "instruction": "Przetłumacz na angielski.",
+      "source": "Okazało się, że koncert odwołano.",
+      "answers": [
+        "It turned out that the concert had been cancelled.",
+        "It turned out the concert had been cancelled.",
+        "The concert turned out to have been cancelled.",
+        "It turned out that the concert was cancelled.",
+        "It turned out the concert was cancelled."
+      ],
+      "review": true,
+      "explain": "turn out: It turned out (that) + zdanie albo sth turned out to have been… Odwołanie nastąpiło wcześniej, więc najlepiej pasuje Past Perfect w stronie biernej: had been cancelled."
+    }
+  ]
+}

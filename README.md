@@ -22,6 +22,8 @@ Rutyny i ich procedury: [docs/routines.md](docs/routines.md). Długi plan do egz
 
 **„Co dziś?”** Napisz `/daily-task` – dostaniesz jedno zadanie dopasowane do dnia.
 
+**Szybki test na telefonie.** [Pięciominutówka](https://claude.ai/artifact/VxakPzW5TXhT9fjtKv352t) to aplikacja z krótkimi zestawami B2 First. Rozwiązujesz w niej zestaw, a potem piszesz w czacie „sprawdź Pięciominutówkę”. Opis: [docs/pieciominutowka.md](docs/pieciominutowka.md).
+
 ## Komendy (skille)
 
 | Komenda | Do czego |
@@ -53,6 +55,7 @@ output/          talie TSV i gotowe paczki .apkg
 scripts/         walidacja, budowa paczek, cardlib, podcasty
 tests/           testy uruchamiane też w CI
 templates/       typy notatek Anki, CSS kart, szablon feedbacku do writingu
+apps/            Pięciominutówka: kod strony na telefon i zestawy (JSON)
 docs/            przewodniki (workflow, import Anki, skille, rutyny)
 .claude/skills/  skille tutora (.github/skills to dowiązanie dla Copilota)
 ```
