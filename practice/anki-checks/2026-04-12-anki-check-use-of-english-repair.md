@@ -1,5 +1,7 @@
 # Anki Check – Use of English Repair
 
+**Status:** do zrobienia
+
 ## Kiedy zrobić
 
 Zrób ten check po jednej albo dwóch rundach nauki talii Anki z dzisiejszej sesji.

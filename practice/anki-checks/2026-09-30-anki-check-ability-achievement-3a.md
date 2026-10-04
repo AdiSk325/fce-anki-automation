@@ -1,5 +1,7 @@
 # Anki Check – 3A Ability and achievement
 
+**Status:** do zrobienia
+
 ## Kiedy zrobić
 
 Po przerobieniu nowych kart z talii `FCE Preparation::3A Ability and achievement` (paczka `output/fce-ability-achievement-3a.apkg`).

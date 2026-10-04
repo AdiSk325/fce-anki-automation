@@ -1,5 +1,7 @@
 # Anki Check – 1A Character adjectives + 2A Expressions with get
 
+**Status:** do zrobienia
+
 ## Kiedy zrobić
 
 Po przerobieniu nowych kart z talii `FCE Preparation::2A Expressions with get` i `FCE Preparation::1A Character adjectives` (paczki `output/fce-expressions-with-get-2a.apkg` i `output/fce-character-adjectives-1a.apkg`).

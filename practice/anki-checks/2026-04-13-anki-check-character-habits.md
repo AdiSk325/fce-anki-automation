@@ -1,5 +1,7 @@
 # Anki Check – Character And Habits
 
+**Status:** do zrobienia
+
 ## Kiedy zrobić
 
 Zrób ten check po nauczeniu się nowych kart z talii `fce-vocabulary-character-habits.tsv`.

@@ -1,5 +1,7 @@
 # Anki Check – Preply Workplace Language
 
+**Status:** do zrobienia
+
 ## Kiedy zrobić
 
 Zrób ten check po przerobieniu nowych kart z tematycznych talii dotyczących języka pracy, projektów i komunikacji.

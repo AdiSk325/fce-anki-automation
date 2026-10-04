@@ -17,11 +17,22 @@ Adresy referencyjne:
 - https://www.cambridgeenglish.org/exams-and-tests/first/
 - https://www.cambridgeenglish.org/exams-and-tests/qualifications/first/format
 - https://www.cambridgeenglish.org/exams-and-tests/qualifications/first/preparation
+- B2 First Handbook for teachers: https://www.cambridgeenglish.org/Images/167791-cambridge-english-first-handbook.pdf
+- Overview of the Writing Paper: https://www.cambridgeenglish.org/Images/167893-cambridge-english-b2-first-writing-overview.pdf
+- Overview of the Listening Paper: https://www.cambridgeenglish.org/Images/167888-cambridge-english-b2-first-listening-overview.pdf
+- Assessing Speaking Performance at Level B2: https://www.cambridgeenglish.org/images/168619-assessing-speaking-performance-at-level-b2.pdf
+- Understanding the Statement of Results: https://www.cambridgeenglish.org/Images/664445-b2-statement-of-results-factsheet.pdf
+
+Szczegóły części Writing, Listening i Speaking oraz progi skali zostały uzupełnione 2026-10-04 na podstawie powyższych dokumentów.
 
 ## Poziom i znaczenie egzaminu
 
 - B2 First potwierdza poziom B2 według CEFR.
-- Cambridge podaje skalę wyniku 160-179 dla tego egzaminu.
+- Wynik podawany jest na Cambridge English Scale (osobno dla każdego z 5 skills i łącznie):
+  - **Grade A: 180–190** → certyfikat z poziomem **C1**,
+  - **Grade B: 173–179** i **Grade C: 160–172** → certyfikat **B2**,
+  - **Level B1: 140–159** → certyfikat B1 (egzamin niezdany na B2, ale potwierdza B1).
+- Każdy paper liczy się do wyniku: Reading and Use of English 40% (dwa skills), Writing 20%, Listening 20%, Speaking 20%.
 - Egzamin ma formę papierową lub cyfrową, ale format i wymagane umiejętności pozostają takie same.
 - To kwalifikacja potwierdzająca, że kandydat potrafi funkcjonować w anglojęzycznym środowisku edukacyjnym, społecznym i zawodowym.
 
@@ -41,15 +52,37 @@ Cambridge wskazuje, że paper sprawdza radzenie sobie z różnymi typami tekstu 
 ### 2. Writing
 
 - czas: 1 godzina 20 minut,
-- 2 parts.
+- 2 parts, każdy tekst **140–190 słów**,
+- wartość: 20% całego wyniku.
 
-Cambridge podkreśla, że kandydat musi umieć napisać dwa różne teksty, między innymi essay, letter/email, report lub review.
+| Part | Zadanie | Szczegóły |
+|------|---------|-----------|
+| 1 | **Essay – obowiązkowy** | Polecenie (do ok. 120 słów) z pytaniem i dwiema podanymi notatkami; trzecią myśl kandydat dodaje sam. Funkcje: zgadzanie się / niezgadzanie, wyrażanie i uzasadnianie opinii, porównywanie, wyjaśnianie. |
+| 2 | **Jedno zadanie do wyboru** | W B2 First (wersja dla dorosłych): article, email/letter, report albo review. Wersja *for Schools* ma też story. |
+
+**Kryteria oceny** (każdy tekst oceniany osobno, 4 kryteria w skali 0–5):
+
+- **Content** – czy odpowiedź realizuje polecenie i wszystkie punkty, czy czytelnik dostaje pełną informację,
+- **Communicative Achievement** – czy rejestr, ton i konwencje formy (essay, email, review…) pasują do celu i odbiorcy,
+- **Organisation** – akapity, logiczny porządek, łączniki i środki spójności,
+- **Language** – zakres i poprawność słownictwa i gramatyki.
+
+Wzór oceny i feedbacku: `templates/writing-feedback.md`.
 
 ### 3. Listening
 
 - czas: około 40 minut,
 - 4 parts,
-- 30 questions.
+- 30 questions,
+- każde nagranie słychać **dwa razy**,
+- wartość: 20% całego wyniku.
+
+| Part | Zadanie | Pytania |
+|------|---------|---------|
+| 1 | Multiple choice: 8 krótkich, niezwiązanych nagrań (ok. 30 s), 3 opcje do każdego | 8 |
+| 2 | Sentence completion: monolog 3–4 min, uzupełnianie zdań informacją z nagrania | 10 |
+| 3 | Multiple matching: 5 krótkich powiązanych monologów (ok. 30 s), 8 opcji do wyboru | 5 |
+| 4 | Multiple choice: rozmowa lub wywiad 3–4 min, 3 opcje do każdego pytania | 7 |
 
 Paper sprawdza rozumienie różnych materiałów mówionych, na przykład rozmów, prezentacji i programów informacyjnych.
 
@@ -57,9 +90,19 @@ Paper sprawdza rozumienie różnych materiałów mówionych, na przykład rozmó
 
 - 14 minut dla pary kandydatów,
 - 20 minut dla grupy trzyosobowej,
-- 4 parts.
+- 4 parts,
+- wartość: 20% całego wyniku.
 
 Speaking odbywa się twarzą w twarz z udziałem jednego lub dwóch kandydatów oraz dwóch egzaminatorów. Jeden prowadzi rozmowę, drugi ocenia.
+
+| Part | Zadanie | Czas (para) |
+|------|---------|-------------|
+| 1 | Interview: krótka rozmowa z egzaminatorem o sobie, pracy, zainteresowaniach | ok. 2 min |
+| 2 | Long turn: każdy kandydat przez 1 min porównuje dwa zdjęcia i odpowiada na pytanie, potem ok. 30 s reaguje na zdjęcia partnera | ok. 4 min |
+| 3 | Collaborative task: wspólna rozmowa o kilku podanych opcjach, potem wspólna decyzja | ok. 4 min |
+| 4 | Discussion: szersze pytania związane z tematem Part 3 | ok. 4 min |
+
+**Kryteria oceny:** egzaminator oceniający przyznaje punkty za Grammar and Vocabulary, Discourse Management, Pronunciation i Interactive Communication. Egzaminator prowadzący rozmowę daje jedną ocenę ogólną (Global Achievement).
 
 ## Umiejętności komunikacyjne deklarowane przez Cambridge
 
