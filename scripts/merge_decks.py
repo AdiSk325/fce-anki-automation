@@ -45,11 +45,10 @@ def merge_tsv_files(input_files, output_file, remove_duplicates=True):
         print("❌ Brak danych do zapisania")
         return False
 
-    # Zapisz
+    # Zapisz w tym samym surowym formacie co pliki wejściowe (bez cytowania pól z HTML)
     output_path = Path(output_file)
     with open(output_path, "w", encoding="utf-8", newline="") as f:
-        writer = csv.writer(f, delimiter="\t")
-        writer.writerows(all_rows)
+        f.write("".join("\t".join(row) + "\n" for row in all_rows))
 
     print(f"\n✅ Zapisano: {output_path}")
     print(f"📊 Liczba kart: {len(all_rows)}")

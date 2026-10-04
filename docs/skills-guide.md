@@ -4,7 +4,7 @@
 
 Skills mają uruchamiać powtarzalne, wieloetapowe workflow, które w tym projekcie wracają regularnie. Dzięki temu agent ma jaśniejszy tryb działania, a Ty możesz szybciej wywołać konkretny rodzaj pracy.
 
-Skills zostały zapisane w `.github/skills/` i są projektowe, czyli dotyczą właśnie tego repo jako przestrzeni do przygotowania do FCE.
+Skills zostały zapisane w `.claude/skills/` (dla Copilota `.github/skills` to dowiązanie do tego katalogu) i są projektowe, czyli dotyczą właśnie tego repo jako przestrzeni do przygotowania do FCE.
 
 ## Dostępne skills
 

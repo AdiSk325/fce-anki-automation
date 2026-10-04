@@ -35,12 +35,26 @@ VALID_TAG_PREFIXES = {
 
 
 def detect_type_from_filename(filename):
-    """Wykrywa typ karty na podstawie nazwy pliku."""
+    """Wykrywa typ karty na podstawie nazwy pliku: najpierw prefiks fce-<typ>-, potem dowolne wystąpienie."""
     name = Path(filename).stem.lower()
+    for card_type in EXPECTED_COLUMNS:
+        if name.startswith(f"fce-{card_type}-") or name == f"fce-{card_type}":
+            return card_type
     for card_type in EXPECTED_COLUMNS:
         if card_type in name:
             return card_type
     return None
+
+
+# Skróty liczone na egzaminie jako dwa słowa (didn't = did not). Końcówka 's bywa dopełniaczem,
+# więc liczy się jako jedno słowo.
+TWO_WORD_CONTRACTIONS = re.compile(r"(n't|'ll|'ve|'re|'d|'m)$", re.IGNORECASE)
+
+
+def count_kwt_words(text):
+    """Liczy słowa odpowiedzi KWT według zasad Cambridge (skróty = dwa słowa)."""
+    words = [w.strip(".,;:!?()[]{}\"") for w in text.split()]
+    return sum(2 if TWO_WORD_CONTRACTIONS.search(w) else 1 for w in words if w)
 
 
 def validate_utf8(filepath):
@@ -125,7 +139,9 @@ def validate_use_of_english_logic(filepath):
                 continue
 
             keyword = keyword_match.group(1).strip()
-            answer_text = re.sub(r"<[^>]+>", " ", answer)
+            # Sama odpowiedź to pole .answer; pełne zdanie (.full-sentence) nie wlicza się do limitu słów.
+            answer_match = re.search(r'<div class="answer">(.*?)</div>', answer, re.IGNORECASE | re.DOTALL)
+            answer_text = re.sub(r"<[^>]+>", " ", answer_match.group(1) if answer_match else answer)
             answer_text = re.sub(r"\s+", " ", answer_text).strip()
             answer_words = {word.strip(".,;:!?()[]{}\"'").upper() for word in answer_text.split()}
 
@@ -134,12 +150,17 @@ def validate_use_of_english_logic(filepath):
                     f"Wiersz {i}: odpowiedź KWT nie zawiera słowa kluczowego '{keyword}'"
                 )
 
+            word_count = count_kwt_words(answer_text)
+            if not 2 <= word_count <= 5:
+                errors.append(
+                    f"Wiersz {i}: odpowiedź KWT '{answer_text}' ma {word_count} słów (dozwolone 2–5)"
+                )
+
     return errors
 
 
 def validate_html(filepath):
     """Podstawowa walidacja HTML w polach."""
-    import re
     warnings = []
     tag_names = ["b", "i", "div", "ul", "li", "p", "span", "code"]
 
@@ -175,6 +196,33 @@ def check_duplicates(filepath):
                 else:
                     seen[key] = i
 
+    return warnings
+
+
+def check_cross_file_duplicates(tsv_files, forced_type=None):
+    """Szuka tego samego pierwszego pola w różnych plikach jednego typu.
+
+    build_apkg.py liczy GUID notatki z typu i pierwszego pola, więc taki duplikat
+    w dwóch paczkach skleiłby się w Anki w jedną notatkę.
+    """
+    warnings = []
+    seen = {}
+    for tsv_file in sorted(tsv_files):
+        card_type = forced_type or detect_type_from_filename(tsv_file)
+        if not card_type:
+            continue
+        with open(tsv_file, "r", encoding="utf-8") as f:
+            for i, row in enumerate(csv.reader(f, delimiter="\t"), 1):
+                if not row:
+                    continue
+                key = (card_type, row[0].strip().lower())
+                if key in seen and seen[key][0] != tsv_file.name:
+                    first_file, first_row = seen[key]
+                    warnings.append(
+                        f"{tsv_file.name} wiersz {i}: '{row[0]}' jest już w {first_file} (wiersz {first_row})"
+                    )
+                else:
+                    seen.setdefault(key, (tsv_file.name, i))
     return warnings
 
 
@@ -284,7 +332,12 @@ def main():
             result = validate_file(tsv_file, args.type)
             results.append(result)
 
+        cross_warnings = check_cross_file_duplicates(tsv_files, args.type)
         print(f"\n{'='*60}")
+        if cross_warnings:
+            print(f"⚠️  DUPLIKATY MIĘDZY PLIKAMI ({len(cross_warnings)}):")
+            for warning in cross_warnings:
+                print(f"   • {warning}")
         print(f"📋 PODSUMOWANIE: {sum(results)}/{len(results)} plików poprawnych")
         sys.exit(0 if all(results) else 1)
     else:

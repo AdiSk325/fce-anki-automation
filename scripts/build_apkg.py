@@ -35,7 +35,7 @@ import time
 import zipfile
 from pathlib import Path
 
-from validate_output import detect_type_from_filename
+from validate_output import detect_type_from_filename, validate_file
 
 CSS_PATH = Path(__file__).resolve().parent.parent / "templates" / "anki-card-style.css"
 
@@ -301,6 +301,11 @@ def parse_source(arg, root_deck):
 
 
 def build_apkg(sources, output, forced_type=None):
+    # Paczka trafia prosto do Anki, więc niepoprawny TSV zatrzymuje budowanie.
+    invalid = [path.name for path, _ in sources if not validate_file(path, forced_type)]
+    if invalid:
+        raise ValueError(f"Walidacja nie przeszła: {', '.join(invalid)}")
+
     now = int(time.time())
     css = CSS_PATH.read_text(encoding="utf-8")
 
