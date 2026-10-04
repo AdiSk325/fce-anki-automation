@@ -1,11 +1,20 @@
 # User Progress
 
-## Punkt startowy
+## Stan per paper (aktualizacja 2026-10-04)
+
+| Paper | Ostatni wynik | Mocne | Słabe |
+|-------|---------------|-------|-------|
+| Reading and Use of English | Diagnoza 24/36 (2026-04-12), repair drill 6/13 | reading MC, word formation, multiple matching | open cloze, KWT (główny bloker), gapped text |
+| Writing | brak próbek – diagnoza zadana 2026-10-04 | – | – |
+| Listening | brak próbek | – | – |
+| Speaking | brak próbek | – | – |
+| Słownictwo / Anki | 5 paczek zaimportowanych w AnkiDroid (1A, 2A, 3A Multi-word verbs, 3A Ability and achievement, talia kwietniowa), regularne powtórki | rozpoznanie słownictwa z podręcznika (1A 16/16, 2A *g* 12/12) | aktywne użycie: 2A-d tylko 1/5 zdań w pełni poprawnych; 0/6 sprawdzianów zrobionych |
+
+Wyniki per paper aktualizuj w tej tabeli, a szczegóły dopisuj do historii poniżej.
+
+## Historia
 
 - Repo zostało przekształcone z projektu Anki w pełną przestrzeń przygotowania do B2 First.
-- Na starcie nie ma jeszcze zapisanych wyników diagnostycznych ani pełnej mapy mocnych i słabych stron użytkownika.
-- Najbliższy priorytet: zbudować pierwszy profil diagnostyczny na podstawie kilku sesji z grammar, use of english, writing i speaking.
-- Przygotowano pierwszą diagnozę startową dla Reading and Use of English; wynik oczekuje na rozwiązanie przez użytkownika.
 - Pierwsza diagnoza Reading and Use of English została rozwiązana i sprawdzona: 24/36.
 - Na starcie mocniejszy jest reading niż czysta precyzja use of english.
 - Najsłabsze obszary ujawnione w pierwszej diagnozie: open cloze, key word transformation oraz gapped text.

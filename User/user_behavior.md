@@ -13,7 +13,11 @@
 - Sam rozróżnia wiedzę bierną i czynną (notatka: *straight away* – „znam, ale nie używam”). Przy słownictwie dawaj zadania produkcyjne: tłumaczenia PL → EN, własne zdania, mówienie. Samo rozpoznawanie nie wystarcza.
 - Do ćwiczeń podręcznikowych dopisuje własne zdania z życia (praca, chór, muzyka, samochód). Poprawiaj je i włączaj do talii jako tłumaczenia (tag `my-sentences`).
 - W tekstach z podręcznika zaznacza kolorem słownictwo do nauki. Zakres talii to zaznaczenia plus dopiski; niezaznaczone słowa z tekstu dodawaj najwyżej jako karty z tagiem `extra`.
-- Materiał kursowy: Empower Upper-Intermediate (Cambridge). Część słownictwa z wcześniejszych stron była już opracowana – przed tworzeniem talii sprawdzaj `output/` i `practice/vocabulary/`, żeby nie dublować kart.
+- Materiał kursowy: Empower Upper-Intermediate (Cambridge) i lekcje z lektorem. Część słownictwa z wcześniejszych stron była już opracowana – przed tworzeniem talii sprawdzaj `output/` i `practice/vocabulary/`, żeby nie dublować kart.
+- Ma zaimportowane w AnkiDroid wszystkie paczki i powtarza je regularnie. Nie zmieniaj pierwszych pól istniejących kart – zmiana oznacza duplikat i utratę historii powtórek.
+- Rytm: krótko w tygodniu (telefon, Anki), dłużej w weekend. Pracuje zrywami, dlatego potrzebuje stałych punktów zaczepienia: rutyny z powiadomieniami (plan tygodnia w poniedziałek, pakiet na weekend w piątek).
+- Writing oddaje, wklejając tekst w czacie.
+- Git: tutor tworzy PR i sam go merguje po zielonym CI (decyzja z 2026-10-04). Nie trzeba prosić o merge.
 
 ## Jak pracować z użytkownikiem
 

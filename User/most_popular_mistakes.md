@@ -1,9 +1,5 @@
 # Most Popular Mistakes
 
-## Status początkowy
-
-Brak jeszcze zarejestrowanych, powtarzalnych błędów językowych użytkownika.
-
 ## Zarejestrowane wzorce
 
 - obszar: use-of-english
