@@ -8,6 +8,16 @@ Skills zostały zapisane w `.claude/skills/` (dla Copilota `.github/skills` to d
 
 ## Dostępne skills
 
+### `/daily-task`
+
+Używaj, gdy chcesz wiedzieć, co zrobić dziś – szczególnie gdy masz tylko kilka minut.
+
+Najlepsze sytuacje:
+
+- w tygodniu: dostajesz jedno mikro-zadanie na 10–15 minut (z planu tygodnia albo dopasowane do Twoich błędów),
+- w weekend: dostajesz zaległy Writing albo najstarszy sprawdzian po Anki,
+- odpowiedzi wklejasz w czacie, a tutor je sprawdza.
+
 ### `/create-exercise`
 
 Używaj, gdy chcesz dostać nowe ćwiczenie, zestaw zadań, worksheet, mini-test albo homework.
@@ -101,6 +111,7 @@ Najlepsze sytuacje:
 
 Najprostsza reguła:
 
+- jeśli nie wiesz, od czego zacząć dziś, użyj `/daily-task`,
 - jeśli chcesz nowe zadanie, użyj `/create-exercise`,
 - jeśli chcesz sprawdzić gotowe zadanie, użyj `/check-exercise`,
 - jeśli chcesz diagnozy i kierunku dalszej pracy, użyj `/progress-feedback`,

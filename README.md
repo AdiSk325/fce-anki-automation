@@ -1,145 +1,72 @@
 # FCE Tutor Workspace
 
-To repo nie jest już tylko generatorem fiszek. To kompletna, osobista przestrzeń do przygotowania do egzaminu Cambridge B2 First, w której GitHub Copilot działa jako tutor, trener egzaminacyjny, recenzent prac i opiekun spersonalizowanego systemu nauki.
+Osobista przestrzeń do przygotowania do egzaminu Cambridge B2 First. Tutorem jest Claude (Claude Code): planuje naukę, tworzy ćwiczenia i talie Anki z Twoich materiałów, ocenia prace i pamięta postępy w plikach `User/`. Repo jest jednocześnie archiwum całej pracy.
 
-## Cel projektu
+## Jak wygląda tydzień
 
-Jedyny główny cel projektu to pomoc w skutecznym przygotowaniu i zdaniu egzaminu B2 First. Oznacza to połączenie w jednym miejscu:
+| Kiedy | Co robisz | Skąd wiesz co |
+|-------|-----------|---------------|
+| Pn–Pt, 10–15 min | Anki w AnkiDroid + jedno mikro-zadanie | Plan tygodnia w `plans/weekly/`, powiadomienie w poniedziałek rano albo `/daily-task` w czacie |
+| Weekend, 60–90 min | Writing + sprawdzian po Anki albo zestaw Use of English | Pakiet na weekend, powiadomienie w piątek po południu |
+| Po lekcji z lektorem | Zrzuty stron z Empower i notatek → nowa talia Anki | Prośba w czacie, np. „zrób fiszki z tego materiału” |
 
-- wiedzy eksperckiej o egzaminie,
-- codziennej pracy z tutorem AI,
-- trwałej pamięci o postępach i błędach,
-- archiwum ćwiczeń i materiałów,
-- modułu Anki do powtórek słownictwa, gramatyki i Use of English.
+Rutyny i ich procedury: [docs/routines.md](docs/routines.md). Długi plan do egzaminu: [plans/2026-10-04-roadmap-b2-first.md](plans/2026-10-04-roadmap-b2-first.md).
 
-## Jak działa tutor
+## Najczęstsze sytuacje
 
-Domyślny agent projektu pracuje w trybie:
+**Nowy materiał z podręcznika lub lekcji.** Wyślij zrzuty ekranu, razem z kolorowymi zaznaczeniami i dopiskami. Tutor porówna je z istniejącymi taliami, przygotuje karty (znaczenia, zdania do tłumaczenia, zadania w stylu egzaminu) i zbuduje paczkę `.apkg` w `output/`. Paczkę otwierasz na telefonie w AnkiDroid ([instrukcja](docs/anki-import-guide.md)). Ponowny import poprawionej paczki aktualizuje karty i zachowuje historię powtórek.
 
-1. analizuje kontekst bieżącej nauki,
-2. wykonuje zadanie dydaktyczne,
-3. zapisuje postępy, błędy i nowe ustalenia.
+**Writing.** Zadania są w `practice/writing/tasks/`. Tekst wklejasz w czacie. Ocena według 4 kryteriów Cambridge trafia do `practice/writing/feedback/`, a wersja poprawiona do `practice/writing/corrected/`.
 
-W praktyce oznacza to, że po każdej sensownej sesji repo może zostać zaktualizowane o:
+**Sprawdzian po Anki.** Pliki w `practice/anki-checks/` mają w nagłówku status (`do zrobienia` / `sprawdzony`). Odpowiedzi wklejasz w czacie.
 
-- nowe ćwiczenia,
-- ocenę writingu lub speakingu,
-- wnioski o najczęstszych błędach,
-- aktualny plan nauki,
-- materiały Anki do dalszej pracy.
+**„Co dziś?”** Napisz `/daily-task` – dostaniesz jedno zadanie dopasowane do dnia.
 
-## Struktura projektu
+## Komendy (skille)
 
-```text
-fce-anki-automation/
-├── .github/
-│   ├── copilot-instructions.md
-│   └── prompts/
-├── User/
-│   ├── current_goals.md
-│   ├── most_popular_mistakes.md
-│   ├── user_behavior.md
-│   └── user_progress.md
-├── knowledge/
-│   └── expert_knowledge.md
-├── practice/
-│   ├── anki-checks/
-│   ├── grammar/
-│   ├── listening/
-│   ├── reading-use-of-english/
-│   ├── speaking/
-│   ├── vocabulary/
-│   └── writing/
-│       ├── corrected/
-│       ├── feedback/
-│       └── raw/
-├── plans/
-│   ├── mock-exams/
-│   └── weekly/
-├── progress/
-│   ├── assessments/
-│   └── reports/
-├── materials/
-│   ├── lesson-notes/
-│   └── reference/
-├── input/
-├── output/
-├── scripts/
-├── templates/
-└── docs/
-```
+| Komenda | Do czego |
+|---------|----------|
+| `/daily-task` | jedno zadanie na dziś |
+| `/create-exercise` | nowe ćwiczenie lub test |
+| `/check-exercise` | sprawdzenie odpowiedzi lub writingu, zapis błędów |
+| `/anki-cycle` | fiszki → nauka → sprawdzian |
+| `/study-plan` | plan tygodnia albo sprintu |
+| `/progress-feedback` | podsumowanie postępów i priorytety |
+| `/memory-checkpoint` | porządek w pamięci tutora |
+| `/podcast-episode-agent` | odcinek podcastu → słówka, gramatyka, listening |
+| `/gitflow` | porządne commity |
 
-## Szybki start
+Szczegóły: [docs/skills-guide.md](docs/skills-guide.md).
 
-### 1. Zacznij od pracy z tutorem
-
-Przykładowe polecenia do Copilot Chat:
+## Struktura
 
 ```text
-Przeanalizuj moje cele, błędy i aktualny progress, a potem przygotuj mi plan nauki na 7 dni pod FCE.
+User/            pamięć tutora: cele, postępy, błędy, sposób pracy
+knowledge/       fakty o egzaminie B2 First (źródła Cambridge)
+plans/           roadmapa i plany tygodnia
+practice/        ćwiczenia, writing (tasks/raw/feedback/corrected), sprawdziany po Anki
+progress/        raporty i diagnozy
+input/           materiały źródłowe (notatki ze zrzutów, listy słów, transkrypcje)
+materials/       notatki z lekcji i podcastów
+decks/           źródła talii Anki (Python) → generują output/*.tsv
+output/          talie TSV i gotowe paczki .apkg
+scripts/         walidacja, budowa paczek, cardlib, podcasty
+tests/           testy uruchamiane też w CI
+templates/       typy notatek Anki, CSS kart, szablon feedbacku do writingu
+docs/            przewodniki (workflow, import Anki, skille, rutyny)
+.claude/skills/  skille tutora (.github/skills to dowiązanie dla Copilota)
 ```
 
-```text
-Przeprowadź ze mną Writing Part 1. Najpierw daj task, potem oceń mój tekst i zapisz raw, feedback i corrected do odpowiednich katalogów.
+## Dla agenta
+
+Instrukcje pracy są w [CLAUDE.md](CLAUDE.md) (oraz [.github/copilot-instructions.md](.github/copilot-instructions.md) dla Copilota). Skrypty korzystają tylko z biblioteki standardowej Pythona:
+
+```bash
+python -m unittest discover -s tests          # testy (też w CI na każdym PR)
+python scripts/validate_output.py output/     # walidacja wszystkich talii
+python decks/ability_achievement_3a.py        # regeneracja TSV ze źródła talii
+python scripts/build_apkg.py "output/fce-x.tsv=Podtalia" --deck "FCE Preparation::Temat" -o output/fce-x.apkg
 ```
-
-```text
-Przygotuj mi 12 zadań Use of English celowanych w moje najczęstsze błędy i zapisz je do practice/reading-use-of-english/.
-```
-
-```text
-Weź ten odcinek podcastu z transkrypcją i przygotuj pełny pakiet: słówka + grammar + listening B2 First z answer key.
-```
-
-### 2. Używaj Anki jako modułu powtórek
-
-Moduł Anki nadal działa i jest wspierany przez istniejące prompty oraz skrypty walidacyjne. Tutor może generować fiszki, zlecać ich naukę i później sprawdzać aktywne użycie materiału.
-
-### 3. Archiwizuj realną pracę
-
-- własne teksty zapisuj w `practice/writing/raw/`,
-- wspólne poprawki w `practice/writing/corrected/`,
-- oceny i komentarze w `practice/writing/feedback/`,
-- testy i zestawy ćwiczeń w odpowiednich katalogach `practice/`,
-- plany nauki w `plans/`,
-- raporty postępu w `progress/`.
-
-## Najważniejsze pliki startowe
-
-- [docs/workflow.md](docs/workflow.md)
-- [docs/study-system.md](docs/study-system.md)
-- [docs/skills-guide.md](docs/skills-guide.md)
-- [knowledge/expert_knowledge.md](knowledge/expert_knowledge.md)
-- [docs/fce-topics.md](docs/fce-topics.md)
-- [docs/anki-import-guide.md](docs/anki-import-guide.md)
-- [templates/note-types.md](templates/note-types.md)
-
-## Moduł Anki
-
-Obsługiwane typy materiałów:
-
-- vocabulary,
-- grammar,
-- phrasal verbs,
-- collocations,
-- use of english.
-
-Promptów do generowania fiszek nadal używa się z katalogu `.github/prompts/`, a gotowe pliki można walidować skryptem `scripts/validate_output.py` i łączyć `scripts/merge_decks.py`.
-
-## Workflow podcast -> pakiet FCE
-
-Repo obsługuje teraz pełny workflow oparty na transkrypcjach podcastów:
-
-- pobranie transkrypcji do `input/podcast-transcripts/` przez `scripts/fetch_podcast_transcript.py`,
-- przygotowanie notatki słownictwa do `materials/podcast-notes/`,
-- przygotowanie ćwiczenia gramatycznego do `practice/grammar/`,
-- przygotowanie ćwiczenia Listening B2 First + answer key (z referencjami do linii transkrypcji) do `practice/listening/`.
-
-Do tego workflow możesz użyć skilla `podcast-episode-agent` albo promptu `.github/prompts/podcast-episode-workflow.prompt.md`.
-
-## Oficjalna podstawa wiedzy
-
-Ekspercka wiedza agenta została oparta na oficjalnych materiałach Cambridge dotyczących B2 First, podsumowanych w [knowledge/expert_knowledge.md](knowledge/expert_knowledge.md). Ten plik jest źródłem referencyjnym dla struktury egzaminu, typów zadań i oczekiwań wobec kandydata.
 
 ## Licencja
 
