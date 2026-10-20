@@ -8,7 +8,7 @@
 | Writing | brak próbek – diagnoza zadana 2026-10-04 | – | – |
 | Listening | brak próbek | – | – |
 | Speaking | brak próbek | – | – |
-| Słownictwo / Anki | 5 paczek zaimportowanych w AnkiDroid (1A, 2A, 3A Multi-word verbs, 3A Ability and achievement, talia kwietniowa), regularne powtórki | rozpoznanie słownictwa z podręcznika (1A 16/16, 2A *g* 12/12) | aktywne użycie: 2A-d tylko 1/5 zdań w pełni poprawnych; *turn out* z talii 3A nieprzywołane w tłumaczeniu bez podpowiedzi (4.10); 0/6 sprawdzianów zrobionych |
+| Słownictwo / Anki | 5 paczek zaimportowanych w AnkiDroid (1A, 2A, 3A Multi-word verbs, 3A Ability and achievement, talia kwietniowa), regularne powtórki; nowa paczka 3A Sport (2026-10-20) | rozpoznanie słownictwa z podręcznika (1A 16/16, 2A *g* 12/12, 3A sport 33/33) | aktywne użycie: 2A-d tylko 1/5 zdań w pełni poprawnych, 3A sport c 0/2 (brak *the*); *turn out* z talii 3A nieprzywołane w tłumaczeniu bez podpowiedzi (4.10); 0/6 sprawdzianów zrobionych |
 
 Wyniki per paper aktualizuj w tej tabeli, a szczegóły dopisuj do historii poniżej.
 
@@ -30,6 +30,7 @@ Wyniki per paper aktualizuj w tej tabeli, a szczegóły dopisuj do historii poni
 - 2026-09-29: podręcznik unit 1A (character adjectives) – ćwiczenia b i c: 16/16, słownictwo pewne na poziomie rozpoznania. Unit 2A (expressions with get) – rozróżnianie twardego i miękkiego *g*: 12/12; własne zdania z ćwiczenia d: znaczenie 5/5, w pełni poprawne gramatycznie 1/5 (feedback: `practice/vocabulary/2026-09-29-expressions-with-get-2a-exercise-d-feedback.md`). Powstały paczki `output/fce-expressions-with-get-2a.apkg` (72 karty) i `output/fce-character-adjectives-1a.apkg` (31 kart: word formation Part 3 + akcent) oraz check `practice/anki-checks/2026-09-29-anki-check-1a-2a-vocabulary.md`.
 - 2026-09-30: unit 3A – słownictwo *Ability and achievement* z tekstów *Learning to learn* i o sportowcach. Powstała paczka `output/fce-ability-achievement-3a.apkg` (126 kart: 31 pozycji słownictwa, kolokacji i multi-word verbs, 1 reguła *enough*, 19 open cloze, 7 word formation, 9 KWT, 21 tłumaczeń) i check `practice/anki-checks/2026-09-30-anki-check-ability-achievement-3a.md`. W notatkach poprawne użycie Present Perfect (*I have seen how it has developed*).
 - 2026-10-04: pierwszy zestaw w Pięciominutówce (aplikacja na telefon, `docs/pieciominutowka.md`): 3/5 w 1,5 min. Poprawnie: *associate with*, *a lot of*, *throw them away*. Błędy: KWT *pays to* bez *book* (niepełna struktura), tłumaczenie bez *turn out*. Szczegóły: `practice/reading-use-of-english/2026-10-04-quick-test.md`.
+- 2026-10-20: unit 3 *Words connected with sport* (praktyka 3A). Ćwiczenia a, b i tabela rodzin wyrazów bezbłędnie (33/33). Dwie relacje sportowe z ćwiczenia c: znaczenie słów dobre, ale w obu zdaniach brak *the*, w drugim też *at the Olympic Games* (feedback: `practice/vocabulary/2026-10-20-sport-3a-exercise-c-feedback.md`). Powstała paczka `output/fce-sport-3a.apkg` (80 notatek, 101 kart: słownictwo i kolokacje, open cloze z przyimkami, word formation, KWT, akcent, 16 tłumaczeń) i sprawdzian w Pięciominutówce (`2026-10-24-sport-3a-anki-check`).
 
 ## Co aktualizować dalej
 

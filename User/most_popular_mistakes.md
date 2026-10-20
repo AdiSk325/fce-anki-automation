@@ -20,6 +20,12 @@
 	krótka uwaga dydaktyczna: sygnały *over the years*, *for years*, *since* wymagają Present Perfect (Simple lub Continuous); wcześniej ten sam problem z aspektem w KWT (2026-04-12)
 	data ostatniego wystąpienia: 2026-09-29
 
+- obszar: grammar
+	błąd: brak przedimka *the* przy konkretnych rzeczownikach i nazwach wydarzeń; przy zawodach także zły przyimek
+	poprawna forma: `on the motorway` (2026-09-29), `because the game was really tight`, `represent Kenya at the Olympic Games` (2026-10-20)
+	krótka uwaga dydaktyczna: polski nie ma przedimków, więc *the* znika przy rzeczach, o których obie strony wiedzą (ten mecz, ta autostrada) i przy nazwach wydarzeń (the Olympic Games, the World Cup); przy zawodach *at the …*
+	data ostatniego wystąpienia: 2026-10-20
+
 - obszar: reading
 	błąd: weak discourse matching in gapped text
 	poprawna forma: contrast, result and accountability links must match the surrounding sentences

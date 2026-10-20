@@ -1,0 +1,121 @@
+{
+  "title": "Sob 24.10 – sprawdzian po talii 3A Sport",
+  "created": "2026-10-24T08:00:00Z",
+  "minutes": 8,
+  "focus": "słownictwo sportowe, przyimki, Part 3–4",
+  "intro": "Zrób po nauce kart z talii 3A Words connected with sport. Zdania są inne niż na kartach – chodzi o użycie słów w nowym kontekście.",
+  "items": [
+    {
+      "id": "q1",
+      "kind": "cloze",
+      "label": "Part 2 · Open cloze",
+      "instruction": "Wpisz jedno słowo.",
+      "text": "She won two gold medals {gap} the last Olympic Games.",
+      "answers": [
+        "at",
+        "in"
+      ],
+      "explain": "Najczęściej at the Olympic Games (też in the Olympic Games). Zawsze z the – brakowało go w ćwiczeniu c."
+    },
+    {
+      "id": "q2",
+      "kind": "cloze",
+      "label": "Part 2 · Open cloze",
+      "instruction": "Wpisz jedno słowo.",
+      "text": "It was the team's first victory {gap} Germany in ten years.",
+      "answers": [
+        "over"
+      ],
+      "explain": "a victory OVER sb = zwycięstwo nad kimś (nie above)."
+    },
+    {
+      "id": "q3",
+      "kind": "cloze",
+      "label": "Part 2 · Open cloze",
+      "instruction": "Wpisz jedno słowo.",
+      "text": "Twenty minutes {gap} the match, the referee awarded a penalty.",
+      "answers": [
+        "into"
+      ],
+      "explain": "czas + INTO + the match = tyle minęło od początku meczu."
+    },
+    {
+      "id": "q4",
+      "kind": "cloze",
+      "label": "Part 3 · Word formation",
+      "instruction": "Utwórz od słowa w nawiasie wyraz, który pasuje do luki.",
+      "text": "The {gap} team celebrated on the pitch all night. (VICTORY)",
+      "answers": [
+        "victorious"
+      ],
+      "explain": "Przed rzeczownikiem przymiotnik: victorious. Akcent przesuwa się: VICtory → vicTOrious."
+    },
+    {
+      "id": "q5",
+      "kind": "cloze",
+      "label": "Part 3 · Word formation",
+      "instruction": "Utwórz od słowa w nawiasie wyraz, który pasuje do luki.",
+      "text": "My brother is very {gap} – he wants to win even when we play cards. (COMPETE)",
+      "answers": [
+        "competitive"
+      ],
+      "explain": "competitive = nastawiony na rywalizację. Akcent: comPETitive, jak comPETitor."
+    },
+    {
+      "id": "q6",
+      "kind": "kwt",
+      "label": "Part 4 · Key word transformation",
+      "instruction": "Uzupełnij drugie zdanie tak, żeby znaczyło to samo co pierwsze. Użyj słowa z ramki bez zmiany jego formy. Wpisz od 2 do 5 słów, licząc słowo z ramki.",
+      "source": "The judges gave the Polish skater the highest score.",
+      "keyword": "AWARDED",
+      "text": "The Polish skater {gap} the highest score by the judges.",
+      "answers": [
+        "was awarded"
+      ],
+      "explain": "Strona bierna z osobą jako podmiotem: sb was awarded sth (bez with)."
+    },
+    {
+      "id": "q7",
+      "kind": "kwt",
+      "label": "Part 4 · Key word transformation",
+      "instruction": "Uzupełnij drugie zdanie tak, żeby znaczyło to samo co pierwsze. Użyj słowa z ramki bez zmiany jego formy. Wpisz od 2 do 5 słów, licząc słowo z ramki.",
+      "source": "Nobody has ever jumped higher than him.",
+      "keyword": "RECORD",
+      "text": "He {gap} the high jump.",
+      "answers": [
+        "holds the world record in"
+      ],
+      "explain": "Najlepszy wynik w historii = hold the world record IN + konkurencja. Pięć słów to górna granica."
+    },
+    {
+      "id": "q8",
+      "kind": "write",
+      "label": "Tłumaczenie PL → EN",
+      "instruction": "Przetłumacz na angielski.",
+      "source": "Widzowie wiwatowali, kiedy sędzia zagwizdał po raz ostatni.",
+      "answers": [
+        "The spectators cheered when the referee blew the final whistle.",
+        "The fans cheered when the referee blew the final whistle.",
+        "The crowd cheered when the referee blew the final whistle.",
+        "The spectators cheered when the referee blew his whistle for the last time."
+      ],
+      "review": true,
+      "explain": "spectators / fans / the crowd (nie audience), cheer, referee. „Zagwizdać po raz ostatni” = blow the final whistle."
+    },
+    {
+      "id": "q9",
+      "kind": "write",
+      "label": "Tłumaczenie PL → EN",
+      "instruction": "Przetłumacz na angielski.",
+      "source": "Mecz był wyrównany, ale ostatecznie wygraliśmy 2:1.",
+      "answers": [
+        "The game was tight, but we won 2-1 in the end.",
+        "The match was tight, but we won 2-1 in the end.",
+        "It was a close game, but we won 2-1 in the end.",
+        "It was a tight game, but in the end we won 2-1."
+      ],
+      "review": true,
+      "explain": "a tight / close game = wyrównany mecz; „ostatecznie” = in the end. Konkretny mecz → the game."
+    }
+  ]
+}
