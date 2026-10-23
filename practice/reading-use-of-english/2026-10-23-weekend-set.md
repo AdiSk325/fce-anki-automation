@@ -38,7 +38,7 @@ Odpowiedzi sprawdzaj dopiero po zrobieniu. Wklej swoje odpowiedzi w czacie, jeś
 
 **Open cloze**
 
-1. since (*training since the age of twelve*; też: *from* odpada, bo Present Perfect Continuous wymaga *since*)
+1. since (*has been training since the age of twelve* – z Present Perfect Continuous pasuje *since*)
 2. the (*the Youth Olympic Games* – nazwa wydarzenia)
 3. to (*sensitive to*)
 4. on (*concentrate on*)
