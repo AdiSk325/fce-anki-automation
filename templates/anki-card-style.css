@@ -173,6 +173,19 @@
     margin-top: 12px;
 }
 
+.oc .instruction, .mc .instruction {
+    font-size: 13px;
+    color: #666;
+    margin: 0 0 8px;
+}
+
+.mc .options {
+    font-size: 17px;
+    text-align: center;
+    margin: 12px 0 0;
+    color: #1a237e;
+}
+
 /* Odpowiedź */
 .answer {
     background-color: #c8e6c9;
@@ -314,6 +327,10 @@ hr {
 
 .nightMode .formula code, .night_mode .formula code {
     background-color: #4a3b52;
+}
+
+.nightMode .mc .options, .night_mode .mc .options {
+    color: #b3c0ff;
 }
 
 .nightMode .answer, .night_mode .answer {

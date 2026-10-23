@@ -100,6 +100,25 @@ Każdy typ odpowiada innemu rodzajowi materiału edukacyjnego FCE.
 - Explanation: typ konstrukcji i reguła szyku + typowy błąd (`.wrong`)
 - Tags: `fce use-of-english translation [temat]`
 
+**Typ `gap-fill` (uzupełnianie formy czasownika):**
+- Task: `<div class="oc">` z poleceniem (`.instruction`) i zdaniem, w którym luka to `GAP`, a bezokolicznik stoi w nawiasie – np. `I ______ (not / see) her since January.`
+- Answer: poprawna forma w `.answer` (jeśli dwie są równie dobre, oddzielone `/`)
+- Explanation: dlaczego ta forma + reguła + wskazówka
+- Tags: `fce use-of-english gap-fill [temat]`
+
+**Typ `tense-choice` (wybór formy spośród podanych):**
+- Task: `<div class="mc">` z poleceniem (`.instruction`), zdaniem z luką i opcjami w `.options`
+- Answer: całe poprawne zdanie w `.answer`
+- Explanation: dlaczego ta opcja + reguła + co znaczyłaby druga
+- Tags: `fce use-of-english tense-choice [temat]`
+
+**Typ `production` (budowanie własnych zdań na głos):**
+- Task: `<div class="tr">` z poleceniem (`.instruction`), zadaniem po polsku (`.pl-sentence`) i wymaganą konstrukcją (`.keyword`)
+- Answer: informacja, że własne odpowiedzi liczą się tak samo, + 2–3 zdania modelowe z tłumaczeniem w `.examples`
+- Explanation: na czym polega trudność i jak budować takie zdanie szybciej
+- Karta nie ma jednej poprawnej odpowiedzi – ocena jest samooceną płynności (bez zacięcia = *Good*)
+- Tags: `fce use-of-english production speaking-drill [temat]`
+
 **Typy wymowy `word-stress` i `sound-spelling` (Speaking – pronunciation):**
 - Task: `<div class="tr">` z poleceniem (`.instruction`) i słowem w `.word` (przy `word-stress` podzielonym na sylaby: `de · ter · mi · na · tion`)
 - Answer: odpowiedź w `.answer` (akcentowana sylaba jako `<b><u>…</u></b>` albo /g/ vs /dʒ/) + IPA i tłumaczenie w `.full-sentence`

@@ -25,6 +25,7 @@ Zdać egzamin Cambridge B2 First dzięki regularnej, spersonalizowanej pracy z t
 ## Bieżący nacisk
 
 - Pierwszy writing (diagnoza): `practice/writing/tasks/2026-10-04-essay-talent-or-practice.md`.
+- Nowy temat gramatyczny: **present perfect / present perfect continuous** (unit 3B) – paczka `output/fce-present-perfect-3b.apkg` plus codzienny trening płynności z `practice/grammar/2026-10-23-present-perfect-fluency-drills.md`; sprawdzian po dwóch tygodniach.
 - Zaległe sprawdziany Anki (status w nagłówku każdego pliku w `practice/anki-checks/`), w pierwszej kolejności:
   - `2026-09-29-anki-check-multi-word-verbs-3a.md` – szyk 4 typów multi-word verbs, KWT,
   - `2026-09-29-anki-check-1a-2a-vocabulary.md` – wyrażenia z *get*, word formation, akcent,

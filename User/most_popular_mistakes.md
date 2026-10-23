@@ -17,7 +17,7 @@
 - obszar: grammar
 	błąd: Present Simple zamiast Present Perfect przy sytuacji lub zmianie trwającej do teraz; kalka „przez lata” → *through the years*
 	poprawna forma: `Over the years, I've got more and more involved in the choir.`, `have been learning`
-	krótka uwaga dydaktyczna: sygnały *over the years*, *for years*, *since* wymagają Present Perfect (Simple lub Continuous); wcześniej ten sam problem z aspektem w KWT (2026-04-12)
+	krótka uwaga dydaktyczna: sygnały *over the years*, *for years*, *since* wymagają Present Perfect (Simple lub Continuous); wcześniej ten sam problem z aspektem w KWT (2026-04-12); od 2026-10-23 celowana talia `fce-present-perfect-3b.apkg` i drille produkcyjne w `practice/grammar/2026-10-23-present-perfect-fluency-drills.md`
 	data ostatniego wystąpienia: 2026-09-29
 
 - obszar: grammar

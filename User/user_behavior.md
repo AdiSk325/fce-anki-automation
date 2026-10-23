@@ -16,6 +16,7 @@
 - Materiał kursowy: Empower Upper-Intermediate (Cambridge) i lekcje z lektorem. Część słownictwa z wcześniejszych stron była już opracowana – przed tworzeniem talii sprawdzaj `output/` i `practice/vocabulary/`, żeby nie dublować kart.
 - Ma zaimportowane w AnkiDroid wszystkie paczki i powtarza je regularnie. Nie zmieniaj pierwszych pól istniejących kart – zmiana oznacza duplikat i utratę historii powtórek.
 - Rytm: krótko w tygodniu (telefon, Anki), dłużej w weekend. Pracuje zrywami, dlatego potrzebuje stałych punktów zaczepienia: rutyny z powiadomieniami (plan tygodnia w poniedziałek, pakiet na weekend w piątek).
+- Sam zgłasza, że osobnym problemem (obok poprawności) jest **tempo budowania zdań** w nowej konstrukcji gramatycznej. Przy gramatyce dodawaj więc karty produkcyjne: polecenie po polsku + konstrukcja + kilka modelowych odpowiedzi, do mówienia na głos i samooceny (tag `production speaking-drill`, typ `FCE Use of English`, Type = `production`). Wzór: `practice/grammar/2026-10-23-present-perfect-fluency-drills.md`.
 - Writing oddaje, wklejając tekst w czacie.
 - Git: tutor tworzy PR i sam go merguje po zielonym CI (decyzja z 2026-10-04). Nie trzeba prosić o merge.
 
