@@ -127,6 +127,13 @@ def gap_fill_fields(sentence, answer, why, rule=None, tip=None):
     return [task, answer_block(answer), uoe_explanation(why, rule, tip)]
 
 
+def error_correction_fields(sentence, correct, why, rule=None, tip=None):
+    """Task, Answer, Explanation dla typu `error-correction` (znajdź i popraw błąd)."""
+    task = ('<div class="mc"><p class="instruction">Znajdź i popraw błąd (albo błędy):</p>'
+            f'<p class="wrong">❌ {sentence}</p></div>')
+    return [task, answer_block(f"✅ {correct}"), uoe_explanation(why, rule, tip)]
+
+
 def choice_fields(sentence, options, answer, why, rule=None, tip=None):
     """Task, Answer, Explanation dla typu `tense-choice` (wybór formy spośród podanych)."""
     opts = " &nbsp;·&nbsp; ".join(f"<b>{o}</b>" for o in options)

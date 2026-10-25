@@ -112,6 +112,13 @@ Każdy typ odpowiada innemu rodzajowi materiału edukacyjnego FCE.
 - Explanation: dlaczego ta opcja + reguła + co znaczyłaby druga
 - Tags: `fce use-of-english tense-choice [temat]`
 
+**Typ `error-correction` (znajdź i popraw błąd):**
+- Task: `<div class="mc">` z poleceniem (`.instruction`) i błędnym zdaniem w `.wrong` (z ❌)
+- Answer: poprawione zdanie w `.answer` (z ✅)
+- Explanation: co dokładnie było źle + reguła + wskazówka
+- Źródłem są własne błędy użytkownika z `practice/**/feedback`; wtedy tag `my-sentences`, a przy zdaniach transferowych `repair`
+- Tags: `fce use-of-english error-correction [temat]`
+
 **Typ `production` (budowanie własnych zdań na głos):**
 - Task: `<div class="tr">` z poleceniem (`.instruction`), zadaniem po polsku (`.pl-sentence`) i wymaganą konstrukcją (`.keyword`)
 - Answer: informacja, że własne odpowiedzi liczą się tak samo, + 2–3 zdania modelowe z tłumaczeniem w `.examples`
