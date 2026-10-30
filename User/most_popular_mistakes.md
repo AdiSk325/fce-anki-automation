@@ -3,10 +3,10 @@
 ## Zarejestrowane wzorce
 
 - obszar: use-of-english
-	błąd: dependent prepositions and fixed chunks
-	poprawna forma: `aware of`, `kind of`, `sensitive to`, `contribute to`
-	krótka uwaga dydaktyczna: w open cloze trzeba rozpoznawać całe połączenia, nie pojedyncze słowa
-	data ostatniego wystąpienia: 2026-04-12
+	błąd: dependent prepositions and fixed chunks; w multi-word verbs wybór cząstki po znaczeniu samego czasownika, a nie całego połączenia
+	poprawna forma: `aware of`, `kind of`, `sensitive to`, `contribute to`; `look into how it worked` (nie *look over*), `go on about something` (nie *go in with*), `run out of petrol` (nie *run at*)
+	krótka uwaga dydaktyczna: w open cloze i multiple-choice cloze trzeba rozpoznawać całe połączenia, nie pojedyncze słowa; *look*, *go*, *run* są neutralne – znaczenie nadaje dopiero cząstka. Strategia: zasłoń opcje, dopowiedz sam oczekiwany czasownik wielowyrazowy, dopiero potem szukaj go wśród wariantów
+	data ostatniego wystąpienia: 2026-10-30
 
 - obszar: use-of-english
 	błąd: incomplete transformation structures in key word transformation
