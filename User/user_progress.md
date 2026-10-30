@@ -4,7 +4,7 @@
 
 | Paper | Ostatni wynik | Mocne | Słabe |
 |-------|---------------|-------|-------|
-| Reading and Use of English | Diagnoza 24/36 (2026-04-12), repair drill 6/13, szybki test 3/5 (2026-10-04), multiple-choice cloze multi-word verbs 6/9 (2026-10-30) | reading MC, word formation, multiple matching; stałe przyimki w prostych lukach (4.10); szyk czasowników rozdzielnych i trzyczłonowych (30.10) | open cloze, KWT (główny bloker), gapped text, wybór cząstki w multi-word verbs |
+| Reading and Use of English | Diagnoza 24/36 (2026-04-12), repair drill 6/13, szybki test 3/5 (2026-10-04), multiple-choice cloze multi-word verbs 6/9 i word order 4/9 (2026-10-30) | reading MC, word formation, multiple matching; stałe przyimki w prostych lukach (4.10); szyk czasowników rozdzielnych i trzyczłonowych (30.10) | open cloze, KWT (główny bloker), gapped text, wybór cząstki w multi-word verbs |
 | Writing | brak próbek – diagnoza zadana 2026-10-04 | – | – |
 | Listening | brak próbek | – | – |
 | Speaking | brak próbek | – | – |
@@ -32,6 +32,7 @@ Wyniki per paper aktualizuj w tej tabeli, a szczegóły dopisuj do historii poni
 - 2026-10-04: pierwszy zestaw w Pięciominutówce (aplikacja na telefon, `docs/pieciominutowka.md`): 3/5 w 1,5 min. Poprawnie: *associate with*, *a lot of*, *throw them away*. Błędy: KWT *pays to* bez *book* (niepełna struktura), tłumaczenie bez *turn out*. Szczegóły: `practice/reading-use-of-english/2026-10-04-quick-test.md`.
 - 2026-10-20: unit 3 *Words connected with sport* (praktyka 3A). Ćwiczenia a, b i tabela rodzin wyrazów bezbłędnie (33/33). Dwie relacje sportowe z ćwiczenia c: znaczenie słów dobre, ale w obu zdaniach brak *the*, w drugim też *at the Olympic Games* (feedback: `practice/vocabulary/2026-10-20-sport-3a-exercise-c-feedback.md`). Powstała paczka `output/fce-sport-3a.apkg` (80 notatek, 101 kart: słownictwo i kolokacje, open cloze z przyimkami, word formation, KWT, akcent, 16 tłumaczeń) i sprawdzian w Pięciominutówce (`2026-10-24-sport-3a-anki-check`).
 - 2026-10-30: multiple-choice cloze z czasownikami wielowyrazowymi (10 luk, zdjęcie ćwiczenia): 6/9 zaznaczonych, luka 1 bez odpowiedzi. Poprawnie szyk i cząstki w *wake up*, *figure out*, *set up*, *look up to me*, *look down on*, *be into*. Błędy: *look over* zamiast *look into*, *go in with* zamiast *go on about*, *run at* zamiast *run out of* – wszystkie trzy to wybór cząstki po znaczeniu samego czasownika. Feedback: `practice/reading-use-of-english/2026-10-30-multi-word-verbs-multiple-choice-cloze-feedback.md`.
+- 2026-10-30: ćwiczenie c (word order z multi-word verbs, 9 pozycji): 4/9. Poprawnie *get away with*, *come up with*, *made it up*, *picked it up* – zaimek w czasownikach rozdzielnych i dopełnienie po czasownikach nierozdzielnych z krótkim obiektem. Błędy: *…not friends with Tony* zamiast *fallen out with Tony*, *believe what you're doing in* zamiast *believe in what you're doing*, *go for yourself* zamiast *figure it out for yourself*, *why just don't you* zamiast *why don't you just*. Wspólny wzorzec z porannym cloze: cząstka odrywa się od swojego czasownika. Feedback: `practice/reading-use-of-english/2026-10-30-multi-word-verbs-word-order-feedback.md`.
 
 ## Co aktualizować dalej
 
