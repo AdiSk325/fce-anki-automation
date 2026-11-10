@@ -82,7 +82,7 @@ The Anki cycle is: diagnose gaps → generate TSV → validate → build `.apkg`
 
 For sentence-translation cards (PL → EN), use the `FCE Use of English` type with `Type` = `translation` (format in `templates/note-types.md`).
 
-The learner prefers cards that make them type the answer (set on 2026-11-10). For phrases and short sentences that must be reproduced exactly, use `FCE Typing` (`Type` = `gap-phrase`, `word-order`, `error-correction` or `translation`): the card shows an input box and Anki compares the typed text with `TypeAnswer`.
+The learner prefers cards that make them type the answer (set on 2026-11-10). For phrases and short sentences that must be reproduced exactly, use `FCE Typing` (`Type` = `gap-phrase`, `word-order`, `error-correction`, `rewrite` or `translation`): the card shows an input box and Anki compares the typed text with `TypeAnswer`.
 
 ### File Naming Convention
 

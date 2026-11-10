@@ -120,16 +120,17 @@ Karty, na których odpowiedź wpisuje się z klawiatury (`{{type:TypeAnswer}}`).
 | TypeAnswer | ✅ | Odpowiedź do wpisania: czysty tekst, bez HTML, prosty apostrof `'` |
 | Answer | ✅ | Ta sama odpowiedź w `.answer` + tłumaczenie PL i inne poprawne wersje w `.full-sentence` |
 | Explanation | ✅ | Wyjaśnienie PL + reguła |
-| Type | ✅ | `gap-phrase`, `word-order`, `error-correction` albo `translation` |
+| Type | ✅ | `gap-phrase`, `word-order`, `error-correction`, `rewrite` albo `translation` |
 | Tags | ✅ | `fce typing [typ] [temat]` |
 
 **Kierunki nauki:**
 - Card 1: Task + pole do wpisania → porównanie + Answer + Explanation
 
 **Typy zadań:**
-- `gap-phrase` – luka na cały zwrot (2–4 słowa), z podpowiedzią PL i liczbą słów
-- `word-order` – *Put the words in the correct order*: rozsypanka w `<p class="word scrambled">`, słowa rozdzielone ` / `; walidator sprawdza, czy rozsypanka zawiera dokładnie słowa odpowiedzi
+- `gap-phrase` – luka na słowo albo cały zwrot (1–4 słowa), z podpowiedzią PL i liczbą słów
+- `word-order` – *Put the words in the correct order*: rozsypanka w `<p class="word scrambled">`, słowa rozdzielone ` / `; walidator sprawdza, czy rozsypanka zawiera dokładnie słowa odpowiedzi. Przy długim zdaniu rozsypanka obejmuje tylko fragment, a zdanie z luką stoi nad nią w `<p class="context">`
 - `error-correction` – *Correct the mistake*: zdanie z jednym błędem w `.wrong-sentence`, wpisuje się całe poprawne zdanie
+- `rewrite` – zdanie do przepisania inną konstrukcją, z podanym słowem i początkiem odpowiedzi
 - `translation` – zdanie PL + zwrot do użycia, wpisuje się całe zdanie EN
 
 Plik: `output/fce-typing-<temat>.tsv`, helper: `typing_fields()` w `scripts/cardlib.py`.

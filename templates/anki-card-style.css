@@ -277,6 +277,11 @@ hr {
     line-height: 1.6;
 }
 
+.tr .context {
+    font-size: 18px;
+    margin: 8px 0;
+}
+
 .tr .wrong-sentence {
     font-size: 20px;
     font-weight: bold;

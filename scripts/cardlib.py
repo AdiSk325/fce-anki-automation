@@ -161,13 +161,18 @@ def sound_g_fields(word, hard, ipa, pl, rule):
     return [task, ans, rule_explanation(rule)]
 
 
-def typing_fields(instruction, body, type_answer, answer, pl=None, alt=None, hint=None, body_cls="pl-sentence"):
+def typing_fields(instruction, body, type_answer, answer, pl=None, alt=None, hint=None, body_cls="pl-sentence",
+                  context=None):
     """Task, TypeAnswer, Answer dla typu notatki FCE Typing (odpowiedź wpisywana z klawiatury).
 
     type_answer to czysty tekst porównywany przez Anki; answer to ta sama odpowiedź z HTML
-    (np. z pogrubionym zwrotem), pl – tłumaczenie całego zdania, alt – inna poprawna wersja.
+    (np. z pogrubionym zwrotem), pl – tłumaczenie całego zdania, alt – inna poprawna wersja,
+    context – zdanie z luką pokazane nad rozsypanką, gdy wpisuje się tylko jej fragment.
     """
-    task = f'<div class="tr"><p class="instruction">{instruction}</p><p class="{body_cls}">{body}</p>'
+    task = f'<div class="tr"><p class="instruction">{instruction}</p>'
+    if context:
+        task += f'<p class="context">{context}</p>'
+    task += f'<p class="{body_cls}">{body}</p>'
     if hint:
         task += f'<p class="keyword">{hint}</p>'
     ans = answer_block(answer)
