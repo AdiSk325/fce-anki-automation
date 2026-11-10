@@ -271,6 +271,39 @@ hr {
     margin: 12px 0 4px;
 }
 
+/* Karty z wpisywaniem (FCE Typing): rozsypanka, zdanie z błędem, pole odpowiedzi */
+.tr .word.scrambled {
+    font-size: 19px;
+    line-height: 1.6;
+}
+
+.tr .wrong-sentence {
+    font-size: 20px;
+    font-weight: bold;
+    color: #b71c1c;
+    margin: 8px 0;
+}
+
+.type-box {
+    margin: 12px 0;
+    text-align: center;
+}
+
+input#typeans {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    border: 1px solid #9fa8da;
+    border-radius: 6px;
+}
+
+code#typeans {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
 /* Tryb nocny (Anki Desktop, AnkiDroid, AnkiMobile) */
 .nightMode.card, .night_mode.card,
 .nightMode .card, .night_mode .card {
@@ -323,6 +356,16 @@ hr {
 
 .nightMode .wrong, .night_mode .wrong {
     color: #ef9a9a;
+}
+
+.nightMode .tr .wrong-sentence, .night_mode .tr .wrong-sentence {
+    color: #ef9a9a;
+}
+
+.nightMode input#typeans, .night_mode input#typeans {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #555;
 }
 
 .nightMode .correct, .night_mode .correct {

@@ -4,7 +4,7 @@ Walidator plików TSV wygenerowanych dla Anki.
 Sprawdza poprawność formatu, kodowania i kompletność danych.
 
 Użycie:
-    python validate_output.py <plik.tsv> [--type vocabulary|grammar|phrasal-verbs|collocations|use-of-english]
+    python validate_output.py <plik.tsv> [--type vocabulary|grammar|phrasal-verbs|collocations|use-of-english|typing]
     python validate_output.py output/  (waliduje wszystkie pliki TSV w katalogu)
 """
 
@@ -22,6 +22,7 @@ EXPECTED_COLUMNS = {
     "phrasal-verbs": {"count": 5, "names": ["PhrasalVerb", "Meaning", "Examples", "Synonyms", "Tags"]},
     "collocations": {"count": 5, "names": ["Collocation", "Translation", "Example", "Type", "Tags"]},
     "use-of-english": {"count": 5, "names": ["Task", "Answer", "Explanation", "Type", "Tags"]},
+    "typing": {"count": 6, "names": ["Task", "TypeAnswer", "Answer", "Explanation", "Type", "Tags"]},
 }
 
 # Prawidłowe prefiksy tagów per typ
@@ -31,6 +32,7 @@ VALID_TAG_PREFIXES = {
     "phrasal-verbs": "fce phrasal-verbs",
     "collocations": "fce collocations",
     "use-of-english": "fce use-of-english",
+    "typing": "fce typing",
 }
 
 
@@ -159,6 +161,43 @@ def validate_use_of_english_logic(filepath):
     return errors
 
 
+def sentence_words(text):
+    """Słowa zdania małymi literami, bez interpunkcji – do porównania rozsypanki z odpowiedzią."""
+    words = [w.strip(".,;:!?/").lower() for w in re.sub(r"<[^>]+>", " ", text).split()]
+    return sorted(w for w in words if w)
+
+
+def validate_typing_logic(filepath):
+    """Sprawdza karty FCE Typing: pole do wpisania to czysty tekst, a rozsypanka zgadza się z odpowiedzią."""
+    errors = []
+
+    with open(filepath, "r", encoding="utf-8") as f:
+        for i, row in enumerate(csv.reader(f, delimiter="	"), 1):
+            if len(row) != EXPECTED_COLUMNS["typing"]["count"]:
+                continue
+
+            task, type_answer, _, _, task_type, _ = row
+
+            # Anki porównuje wpisany tekst znak po znaku, więc HTML i zbędne spacje psują wynik.
+            if re.search(r"[<>&]", type_answer):
+                errors.append(f"Wiersz {i}: pole TypeAnswer zawiera HTML – ma być czystym tekstem")
+            if type_answer != " ".join(type_answer.split()):
+                errors.append(f"Wiersz {i}: pole TypeAnswer ma zbędne spacje")
+            if "’" in type_answer:
+                errors.append(f"Wiersz {i}: pole TypeAnswer ma apostrof ’ – użyj prostego ' (jak na klawiaturze)")
+
+            if task_type.strip() != "word-order":
+                continue
+
+            scrambled = re.search(r'<p class="word[^"]*">(.*?)</p>', task, re.DOTALL)
+            if not scrambled:
+                errors.append(f"Wiersz {i}: brak rozsypanki (<p class=\"word\">) w zadaniu word-order")
+            elif sentence_words(scrambled.group(1)) != sentence_words(type_answer):
+                errors.append(f"Wiersz {i}: słowa rozsypanki nie zgadzają się z odpowiedzią '{type_answer}'")
+
+    return errors
+
+
 def validate_html(filepath):
     """Podstawowa walidacja HTML w polach."""
     warnings = []
@@ -273,6 +312,8 @@ def validate_file(filepath, card_type=None):
     if not utf8_errors and card_type == "use-of-english":
         logic_errors = validate_use_of_english_logic(filepath)
         all_errors.extend(logic_errors)
+    if not utf8_errors and card_type == "typing":
+        all_errors.extend(validate_typing_logic(filepath))
 
     # 5. Duplikaty
     if not utf8_errors:

@@ -38,7 +38,7 @@ python -m unittest discover -s tests
 
 New card decks are written as a Python source in `decks/` built from `scripts/cardlib.py` helpers, then rendered to `output/*.tsv`. Never change the first field of an existing row: `build_apkg.py` derives the Anki note GUID from note type + first field, and the learner has all packages imported in AnkiDroid, so a changed first field becomes a duplicate card and loses review history. `tests/test_build_apkg.py` pins the IDs, and `tests/test_decks.py` checks that `decks/` reproduces `output/` byte for byte.
 
-Supported `--type` values for validation: `vocabulary`, `grammar`, `phrasal-verbs`, `collocations`, `use-of-english`.
+Supported `--type` values for validation: `vocabulary`, `grammar`, `phrasal-verbs`, `collocations`, `use-of-english`, `typing`.
 
 ## Architecture
 
@@ -65,7 +65,7 @@ Update these files after any session that reveals a new pattern. Do not duplicat
 
 ### Anki Module
 
-TSV files in `output/` follow strict schemas defined in `templates/note-types.md`. Five card types are supported, each with its own column set:
+TSV files in `output/` follow strict schemas defined in `templates/note-types.md`. Six card types are supported, each with its own column set:
 
 | Type | Columns |
 |------|---------|
@@ -74,12 +74,15 @@ TSV files in `output/` follow strict schemas defined in `templates/note-types.md
 | `FCE Phrasal Verbs` | PhrasalVerb, Meaning, Examples, Synonyms, Tags |
 | `FCE Collocations` | Collocation, Translation, Example, Type, Tags |
 | `FCE Use of English` | Task, Answer, Explanation, Type, Tags |
+| `FCE Typing` | Task, TypeAnswer, Answer, Explanation, Type, Tags |
 
 Format: TSV, UTF-8 without BOM. Always validate with `validate_output.py` before treating a file as ready to import.
 
 The Anki cycle is: diagnose gaps → generate TSV → validate → build `.apkg` with `build_apkg.py` (the user studies on Android via AnkiDroid) → user studies in Anki → create active recall check in `practice/anki-checks/` → grade check → update memory.
 
 For sentence-translation cards (PL → EN), use the `FCE Use of English` type with `Type` = `translation` (format in `templates/note-types.md`).
+
+The learner prefers cards that make them type the answer (set on 2026-11-10). For phrases and short sentences that must be reproduced exactly, use `FCE Typing` (`Type` = `gap-phrase`, `word-order`, `error-correction` or `translation`): the card shows an input box and Anki compares the typed text with `TypeAnswer`.
 
 ### File Naming Convention
 

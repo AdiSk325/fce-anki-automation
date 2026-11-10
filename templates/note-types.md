@@ -108,6 +108,34 @@ Każdy typ odpowiada innemu rodzajowi materiału edukacyjnego FCE.
 
 ---
 
+## 6. FCE Typing
+
+**Nazwa typu w Anki:** `FCE Typing`
+
+Karty, na których odpowiedź wpisuje się z klawiatury (`{{type:TypeAnswer}}`). Po odsłonięciu Anki porównuje wpisany tekst z odpowiedzią znak po znaku. Używaj do zwrotów i krótkich zdań, które trzeba umieć odtworzyć dokładnie; dłuższe, otwarte tłumaczenia zostają w `FCE Use of English` (`translation`).
+
+| Pole | Wymagane | Opis |
+|------|----------|------|
+| Task | ✅ | Polecenie + zdanie z luką / rozsypanka / zdanie z błędem / zdanie PL |
+| TypeAnswer | ✅ | Odpowiedź do wpisania: czysty tekst, bez HTML, prosty apostrof `'` |
+| Answer | ✅ | Ta sama odpowiedź w `.answer` + tłumaczenie PL i inne poprawne wersje w `.full-sentence` |
+| Explanation | ✅ | Wyjaśnienie PL + reguła |
+| Type | ✅ | `gap-phrase`, `word-order`, `error-correction` albo `translation` |
+| Tags | ✅ | `fce typing [typ] [temat]` |
+
+**Kierunki nauki:**
+- Card 1: Task + pole do wpisania → porównanie + Answer + Explanation
+
+**Typy zadań:**
+- `gap-phrase` – luka na cały zwrot (2–4 słowa), z podpowiedzią PL i liczbą słów
+- `word-order` – *Put the words in the correct order*: rozsypanka w `<p class="word scrambled">`, słowa rozdzielone ` / `; walidator sprawdza, czy rozsypanka zawiera dokładnie słowa odpowiedzi
+- `error-correction` – *Correct the mistake*: zdanie z jednym błędem w `.wrong-sentence`, wpisuje się całe poprawne zdanie
+- `translation` – zdanie PL + zwrot do użycia, wpisuje się całe zdanie EN
+
+Plik: `output/fce-typing-<temat>.tsv`, helper: `typing_fields()` w `scripts/cardlib.py`.
+
+---
+
 ## Szablony kart w paczce `.apkg`
 
 Skrypt `scripts/build_apkg.py` tworzy te typy notatek automatycznie, z kierunkami nauki jak wyżej i CSS z `templates/anki-card-style.css`. Na kartach odwrotnych (znaczenie → czasownik, tłumaczenie → kolokacja) elementy zdradzające odpowiedź (`.grammar-note`, `.note`) są ukryte do momentu odsłonięcia karty. Szczegóły importu: `docs/anki-import-guide.md`.

@@ -20,6 +20,7 @@ class StableIdentifiersTest(unittest.TestCase):
             "FCE Phrasal Verbs": 1990346138,
             "FCE Collocations": 1493849618,
             "FCE Use of English": 1515238980,
+            "FCE Typing": 1242744613,
         }
         self.assertEqual({t["name"]: b.stable_id("model", t["name"]) for t in b.NOTE_TYPES.values()}, expected)
 
@@ -75,6 +76,23 @@ class BuildPackageTest(unittest.TestCase):
         self.assertIn(b.note_guid("FCE Phrasal Verbs", "look into (sth)"), guids)
         tags = con.execute("select tags from notes where sfld = 'look into (sth)'").fetchone()[0]
         self.assertEqual(tags.split(), ["fce", "phrasal-verbs", "look", "type-3"])
+        con.close()
+
+    def test_typing_note_has_type_in_field(self):
+        typing = write_tsv(self.dir / "fce-typing-t.tsv", [
+            ['<div class="tr"><p class="word">go / we / could .</p></div>', "We could go.",
+             '<div class="answer"><b>We could go.</b></div>', '<div class="explanation"><p>x</p></div>',
+             "word-order", "fce typing word-order t"],
+        ])
+        apkg = self.dir / "typing.apkg"
+        quiet(b.build_apkg, [(typing, "Root")], apkg)
+
+        con = self.open_collection(apkg)
+        self.assertEqual(con.execute("select count(*) from cards").fetchone()[0], 1)
+        models = json.loads(con.execute("select models from col").fetchone()[0])
+        model = models[str(b.stable_id("model", "FCE Typing"))]
+        self.assertIn("{{type:TypeAnswer}}", model["tmpls"][0]["qfmt"])
+        self.assertEqual(con.execute("select flds from notes").fetchone()[0].split("")[1], "We could go.")
         con.close()
 
     def test_invalid_tsv_stops_build(self):

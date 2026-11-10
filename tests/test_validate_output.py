@@ -29,6 +29,38 @@ class DetectTypeTest(unittest.TestCase):
         self.assertIsNone(v.detect_type_from_filename("notes.tsv"))
 
 
+def typing_row(scrambled, type_answer, task_type="word-order"):
+    return [f'<div class="tr"><p class="word scrambled">{scrambled}</p></div>', type_answer,
+            f'<div class="answer"><b>{type_answer}</b></div>', '<div class="explanation"><p>x</p></div>',
+            task_type, f"fce typing {task_type}"]
+
+
+class TypingTest(unittest.TestCase):
+    def check(self, rows):
+        with tempfile.TemporaryDirectory() as tmp:
+            return v.validate_typing_logic(write_tsv(Path(tmp) / "fce-typing-t.tsv", rows))
+
+    def test_scrambled_words_match_answer(self):
+        self.assertEqual(self.check([
+            typing_row("to / that / but / easier / it'd / eat out / agree / be / don't you ?",
+                       "But don't you agree that it'd be easier to eat out?"),
+            typing_row("saying / was / anyway / I / as / go / we .", "Anyway, as I was saying, we go."),
+        ]), [])
+
+    def test_missing_or_extra_word_is_an_error(self):
+        errors = self.check([typing_row("could / go / we .", "We could always go.")])
+        self.assertEqual(len(errors), 1)
+        self.assertIn("rozsypanki", errors[0])
+
+    def test_type_answer_must_be_plain_text(self):
+        errors = self.check([
+            typing_row("x", "<b>could always</b>", "gap-phrase"),
+            typing_row("x", "could  always", "gap-phrase"),
+            typing_row("x", "Don’t you think", "gap-phrase"),
+        ])
+        self.assertEqual(len(errors), 3)
+
+
 class KwtTest(unittest.TestCase):
     def test_word_count_counts_contractions_as_two(self):
         self.assertEqual(v.count_kwt_words("is thought to be"), 4)

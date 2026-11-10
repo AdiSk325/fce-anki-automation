@@ -134,6 +134,19 @@ NOTE_TYPES = {
             ),
         ],
     },
+    # Karty z wpisywaniem: {{type:TypeAnswer}} daje pole tekstowe, a po odsłonięciu
+    # Anki pokazuje porównanie wpisanego tekstu z odpowiedzią znak po znaku.
+    "typing": {
+        "name": "FCE Typing",
+        "fields": ["Task", "TypeAnswer", "Answer", "Explanation", "Type"],
+        "templates": [
+            (
+                "Card 1: Task → Type the answer",
+                '{{Task}}<div class="type-box">{{type:TypeAnswer}}</div>',
+                "{{FrontSide}}" + ANSWER_LINE + "{{Answer}}{{Explanation}}",
+            ),
+        ],
+    },
 }
 
 DEFAULT_DECK_CONFIG = {

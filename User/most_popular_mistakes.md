@@ -11,8 +11,8 @@
 - obszar: grammar
 	błąd: w zadaniach na szyk przyimek lub cząstka odrywa się od swojego czasownika wielowyrazowego, zwłaszcza gdy dopełnieniem jest zdanie podrzędne; mylone typy rozdzielny / nierozdzielny
 	poprawna forma: `I've fallen out with Tony and we're not friends.` (nie *…not friends with Tony*), `You need to believe in what you're doing.` (nie *…believe what you're doing in*), `Go and figure it out for yourself.`, `Why don't you just try it out?`
-	krótka uwaga dydaktyczna: Type 2 (rozdzielny: *let down*, *pick up*, *try out*) – zaimek obowiązkowo w środku (*let us down*, *picked it up*); Type 3 i 4 (nierozdzielny: *believe in*, *fall out with*, *get away with*, *come up with*) – nic nie wchodzi do środka i nic nie zostaje na końcu, całe dopełnienie idzie po czasowniku. Przy układaniu zdania najpierw sklej czasownik wielowyrazowy w całość, potem dokładaj resztę
-	data ostatniego wystąpienia: 2026-10-30
+	krótka uwaga dydaktyczna: Type 2 (rozdzielny: *let down*, *pick up*, *try out*) – zaimek obowiązkowo w środku (*let us down*, *picked it up*); Type 3 i 4 (nierozdzielny: *believe in*, *fall out with*, *get away with*, *come up with*) – nic nie wchodzi do środka i nic nie zostaje na końcu, całe dopełnienie idzie po czasowniku. Przy układaniu zdania najpierw sklej czasownik wielowyrazowy w całość, potem dokładaj resztę. 2026-11-10: ten sam mechanizm przy zwrotach funkcyjnych w rozsypance (unit 3C, 2/5) – stała rama rozpada się na pojedyncze słowa: `I think maybe we should stay home.` (nie *we maybe should*), `But don't you agree that it'd be easier to eat out?` (nie *Don't you agree to eat out but that it'd easier?*), `Another thing to remember is the price.`
+	data ostatniego wystąpienia: 2026-11-10
 
 - obszar: use-of-english
 	błąd: incomplete transformation structures in key word transformation

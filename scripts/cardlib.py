@@ -161,6 +161,23 @@ def sound_g_fields(word, hard, ipa, pl, rule):
     return [task, ans, rule_explanation(rule)]
 
 
+def typing_fields(instruction, body, type_answer, answer, pl=None, alt=None, hint=None, body_cls="pl-sentence"):
+    """Task, TypeAnswer, Answer dla typu notatki FCE Typing (odpowiedź wpisywana z klawiatury).
+
+    type_answer to czysty tekst porównywany przez Anki; answer to ta sama odpowiedź z HTML
+    (np. z pogrubionym zwrotem), pl – tłumaczenie całego zdania, alt – inna poprawna wersja.
+    """
+    task = f'<div class="tr"><p class="instruction">{instruction}</p><p class="{body_cls}">{body}</p>'
+    if hint:
+        task += f'<p class="keyword">{hint}</p>'
+    ans = answer_block(answer)
+    if pl:
+        ans += f'<p class="full-sentence">🇵🇱 <i>{pl}</i></p>'
+    if alt:
+        ans += f'<p class="full-sentence">✅ Też poprawnie: <i>{alt}</i></p>'
+    return [task + "</div>", type_answer, ans]
+
+
 def write_tsv(name, rows, output_dir=OUTPUT_DIR):
     """Zapisuje wiersze jako TSV (UTF-8 bez BOM, bez cytowania pól)."""
     path = Path(output_dir) / name
